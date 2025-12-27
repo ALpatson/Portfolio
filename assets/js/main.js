@@ -40,4 +40,17 @@ document.addEventListener('DOMContentLoaded', () => {
       f.addEventListener('submit', handleSubmit);
     }
   });
+
+  // Enable GitHub buttons when a data-github attribute is present
+  document.querySelectorAll('[data-github]').forEach(el => {
+    const url = el.getAttribute('data-github') || el.getAttribute('href');
+    if (url) {
+      el.setAttribute('href', url);
+      el.setAttribute('target', '_blank');
+      el.setAttribute('rel', 'noopener noreferrer');
+      el.classList.remove('opacity-50', 'cursor-not-allowed');
+      // ensure the element is keyboard-focusable
+      el.classList.add('focus:outline-none');
+    }
+  });
 });
