@@ -1,0 +1,54 @@
+/* Shared site styles extracted from index.html */
+* {
+  scroll-behavior: smooth;
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hover-lift {
+  transition: all 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.nav-active {
+  color: #ffffff;
+  background: rgba(59,130,246,0.18);
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  box-shadow: 0 6px 18px rgba(59,130,246,0.08);
+}
+
+.nav-link:hover {
+  color: #93c5fd;
+  background: rgba(255,255,255,0.02);
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* kept for future use */
+.page { display: none; }
+.page.active { display: block; animation: fadeIn 0.5s ease-in; }
