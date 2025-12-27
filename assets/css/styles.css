@@ -1,9 +1,9 @@
-
-/* Shared site styles extracted from index.html */
+/* Global */
 * {
   scroll-behavior: smooth;
 }
 
+/* Fade animation */
 .fade-in {
   animation: fadeIn 0.8s ease-in;
 }
@@ -19,37 +19,83 @@
   }
 }
 
+/* Hover lift */
 .hover-lift {
   transition: all 0.3s ease;
 }
 
 .hover-lift:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
 }
 
-.nav-active {
-  color: #ffffff;
-  background: rgba(59,130,246,0.18);
-  padding: 0.35rem 0.75rem;
-  border-radius: 9999px;
-  box-shadow: 0 6px 18px rgba(59,130,246,0.08);
+/* Navigation */
+.nav-link {
+  transition: all 0.25s ease;
 }
 
 .nav-link:hover {
   color: #93c5fd;
-  background: rgba(255,255,255,0.02);
-  padding: 0.25rem 0.5rem;
+  background: rgba(255,255,255,0.04);
+  padding: 0.25rem 0.6rem;
   border-radius: 9999px;
 }
 
-.gradient-text {
-  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.nav-active {
+  color: #ffffff;
+  background: rgba(59,130,246,0.2);
+  padding: 0.35rem 0.8rem;
+  border-radius: 9999px;
+  box-shadow: 0 6px 18px rgba(59,130,246,0.1);
 }
 
-/* kept for future use */
-.page { display: none; }
-.page.active { display: block; animation: fadeIn 0.5s ease-in; }
+/* Entrance animation */
+.enter-element {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(.2,.9,.2,1);
+}
+
+.enter-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  background-clip: text;              /* standard */
+  -webkit-background-clip: text;      /* required for WebKit */
+  -webkit-text-fill-color: transparent;
+}
+
+
+/* Pulse (optional use) */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(16,185,129,0); }
+  70% { box-shadow: 0 0 0 14px rgba(16,185,129,0.06); }
+  100% { box-shadow: 0 0 0 0 rgba(16,185,129,0); }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+  border-color: rgba(16,185,129,0.4);
+}
+
+/* Contact icons (used on contact page) */
+.contact-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: rgba(15,23,42,0.6);
+  color: #10b981;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.contact-icon:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(16,185,129,0.08);
+}

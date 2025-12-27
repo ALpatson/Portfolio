@@ -53,4 +53,19 @@ document.addEventListener('DOMContentLoaded', () => {
       el.classList.add('focus:outline-none');
     }
   });
+
+  // Entrance and pulse animations (appear on scroll)
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('enter-up');
+        // start pulsing for contact icons
+        if (entry.target.classList.contains('contact-icon')) entry.target.classList.add('pulse');
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.enter-element').forEach(el => observer.observe(el));
+  document.querySelectorAll('.contact-icon').forEach(el => observer.observe(el));
+
 });
