@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects — Alpatson Cobbina Siaw</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Favicon -->
+    <link rel="icon" href="assets/icon/favicon.ico">
+    <link rel="shortcut icon" href="assets/icon/favicon.ico">
+    <meta name="theme-color" content="#0b1220">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-slate-900 text-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full bg-slate-900/95 border-b border-slate-700 z-50 md:top-6 md:left-1/2 md:w-auto md:-translate-x-1/2 md:rounded-full md:px-6 md:py-2 md:shadow md:border-0 md:bg-transparent md:backdrop-blur-none md:shadow-none">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between relative md:max-w-max md:px-2 md:py-1 md:justify-center">
+            <div class="hidden md:flex items-center md:absolute md:left-1/2 md:-translate-x-1/2 md:bg-slate-800/60 md:rounded-full md:px-6 md:py-2 md:backdrop-blur md:shadow-md space-x-6">
+                <a href="index.html" class="nav-link hover:text-blue-300 transition md:px-3 md:py-1">Home</a>
+                <a href="about.html" class="nav-link hover:text-blue-300 transition md:px-3 md:py-1">About</a>
+                <a href="projects.html" class="nav-link hover:text-blue-300 transition md:px-3 md:py-1">Projects</a>
+                <a href="contact.html" class="nav-link hover:text-blue-300 transition md:px-3 md:py-1">Contact</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button onclick="toggleMobileMenu()" class="md:hidden text-2xl">☰</button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-slate-800 border-t border-slate-700">
+            <a href="index.html" class="block px-6 py-3 hover:bg-slate-700">Home</a>
+            <a href="about.html" class="block px-6 py-3 hover:bg-slate-700">About</a>
+            <a href="projects.html" class="block px-6 py-3 hover:bg-slate-700">Projects</a>
+            <a href="contact.html" class="block px-6 py-3 hover:bg-slate-700">Contact</a>
+        </div>
+    </nav>
+
+    <main class="pt-20">
+        <section class="min-h-screen py-20 px-6 bg-slate-900">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-bold mb-16 text-center">My Projects</h2>
+                <div class="space-y-12">
+                    <!-- Project 1 -->
+                    <div class="bg-slate-800 rounded-lg overflow-hidden hover-lift fade-in">
+                        <div class="md:flex">
+                            <div class="md:w-2/5 bg-slate-700 flex items-center justify-center p-4 h-64 md:h-80">
+                                <img src="assets/images/inventory-screenshot.png" alt="Inventory Management System" class="max-h-full w-auto object-contain">
+                            </div>
+                            <div class="md:w-3/5 p-8">
+                                <h3 class="text-2xl font-bold mb-3">Inventory Management System</h3>
+                                <p class="text-slate-300 mb-4 leading-relaxed">A comprehensive Django-based inventory management platform that handles product tracking, stock updates, sales records, and user authentication. Built with clean architecture principles and real-world use cases in mind.</p>
+                                <div class="mb-6">
+                                    <p class="text-sm font-semibold text-blue-400 mb-2">Tech Stack:</p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="bg-slate-700 px-3 py-1 rounded text-sm">Django</span>
+                                        <span class="bg-slate-700 px-3 py-1 rounded text-sm">PostgreSQL</span>
+                                        <span class="bg-slate-700 px-3 py-1 rounded text-sm">Bootstrap</span>
+                                        <span class="bg-slate-700 px-3 py-1 rounded text-sm">REST API</span>
+                                    </div>
+                                </div>
+                                <div class="flex gap-4">
+                                    <a class="border border-blue-600 text-blue-400 hover:bg-blue-600/10 px-6 py-2 rounded font-semibold transition cursor-not-allowed opacity-50">Private Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="bg-slate-800 rounded-lg overflow-hidden hover-lift fade-in">
+                        <div class="md:flex flex-row-reverse">
+                            <div class="md:w-2/5 bg-slate-700 flex items-center justify-center p-4 h-64 md:h-80">
+                                <img src="assets/images/library-screenshot.png" alt="Miss Library" class="max-h-full w-auto object-contain">
+                            </div>
+                            <div class="md:w-3/5 p-8">
+                                <h3 class="text-2xl font-bold mb-3">Miss Library</h3>
+                                <p class="text-slate-300 mb-4 leading-relaxed">A React and Next.js library management system that allows users to browse, search, and manage books. Features include user authentication, book reservations, and a clean interface for librarians to maintain inventory.</p>
+                                <div class="mb-6">
+                                    <p class="text-sm font-semibold text-blue-400 mb-2">Tech Stack:</p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="bg-slate-700 px-3 py-1 rounded text-sm">React</span>
+                                        <span class="bg-slate-700 px-3 py-1 rounded text-sm">Next.js</span>
+                                        <span class="bg-slate-700 px-3 py-1 rounded text-sm">Node.js</span>
+                                    </div>
+                                </div>
+                                <div class="flex gap-4">
+                                    <a href="https://github.com/ALpatson/Miss_Library" target="_blank" class="border border-blue-600 text-blue-400 hover:bg-blue-600/10 px-6 py-2 rounded font-semibold transition">GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 3: Portfolio Website -->
+                    <div class="bg-slate-800 rounded-lg overflow-hidden hover-lift fade-in">
+                        <div class="md:flex">
+                            <div class="md:w-2/5 bg-slate-700 flex items-center justify-center p-4 h-64 md:h-80">
+                                <img src="assets/images/portfolio-screenshot.png" alt="Portfolio Website" class="max-h-full w-auto object-contain">
+                            </div>
+                            <div class="md:w-3/5 p-8">
+                                <h3 class="text-2xl font-bold mb-3">Portfolio Website</h3>
+                                <p class="text-slate-300 mb-4 leading-relaxed">This portfolio site showcases my projects, about, and contact pages. Built with HTML, Tailwind CSS, and vanilla JavaScript — it's responsive, accessible, and intentionally lightweight to demonstrate front-end craftsmanship.</p>
+                                <div class="mb-6">
+                                    <p class="text-sm font-semibold text-blue-400 mb-2">Tech Stack:</p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="bg-slate-700 px-3 py-1 rounded text-sm">HTML</span>
+                                        <span class="bg-slate-700 px-3 py-1 rounded text-sm">Tailwind CSS</span>
+                                        <span class="bg-slate-700 px-3 py-1 rounded text-sm">JavaScript</span>
+                                    </div>
+                                </div>
+                                <div class="flex gap-4">
+                                    <a href="https://github.com/ALpatson/Portfolio" id="portfolio-github" data-github="https://github.com/ALpatson/Portfolio" target="_blank" rel="noopener noreferrer" class="border border-blue-600 text-blue-400 hover:bg-blue-600/10 px-6 py-2 rounded font-semibold transition inline-flex items-center gap-2">
+                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.9.58.11.79-.25.79-.56v-2.03c-3.2.7-3.87-1.54-3.87-1.54-.52-1.33-1.27-1.68-1.27-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.67 1.25 3.32.96.1-.75.4-1.25.73-1.54-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.14 1.18.91-.25 1.89-.37 2.86-.38.97.01 1.96.13 2.87.38 2.18-1.49 3.13-1.18 3.13-1.18.62 1.58.23 2.75.11 3.04.73.81 1.18 1.83 1.18 3.09 0 4.44-2.71 5.4-5.29 5.69.41.35.77 1.04.77 2.1v3.12c0 .32.21.68.8.56C20.71 21.39 24 17.08 24 12 24 5.73 18.27.5 12 .5z"/></svg>
+                                        View on GitHub
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="bg-slate-800 rounded-lg overflow-hidden hover-lift fade-in">
+                        <div class="md:flex">
+                            <div class="md:w-2/5 bg-slate-700 flex items-center justify-center p-4 h-64 md:h-80">
+                                <img src="assets/images/recipe-app-screenshot.png" alt="Recipe App" class="max-h-full w-auto object-contain">
+                            </div>
+                            <div class="md:w-3/5 p-8">
+                                <h3 class="text-2xl font-bold mb-3">Recipe App</h3>
+                                <p class="text-slate-300 mb-4 leading-relaxed">A mobile recipe application built with Kotlin that allows users to browse, search, and discover recipes for food they want to prepare. Features include recipe details, categories, and an intuitive user interface for easy navigation.</p>
+                                <div class="mb-6">
+                                    <p class="text-sm font-semibold text-blue-400 mb-2">Tech Stack:</p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="bg-slate-700 px-3 py-1 rounded text-sm">Kotlin</span>
+                                        <span class="bg-slate-700 px-3 py-1 rounded text-sm">Android</span>
+                                        <span class="bg-slate-700 px-3 py-1 rounded text-sm">Mobile App</span>
+                                    </div>
+                                </div>
+                                <div class="flex gap-4">
+                                    <a class="border border-blue-600 text-blue-400 hover:bg-blue-600/10 px-6 py-2 rounded font-semibold transition cursor-not-allowed opacity-50">Private Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="mt-12 py-6 border-t border-slate-700 text-center text-sm text-slate-400">
+            &copy; <span id="footerYear"></span> Alpatson Cobbina Siaw. All rights reserved.
+        </footer>
+    </main>
+
+    <script src="assets/js/main.js" defer></script>
+</body>
+</html>
