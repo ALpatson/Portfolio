@@ -99,3 +99,20 @@
   transform: translateY(-6px);
   box-shadow: 0 12px 30px rgba(16,185,129,0.08);
 }
+
+/* Typewriter shaking animation */
+@keyframes typewriter-shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-2px);
+  }
+  75% {
+    transform: translateX(2px);
+  }
+}
+
+.typing-shake {
+  animation: typewriter-shake 0.2s infinite;
+}

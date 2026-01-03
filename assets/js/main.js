@@ -6,8 +6,25 @@ function toggleMobileMenu() {
 
 function handleSubmit(e) {
   e.preventDefault();
-  alert('Thanks! Your message was sent (demo).');
-  if (e.target && typeof e.target.reset === 'function') e.target.reset();
+  
+  // Get form values
+  const name = document.getElementById('nameField').value.trim();
+  const email = document.getElementById('emailField').value.trim();
+  const message = document.getElementById('messageField').value.trim();
+  
+  // Create mailto link with form data
+  const subject = encodeURIComponent(`Message from ${name}`);
+  const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+  const mailtoLink = `mailto:alpatson-cobbina.siaw@student.junia.com?subject=${subject}&body=${body}`;
+  
+  // Open the user's email client
+  window.location.href = mailtoLink;
+  
+  // Reset form after a short delay
+  setTimeout(() => {
+    e.target.reset();
+  }, 300);
+  
   return false;
 }
 
@@ -24,9 +41,48 @@ function setActiveNav() {
   });
 }
 
+// Typewriter effect with shaking animation
+function typewriterEffect(element, text, speed = 100) {
+  element.textContent = ''; // Clear the element
+  element.classList.add('typing-shake'); // Add shaking class
+  let index = 0;
+  
+  function type() {
+    if (index < text.length) {
+      element.textContent += text.charAt(index);
+      index++;
+      setTimeout(type, speed);
+    } else {
+      // Remove shaking when done typing
+      element.classList.remove('typing-shake');
+    }
+  }
+  
+  type();
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   setFooterYear();
   setActiveNav();
+
+  // Apply typewriter effect to the h1 heading (entire title)
+  const h1Element = document.querySelector('h1');
+  if (h1Element) {
+    // Clear the h1 but keep structure
+    h1Element.innerHTML = 'Hi, I\'m <span class="gradient-text"></span>';
+    const gradientSpan = h1Element.querySelector('.gradient-text');
+    const fullText = 'Alpatson';
+    
+    // Add shaking to h1 while typing
+    h1Element.classList.add('typing-shake');
+    
+    typewriterEffect(gradientSpan, fullText, 120); // 120ms between each letter
+    
+    // Remove shake from h1 after typing is done
+    setTimeout(() => {
+      h1Element.classList.remove('typing-shake');
+    }, fullText.length * 120);
+  }
 
   // hide mobile menu after selecting an item
   document.querySelectorAll('#mobileMenu a').forEach(a => a.addEventListener('click', () => {
