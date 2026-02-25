@@ -16,38 +16,64 @@
     <!-- Custom Styles -->
     <link rel="stylesheet" href="assets/css/styles.css">
     <style>
-        /* Timeline styles */
+        /* Route-style roadmap */
         .timeline {
             position: relative;
-            padding: 20px 0;
+            padding: 24px 0;
         }
 
         .timeline::before {
             content: '';
             position: absolute;
             left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            width: 14px;
+            height: 100%;
+            border-radius: 999px;
+            background: linear-gradient(180deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.95) 100%);
+            border: 2px solid rgba(148, 163, 184, 0.35);
+            box-shadow: inset 0 0 0 2px rgba(15, 23, 42, 0.8), 0 0 24px rgba(59, 130, 246, 0.15);
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
             transform: translateX(-50%);
             width: 3px;
             height: 100%;
-            background: linear-gradient(to bottom, #3b82f6, #8b5cf6);
+            background: repeating-linear-gradient(
+                to bottom,
+                rgba(241, 245, 249, 0.85) 0,
+                rgba(241, 245, 249, 0.85) 12px,
+                transparent 12px,
+                transparent 24px
+            );
+            opacity: 0.85;
         }
 
         .timeline-item {
-            margin-bottom: 50px;
+            margin-bottom: 56px;
             position: relative;
             opacity: 0;
-            animation: fadeInTimeline 0.6s ease-out forwards;
+            animation: fadeInTimeline 0.65s ease-out forwards;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
         }
 
         .timeline-item:nth-child(1) { animation-delay: 0.1s; }
-        .timeline-item:nth-child(2) { animation-delay: 0.3s; }
-        .timeline-item:nth-child(3) { animation-delay: 0.5s; }
-        .timeline-item:nth-child(4) { animation-delay: 0.7s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.28s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.46s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.64s; }
 
         @keyframes fadeInTimeline {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(24px);
             }
             to {
                 opacity: 1;
@@ -55,22 +81,36 @@
             }
         }
 
+        .timeline-content {
+            width: 44%;
+            padding: 1.2rem 1.25rem;
+            border-radius: 14px;
+            border: 1px solid rgba(148, 163, 184, 0.28);
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.92), rgba(30, 41, 59, 0.9));
+            box-shadow: 0 14px 30px rgba(2, 6, 23, 0.32);
+            position: relative;
+            backdrop-filter: blur(6px);
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-4px);
+            border-color: rgba(96, 165, 250, 0.55);
+            box-shadow: 0 20px 38px rgba(15, 23, 42, 0.5);
+        }
+
         .timeline-item:nth-child(odd) .timeline-content {
-            margin-left: 0;
             margin-right: auto;
-            width: 45%;
             text-align: right;
-            padding-right: 60px;
+            padding-right: 3rem;
             animation: slideInRight 0.6s ease-out forwards;
             animation-delay: inherit;
         }
 
         .timeline-item:nth-child(even) .timeline-content {
             margin-left: auto;
-            margin-right: 0;
-            width: 45%;
             text-align: left;
-            padding-left: 60px;
+            padding-left: 3rem;
             animation: slideInLeft 0.6s ease-out forwards;
             animation-delay: inherit;
         }
@@ -78,7 +118,7 @@
         @keyframes slideInRight {
             from {
                 opacity: 0;
-                transform: translateX(-50px);
+                transform: translateX(-40px);
             }
             to {
                 opacity: 1;
@@ -89,7 +129,7 @@
         @keyframes slideInLeft {
             from {
                 opacity: 0;
-                transform: translateX(50px);
+                transform: translateX(40px);
             }
             to {
                 opacity: 1;
@@ -100,35 +140,81 @@
         .timeline-dot {
             position: absolute;
             left: 50%;
-            top: 0;
+            top: 16px;
             transform: translateX(-50%);
-            width: 20px;
-            height: 20px;
-            background: #3b82f6;
-            border: 4px solid #0f172a;
-            border-radius: 50%;
-            z-index: 10;
-            animation: dotPulse 0.8s ease-out forwards;
-            animation-delay: inherit;
-        }
-
-        @keyframes dotPulse {
-            0% {
-                transform: translateX(-50%) scale(0.5);
-                opacity: 0;
-            }
-            50% {
-                box-shadow: 0 0 0 12px rgba(59, 130, 246, 0.1);
-            }
-            100% {
-                transform: translateX(-50%) scale(1);
-                opacity: 1;
-                box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
-            }
+            width: 30px;
+            height: 30px;
+            border-radius: 999px;
+            border: 3px solid rgba(241, 245, 249, 0.7);
+            background: radial-gradient(circle at 30% 30%, #60a5fa, #1d4ed8);
+            box-shadow: 0 0 0 8px rgba(59, 130, 246, 0.16), 0 0 18px rgba(37, 99, 235, 0.55);
+            z-index: 12;
         }
 
         .timeline-item:nth-child(even) .timeline-dot {
-            background: #8b5cf6;
+            background: radial-gradient(circle at 30% 30%, #c084fc, #7e22ce);
+            box-shadow: 0 0 0 8px rgba(168, 85, 247, 0.16), 0 0 18px rgba(126, 34, 206, 0.55);
+        }
+
+        .timeline-dot::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 8px;
+            height: 8px;
+            border-radius: 999px;
+            background: #f8fafc;
+        }
+
+        .timeline-car {
+            position: absolute;
+            left: 50%;
+            top: 20px;
+            transform: translate(-50%, -50%) rotate(-90deg);
+            z-index: 15;
+            width: 34px;
+            height: 34px;
+            border-radius: 999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(15, 23, 42, 0.95);
+            border: 1px solid rgba(96, 165, 250, 0.55);
+            box-shadow: 0 0 14px rgba(59, 130, 246, 0.35);
+            transition: top 0.2s linear;
+            pointer-events: none;
+            will-change: top;
+        }
+
+        .timeline-car span {
+            font-size: 0.95rem;
+            display: inline-block;
+        }
+
+        .timeline-item.is-reached .timeline-content {
+            border-color: rgba(96, 165, 250, 0.55);
+            box-shadow: 0 18px 34px rgba(15, 23, 42, 0.5);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::before,
+        .timeline-item:nth-child(even) .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 28px;
+            width: 34px;
+            height: 3px;
+            background: rgba(148, 163, 184, 0.85);
+            border-radius: 999px;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            right: -34px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            left: -34px;
         }
 
         /* Technical Expertise Cards */
@@ -170,20 +256,55 @@
         @media (max-width: 768px) {
             .timeline::before {
                 left: 20px;
+                width: 12px;
+                transform: none;
+            }
+
+            .timeline::after {
+                left: 25px;
+                transform: none;
             }
 
             .timeline-item:nth-child(odd) .timeline-content,
             .timeline-item:nth-child(even) .timeline-content {
-                width: calc(100% - 80px);
-                margin-left: 80px !important;
+                width: calc(100% - 72px);
+                margin-left: 72px !important;
                 margin-right: 0 !important;
                 text-align: left !important;
-                padding-left: 0 !important;
-                padding-right: 0 !important;
+                padding-left: 1.15rem !important;
+                padding-right: 1.15rem !important;
+            }
+
+            .timeline-item {
+                margin-bottom: 40px;
+            }
+
+            .timeline-content h4 {
+                font-size: 1rem;
+                line-height: 1.35;
+            }
+
+            .timeline-content p {
+                font-size: 0.82rem;
+                line-height: 1.55;
             }
 
             .timeline-dot {
-                left: 20px;
+                left: 26px;
+                transform: translateX(-50%);
+            }
+
+            .timeline-car {
+                left: 26px;
+                width: 30px;
+                height: 30px;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-content::before,
+            .timeline-item:nth-child(even) .timeline-content::before {
+                left: -28px;
+                right: auto;
+                width: 28px;
             }
         }
     </style>
@@ -223,7 +344,6 @@
     <div class="max-w-6xl mx-auto fade-in">
 
         <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center">About Me</h2>
-        <p class="text-center text-slate-400 mb-20">The path that led me to where I am today</p>
 
         <!-- Profile Image - Top Section -->
         <div class="flex justify-center mb-20">
@@ -235,19 +355,21 @@
         <!-- Introduction Text -->
         <div class="max-w-3xl mx-auto mb-20 text-center enter-element">
             <p class="text-lg text-slate-300 leading-relaxed mb-6">
-                I'm a Software Engineering student with a passion for building scalable, practical web applications. With experience in Django, Python, and modern frontend technologies, I focus on creating solutions that solve real problems.
+                I’m a Software Engineering student passionate about transforming ideas into scalable, real-world applications. Skilled in Java, Python, Django, and modern frontend technologies, I approach every project with a systems mindset, prioritizing clean architecture, performance, and long-term reliability.
             </p>
             <p class="text-lg text-slate-300 leading-relaxed">
-                My journey has taken me from teaching others at the grassroots level to working on critical telecom infrastructure at MTN Ghana, and now pursuing advanced studies in software engineering. I'm driven by curiosity, a commitment to quality, and a belief in the power of collaboration.
+                My journey, from grassroots teaching to contributing to telecom infrastructure at MTN Ghana and now advancing my software engineering expertise, has shaped my discipline, adaptability, and leadership. I’m driven by curiosity, high standards, and collaboration, because great software isn’t just functional, it’s thoughtfully engineered and built with purpose.
             </p>
         </div>
 
         <!-- Timeline Journey -->
         <div class="timeline mb-32">
+            <div class="timeline-car" aria-hidden="true"><span>🚗</span></div>
             <!-- 2025 - MSc -->
             <div class="timeline-item enter-element">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
+                    <span class="inline-block text-[11px] uppercase tracking-[0.18em] text-slate-400 mb-1">Junction 04</span>
                     <span class="text-blue-400 font-semibold text-sm">2025 — Present</span>
                     <h4 class="font-bold text-lg mt-2">MSc Software Engineering</h4>
                     <p class="text-sm text-slate-300 mt-2">JUNIA-ISEN | Lille, France</p>
@@ -261,6 +383,7 @@
             <div class="timeline-item enter-element">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
+                    <span class="inline-block text-[11px] uppercase tracking-[0.18em] text-slate-400 mb-1">Junction 03</span>
                     <span class="text-purple-400 font-semibold text-sm">2022 — 2025 </span>
                     <h4 class="font-bold text-lg mt-2">BSc Computer Engineering</h4>
                     <p class="text-sm text-slate-300 mt-2">KNUST | Kumasi, Ghana</p>
@@ -274,6 +397,7 @@
             <div class="timeline-item enter-element">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
+                    <span class="inline-block text-[11px] uppercase tracking-[0.18em] text-slate-400 mb-1">Junction 02</span>
                     <span class="text-blue-400 font-semibold text-sm">2023</span>
                     <h4 class="font-bold text-lg mt-2">Switch Engineering Intern</h4>
                     <p class="text-sm text-slate-300 mt-2">MTN Ghana | Kumasi, Ghana</p>
@@ -287,6 +411,7 @@
             <div class="timeline-item enter-element">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
+                    <span class="inline-block text-[11px] uppercase tracking-[0.18em] text-slate-400 mb-1">Junction 01</span>
                     <span class="text-purple-400 font-semibold text-sm">2022</span>
                     <h4 class="font-bold text-lg mt-2">Volunteer IT Instructor</h4>
                     <p class="text-sm text-slate-300 mt-2">Community Education | Kumasi, Ghana</p>
@@ -306,7 +431,7 @@
                 <div class="expertise-card p-8 rounded-xl enter-element">
                     <h4 class="text-xl font-bold mb-3">Full-Stack Development</h4>
                     <p class="text-sm text-slate-300 leading-relaxed">
-                        Python, JavaScript, React, Next.js, Node.js, Django, Flask
+                        Python, Java, JavaScript, React, Next.js, Node.js, Django, Flask
                     </p>
                 </div>
 
@@ -328,9 +453,9 @@
 
                 <!-- Tools & DevOps -->
                 <div class="expertise-card p-8 rounded-xl enter-element">
-                    <h4 class="text-xl font-bold mb-3">Tools & DevOps</h4>
+                    <h4 class="text-xl font-bold mb-3">Tools, DevOps & QA</h4>
                     <p class="text-sm text-slate-300 leading-relaxed">
-                        Git, GitHub, VS Code, Linux, Agile Methodologies
+                        Git, GitHub, VS Code, Linux, Agile Methodologies, QA Testing, Robot Framework
                     </p>
                 </div>
                 <div class="expertise-card p-8 rounded-xl enter-element">

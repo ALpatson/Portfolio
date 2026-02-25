@@ -41,6 +41,46 @@ function setActiveNav() {
   });
 }
 
+function initRoadmapCar() {
+  const timeline = document.querySelector('.timeline');
+  const car = document.querySelector('.timeline-car');
+  if (!timeline || !car) return;
+
+  const items = Array.from(timeline.querySelectorAll('.timeline-item'));
+
+  const updateCarPosition = () => {
+    const rect = timeline.getBoundingClientRect();
+    const start = window.scrollY + rect.top;
+    const end = start + timeline.offsetHeight;
+    const cursor = window.scrollY + window.innerHeight * 0.62;
+
+    const rawProgress = (cursor - start) / Math.max(end - start, 1);
+    const progress = Math.max(0, Math.min(1, rawProgress));
+
+    const y = 20 + progress * Math.max(timeline.offsetHeight - 40, 1);
+    car.style.top = `${y}px`;
+
+    items.forEach((item) => {
+      const markerPoint = item.offsetTop + item.offsetHeight * 0.35;
+      item.classList.toggle('is-reached', y >= markerPoint);
+    });
+  };
+
+  let ticking = false;
+  const onScroll = () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      updateCarPosition();
+      ticking = false;
+    });
+  };
+
+  updateCarPosition();
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', updateCarPosition);
+}
+
 // Typewriter effect with shaking animation
 function typewriterEffect(element, text, speed = 100) {
   element.textContent = ''; // Clear the element
@@ -64,9 +104,10 @@ function typewriterEffect(element, text, speed = 100) {
 document.addEventListener('DOMContentLoaded', () => {
   setFooterYear();
   setActiveNav();
+  initRoadmapCar();
 
-  // Apply typewriter effect to the h1 heading (entire title)
-  const h1Element = document.querySelector('h1');
+  // Apply typewriter effect only when explicitly enabled
+  const h1Element = document.querySelector('[data-typewriter]');
   if (h1Element) {
     // Clear the h1 but keep structure
     h1Element.innerHTML = 'Hi, I\'m <span class="gradient-text"></span>';

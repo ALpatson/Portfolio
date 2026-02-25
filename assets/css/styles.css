@@ -63,7 +63,7 @@
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  background: linear-gradient(135deg, #3b82f6);
   background-clip: text;              /* standard */
   -webkit-background-clip: text;      /* required for WebKit */
   -webkit-text-fill-color: transparent;
@@ -227,6 +227,16 @@
   filter: drop-shadow(0 0 8px #e34c26);
 }
 
+/* Robot Framework - Red */
+.skill-card:has(img[alt="Robot Framework"]):hover {
+  color: #d92027;
+  box-shadow: 0 0 20px rgba(217, 32, 39, 0.5), inset 0 0 10px rgba(217, 32, 39, 0.2);
+}
+
+.skill-card:has(img[alt="Robot Framework"]):hover img {
+  filter: drop-shadow(0 0 8px #d92027);
+}
+
 /* PostgreSQL - Blue */
 .skill-card:has(img[alt="PostgreSQL"]):hover {
   color: #336791;
@@ -317,6 +327,16 @@
   filter: drop-shadow(0 0 8px #3ddc84);
 }
 
+/* Apache NetBeans - Blue */
+.skill-card:has(img[alt="Apache NetBeans"]):hover {
+  color: #1b6ac6;
+  box-shadow: 0 0 20px rgba(27, 106, 198, 0.5), inset 0 0 10px rgba(27, 106, 198, 0.2);
+}
+
+.skill-card:has(img[alt="Apache NetBeans"]):hover img {
+  filter: drop-shadow(0 0 8px #1b6ac6);
+}
+
 /* VS Code - Blue */
 .skill-card:has(svg):hover svg {
   filter: drop-shadow(0 0 8px #0078d4);
@@ -325,4 +345,58 @@
 .skill-card:has(svg):hover {
   color: #0078d4;
   box-shadow: 0 0 20px rgba(0, 120, 212, 0.5), inset 0 0 10px rgba(0, 120, 212, 0.2);
+}
+
+/* Homepage hero showcase */
+.hero-showcase {
+  position: relative;
+  isolation: isolate;
+}
+
+.hero-watermark {
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(3rem, 14vw, 12rem);
+  line-height: 0.9;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  color: rgba(15, 23, 42, 0.035);
+  pointer-events: none;
+  z-index: -1;
+  white-space: nowrap;
+}
+
+.hero-portrait {
+  position: absolute;
+  bottom: 0;
+  right: 2rem;
+  height: min(72%, 560px);
+  width: auto;
+  object-fit: contain;
+  object-position: bottom;
+}
+
+@media (max-width: 768px) {
+  .hero-showcase {
+    min-height: auto;
+    padding-bottom: 2rem;
+  }
+
+  .hero-portrait {
+    position: relative;
+    display: block;
+    right: auto;
+    bottom: auto;
+    transform: none;
+    margin: 1.25rem auto 0;
+    width: min(86%, 280px);
+    height: auto;
+  }
+
+  .hero-watermark {
+    top: 70%;
+    font-size: clamp(2.6rem, 18vw, 6rem);
+  }
 }
