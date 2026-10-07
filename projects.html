@@ -3,28 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects — Alpatson Cobbina Siaw</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Projects | Alpatson Cobbina Siaw</title>
+    <meta name="description" content="Selected projects by Alpatson Cobbina Siaw: a live career platform, the Pin and Codes Store e-commerce platform, QueueSmart, SmartShops inventory system, Miss Library and a Java RPG engine.">
+    <link rel="canonical" href="https://alpatsonportfolio.vercel.app/projects.html">
+
+    <!-- Social sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Alpatson Cobbina Siaw">
+    <meta property="og:url" content="https://alpatsonportfolio.vercel.app/projects.html">
+    <meta property="og:title" content="Projects | Alpatson Cobbina Siaw">
+    <meta property="og:description" content="Django, React and Java projects, including a live career platform and a live e-commerce store with Mobile Money payments.">
+    <meta property="og:image" content="https://alpatsonportfolio.vercel.app/assets/images/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <script>document.documentElement.classList.add('js');</script>
     <!-- Favicon -->
     <link rel="icon" href="assets/icon/favicon.ico">
     <link rel="shortcut icon" href="assets/icon/favicon.ico">
     <meta name="theme-color" content="#0b1220">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/tailwind.css?v=2">
+    <link rel="stylesheet" href="assets/css/styles.css?v=3">
 </head>
 <body class="bg-slate-900 text-white">
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 w-full bg-slate-900/95 border-b border-slate-700 z-50 md:top-6 md:left-1/2 md:w-auto md:-translate-x-1/2 md:rounded-full md:px-6 md:py-2 md:shadow md:border-0 md:bg-transparent md:backdrop-blur-none md:shadow-none">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between relative md:max-w-max md:px-2 md:py-1 md:justify-center">
-            <div class="hidden md:flex items-center md:absolute md:left-1/2 md:-translate-x-1/2 md:bg-slate-800/60 md:rounded-full md:px-6 md:py-2 md:backdrop-blur md:shadow-md space-x-6">
-                <a href="index.html" class="nav-link hover:text-blue-300 transition md:px-3 md:py-1">Home</a>
-                <a href="about.html" class="nav-link hover:text-blue-300 transition md:px-3 md:py-1">About</a>
-                <a href="projects.html" class="nav-link hover:text-blue-300 transition md:px-3 md:py-1">Projects</a>
-                <a href="contact.html" class="nav-link hover:text-blue-300 transition md:px-3 md:py-1">Contact</a>
+    <nav class="fixed top-0 left-0 w-full bg-slate-900/95 border-b border-slate-700 z-50 md:top-6 md:left-1/2 md:w-auto md:-translate-x-1/2 md:border-0 md:bg-transparent">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between md:p-0">
+            <a href="index.html" class="font-bold text-lg md:hidden">Alpatson</a>
+            <div class="hidden md:flex items-center gap-2 bg-slate-800/60 rounded-full px-4 py-2 backdrop-blur shadow-md">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="contact.html" class="nav-link">Contact</a>
             </div>
-            <!-- Mobile Menu Button -->
-            <button onclick="toggleMobileMenu()" class="md:hidden text-2xl">☰</button>
+            <button type="button" id="menuButton" class="md:hidden text-2xl" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">☰</button>
         </div>
-        <!-- Mobile Menu -->
         <div id="mobileMenu" class="hidden md:hidden bg-slate-800 border-t border-slate-700">
             <a href="index.html" class="block px-6 py-3 hover:bg-slate-700">Home</a>
             <a href="about.html" class="block px-6 py-3 hover:bg-slate-700">About</a>
@@ -36,235 +48,219 @@
     <main class="pt-20">
         <section class="min-h-screen py-20 px-6 bg-slate-900">
             <div class="max-w-5xl mx-auto">
-                <h2 class="text-4xl md:text-5xl font-bold mb-16 text-center">My Projects</h2>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 text-center">My Projects</h1>
+                <p class="text-slate-400 text-center mb-16">Live products, team work and school projects.</p>
                 <div class="space-y-12">
-                    <!-- Project 1: Career Platform -->
-                    <div class="bg-slate-800 rounded-lg overflow-hidden hover-lift fade-in">
-                        <div class="md:flex flex-row-reverse">
-                            <div class="md:w-2/5 bg-slate-700 flex items-center justify-center p-4 h-64 md:h-80 relative">
-                                <img src="assets/images/Career-platform.png" alt="Career Platform" class="max-h-full w-auto object-contain">
-                                <div class="absolute top-6 right-6 flex items-center gap-1.5 bg-slate-800/80 backdrop-blur text-slate-300 px-3 py-1.5 rounded-full text-xs font-medium shadow-md border border-slate-700">
-                                    <span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
-                                    <span>Live</span>
-                                </div>
+
+                    <!-- Pin and Codes Store -->
+                    <article class="project-card fade-in">
+                        <div class="md:flex md:flex-row-reverse">
+                            <div class="project-media relative">
+                                <img src="assets/images/store-management-screenshot.webp" alt="Pin and Codes Store screenshot" class="max-h-full w-auto object-contain" width="1200" height="626" loading="lazy" decoding="async">
+                                <span class="live-badge"><span class="live-dot animate-pulse"></span>Live</span>
                             </div>
                             <div class="md:w-3/5 p-8">
-                                <h3 class="text-2xl font-bold mb-3">Career Platform</h3>
-                                <p class="text-slate-300 mb-4 leading-relaxed">A live online career platform designed to help users explore opportunities, access career guidance, and engage with a modern, user-friendly web experience focused on professional growth.</p>
-                                <div class="mb-6">
-                                    <p class="text-sm font-semibold text-blue-400 mb-2">Highlights:</p>
-                                    <ul class="text-slate-400 text-sm space-y-1 mb-4">
-                                        <li>✓ Live, publicly accessible web application</li>
-                                        <li>✓ Career-focused content and user experience</li>
-                                        <li>✓ Responsive layout for desktop and mobile users</li>
-                                    </ul>
+                                <h2 class="text-2xl font-bold mb-1">Pin and Codes Store</h2>
+                                <p class="text-slate-500 text-sm mb-3">Since November 2025 · I own and run it</p>
+                                <p class="text-slate-300 mb-4 leading-relaxed">A live Django e-commerce platform selling WAEC, WASSCE and BECE exam results checker PINs. Customers pay with Mobile Money and get their PIN by email straight away. If they lose it, they can retrieve it themselves. I handle everything: backend, REST APIs, payments, deployment and ongoing maintenance.</p>
+                                <p class="text-sm font-semibold text-blue-400 mb-2">Key Features:</p>
+                                <ul class="text-slate-400 text-sm space-y-1 mb-4">
+                                    <li>✓ Mobile Money payment integration</li>
+                                    <li>✓ Instant PIN delivery by email</li>
+                                    <li>✓ Self-service PIN retrieval for customers</li>
+                                    <li>✓ Admin dashboard for products, stock and sales</li>
+                                </ul>
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                    <span class="tech-tag">Django</span>
+                                    <span class="tech-tag">PostgreSQL</span>
+                                    <span class="tech-tag">REST API</span>
+                                    <span class="tech-tag">Mobile Money</span>
                                 </div>
-                                <div class="flex gap-4">
-                                    <a href="https://www.careerplatform.online/" target="_blank" rel="noopener noreferrer" class="border border-blue-600 text-blue-400 hover:bg-blue-600/10 px-6 py-2 rounded font-semibold transition inline-flex items-center gap-2">
-                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3z"></path><path d="M5 5h6v2H7v10h10v-4h2v6H5V5z"></path></svg>
-                                        View Live
-                                    </a>
-                                </div>
+                                <a href="https://pinandcodes.store" target="_blank" rel="noopener noreferrer" class="project-btn">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3z"></path><path d="M5 5h6v2H7v10h10v-4h2v6H5V5z"></path></svg>
+                                    View Live
+                                </a>
                             </div>
                         </div>
-                    </div>
+                    </article>
 
-                    <!-- Project 1: QueueSmart -->
-                    <div class="bg-slate-800 rounded-lg overflow-hidden hover-lift fade-in">
+                    <!-- QueueSmart -->
+                    <article class="project-card fade-in">
                         <div class="md:flex">
-                            <div class="md:w-2/5 bg-slate-700 flex items-center justify-center p-4 h-64 md:h-80">
-                                <img src="assets/images/queuesmart-screenshot.png" alt="QueueSmart" class="max-h-full w-auto object-contain">
+                            <div class="project-media">
+                                <img src="assets/images/queuesmart-screenshot.webp" alt="QueueSmart screenshot" class="max-h-full w-auto object-contain" width="1200" height="643" loading="lazy" decoding="async">
                             </div>
                             <div class="md:w-3/5 p-8">
-                                <h3 class="text-2xl font-bold mb-3">QueueSmart</h3>
-                                <p class="text-slate-300 mb-4 leading-relaxed">A comprehensive appointment booking and management system built with Django. Features role-based authentication for administrators, staff, and clients. Administrators can create staff accounts using restricted keys for security, staff can manage appointments, and clients can book and receive notifications. Includes a complete notification system to keep users updated on appointment confirmations and changes.</p>
-                                <div class="mb-6">
-                                    <p class="text-sm font-semibold text-blue-400 mb-2">Key Features:</p>
-                                    <ul class="text-slate-400 text-sm space-y-1 mb-4">
-                                        <li>✓ Role-based Access Control (Admin, Staff, Client)</li>
-                                        <li>✓ Restricted Key Authentication for Admin Registration</li>
-                                        <li>✓ Appointment Booking, Scheduling & Management</li>
-                                        <li>✓ Real-time Notification System</li>
-                                    </ul>
-                                    <p class="text-sm font-semibold text-blue-400 mb-2">Tech Stack:</p>
-                                    <div class="flex flex-wrap gap-2">
-                                        <span class="bg-slate-700 px-3 py-1 rounded text-sm">Django</span>
-                                        <span class="bg-slate-700 px-3 py-1 rounded text-sm">PostgreSQL</span>
-                                        <span class="bg-slate-700 px-3 py-1 rounded text-sm">Bootstrap</span>
-                                        <span class="bg-slate-700 px-3 py-1 rounded text-sm">Authentication</span>
-                                    </div>
+                                <h2 class="text-2xl font-bold mb-1">QueueSmart</h2>
+                                <p class="text-slate-500 text-sm mb-3">Dec 2025 – Feb 2026</p>
+                                <p class="text-slate-300 mb-4 leading-relaxed">An appointment booking and queue management system built with Django. It has separate workflows for administrators, staff and clients. Administrators register with a restricted key, staff manage appointments, and clients book and get notified when anything changes.</p>
+                                <p class="text-sm font-semibold text-blue-400 mb-2">Key Features:</p>
+                                <ul class="text-slate-400 text-sm space-y-1 mb-4">
+                                    <li>✓ JWT authentication with role-based access control</li>
+                                    <li>✓ Restricted-key registration for administrators</li>
+                                    <li>✓ Full appointment lifecycle: booking, scheduling, changes</li>
+                                    <li>✓ Notification system for confirmations and updates</li>
+                                </ul>
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                    <span class="tech-tag">Django</span>
+                                    <span class="tech-tag">PostgreSQL</span>
+                                    <span class="tech-tag">JWT</span>
+                                    <span class="tech-tag">Bootstrap</span>
                                 </div>
-                                <div class="flex gap-4">
-                                    <a href="https://github.com/ALpatson/QueueSmart" target="_blank" class="border border-blue-600 text-blue-400 hover:bg-blue-600/10 px-6 py-2 rounded font-semibold transition inline-flex items-center gap-2">
-                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.9.58.11.79-.25.79-.56v-2.03c-3.2.7-3.87-1.54-3.87-1.54-.52-1.33-1.27-1.68-1.27-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.67 1.25 3.32.96.1-.75.4-1.25.73-1.54-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.14 1.18.91-.25 1.89-.37 2.86-.38.97.01 1.96.13 2.87.38 2.18-1.49 3.13-1.18 3.13-1.18.62 1.58.23 2.75.11 3.04.73.81 1.18 1.83 1.18 3.09 0 4.44-2.71 5.4-5.29 5.69.41.35.77 1.04.77 2.1v3.12c0 .32.21.68.8.56C20.71 21.39 24 17.08 24 12 24 5.73 18.27.5 12 .5z"/></svg>
-                                        View on GitHub
-                                    </a>
-                                </div>
+                                <a href="https://github.com/ALpatson/QueueSmart" target="_blank" rel="noopener noreferrer" class="project-btn">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.9.58.11.79-.25.79-.56v-2.03c-3.2.7-3.87-1.54-3.87-1.54-.52-1.33-1.27-1.68-1.27-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.67 1.25 3.32.96.1-.75.4-1.25.73-1.54-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.14 1.18.91-.25 1.89-.37 2.86-.38.97.01 1.96.13 2.87.38 2.18-1.49 3.13-1.18 3.13-1.18.62 1.58.23 2.75.11 3.04.73.81 1.18 1.83 1.18 3.09 0 4.44-2.71 5.4-5.29 5.69.41.35.77 1.04.77 2.1v3.12c0 .32.21.68.8.56C20.71 21.39 24 17.08 24 12 24 5.73 18.27.5 12 .5z"/></svg>
+                                    View on GitHub
+                                </a>
                             </div>
                         </div>
-                    </div>
+                    </article>
 
-                    <!-- Project 2: Inventory Management System -->
-                    <div class="bg-slate-800 rounded-lg overflow-hidden hover-lift fade-in">
-                        <div class="md:flex flex-row-reverse">
-                            <div class="md:w-2/5 bg-slate-700 flex items-center justify-center p-4 h-64 md:h-80 relative">
-                                <img src="assets/images/inventory-screenshot.png" alt="Inventory Management System" class="max-h-full w-auto object-contain">
-                                <div class="absolute top-6 right-6 flex items-center gap-1.5 bg-slate-800/80 backdrop-blur text-slate-300 px-3 py-1.5 rounded-full text-xs font-medium shadow-md border border-slate-700">
-                                    <span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
-                                    <span>Live</span>
-                                </div>
+                    <!-- Career Platform -->
+                    <article class="project-card fade-in">
+                        <div class="md:flex md:flex-row-reverse">
+                            <div class="project-media relative">
+                                <img src="assets/images/career-platform.webp" alt="Career Platform screenshot" class="max-h-full w-auto object-contain" width="1200" height="639" loading="lazy" decoding="async">
+                                <span class="live-badge"><span class="live-dot animate-pulse"></span>Live</span>
                             </div>
                             <div class="md:w-3/5 p-8">
-                                <h3 class="text-2xl font-bold mb-3">Inventory Management System</h3>
-                                <p class="text-slate-300 mb-4 leading-relaxed">A comprehensive Django-based inventory management platform that handles product tracking, stock updates, sales records, and user authentication. Built with clean architecture principles and real-world use cases in mind.</p>
-                                <div class="mb-6">
-                                    <p class="text-sm font-semibold text-blue-400 mb-2">Tech Stack:</p>
-                                    <div class="flex flex-wrap gap-2">
-                                        <span class="bg-slate-700 px-3 py-1 rounded text-sm">Django</span>
-                                        <span class="bg-slate-700 px-3 py-1 rounded text-sm">PostgreSQL</span>
-                                        <span class="bg-slate-700 px-3 py-1 rounded text-sm">Bootstrap</span>
-                                        <span class="bg-slate-700 px-3 py-1 rounded text-sm">REST API</span>
-                                    </div>
-                                </div>
-                                <div class="flex gap-4">
-                                    <a class="border border-blue-600 text-blue-400 hover:bg-blue-600/10 px-6 py-2 rounded font-semibold transition cursor-not-allowed opacity-50">Private Project</a>
-                                </div>
+                                <h2 class="text-2xl font-bold mb-3">Career Platform</h2>
+                                <p class="text-slate-300 mb-4 leading-relaxed">A live online career platform that helps users explore opportunities, get career guidance and find resources for professional growth.</p>
+                                <p class="text-sm font-semibold text-blue-400 mb-2">Highlights:</p>
+                                <ul class="text-slate-400 text-sm space-y-1 mb-6">
+                                    <li>✓ Live, publicly accessible web application</li>
+                                    <li>✓ Career-focused content and user experience</li>
+                                    <li>✓ Responsive layout for desktop and mobile</li>
+                                </ul>
+                                <a href="https://www.careerplatform.online/" target="_blank" rel="noopener noreferrer" class="project-btn">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3z"></path><path d="M5 5h6v2H7v10h10v-4h2v6H5V5z"></path></svg>
+                                    View Live
+                                </a>
                             </div>
                         </div>
-                    </div>
+                    </article>
 
-                    <!-- Project 3: Miss Library -->
-                    <div class="bg-slate-800 rounded-lg overflow-hidden hover-lift fade-in">
+                    <!-- SmartShops -->
+                    <article class="project-card fade-in">
                         <div class="md:flex">
-                            <div class="md:w-2/5 bg-slate-700 flex items-center justify-center p-4 h-64 md:h-80">
-                                <img src="assets/images/library-screenshot.png" alt="Miss Library" class="max-h-full w-auto object-contain">
+                            <div class="project-media">
+                                <img src="assets/images/inventory-screenshot.webp" alt="SmartShops inventory system screenshot" class="max-h-full w-auto object-contain" width="1200" height="634" loading="lazy" decoding="async">
                             </div>
                             <div class="md:w-3/5 p-8">
-                                <h3 class="text-2xl font-bold mb-3">Miss Library</h3>
-                                <p class="text-slate-300 mb-4 leading-relaxed">A React and Next.js library management system that allows users to browse, search, and manage books. Features include user authentication, book reservations, and a clean interface for librarians to maintain inventory.</p>
-                                <div class="mb-6">
-                                    <p class="text-sm font-semibold text-blue-400 mb-2">Tech Stack:</p>
-                                    <div class="flex flex-wrap gap-2">
-                                        <span class="bg-slate-700 px-3 py-1 rounded text-sm">React</span>
-                                        <span class="bg-slate-700 px-3 py-1 rounded text-sm">Next.js</span>
-                                        <span class="bg-slate-700 px-3 py-1 rounded text-sm">Node.js</span>
-                                    </div>
+                                <h2 class="text-2xl font-bold mb-3">SmartShops: Inventory &amp; Sales System</h2>
+                                <p class="text-slate-300 mb-4 leading-relaxed">A Django and PostgreSQL backend for running a shop. REST APIs and data pipelines record every sale and stock movement, then feed dashboards with key operational figures and alert when stock runs low.</p>
+                                <p class="text-sm font-semibold text-blue-400 mb-2">Key Features:</p>
+                                <ul class="text-slate-400 text-sm space-y-1 mb-4">
+                                    <li>✓ Product, stock and sales tracking</li>
+                                    <li>✓ KPI dashboards for operations</li>
+                                    <li>✓ Low-stock alerts</li>
+                                </ul>
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                    <span class="tech-tag">Django</span>
+                                    <span class="tech-tag">PostgreSQL</span>
+                                    <span class="tech-tag">REST API</span>
+                                    <span class="tech-tag">Bootstrap</span>
                                 </div>
-                                <div class="flex gap-4">
-                                    <a href="https://github.com/ALpatson/Miss_Library" target="_blank" rel="noopener noreferrer" class="border border-blue-600 text-blue-400 hover:bg-blue-600/10 px-6 py-2 rounded font-semibold transition inline-flex items-center gap-2">
-                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.9.58.11.79-.25.79-.56v-2.03c-3.2.7-3.87-1.54-3.87-1.54-.52-1.33-1.27-1.68-1.27-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.67 1.25 3.32.96.1-.75.4-1.25.73-1.54-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.14 1.18.91-.25 1.89-.37 2.86-.38.97.01 1.96.13 2.87.38 2.18-1.49 3.13-1.18 3.13-1.18.62 1.58.23 2.75.11 3.04.73.81 1.18 1.83 1.18 3.09 0 4.44-2.71 5.4-5.29 5.69.41.35.77 1.04.77 2.1v3.12c0 .32.21.68.8.56C20.71 21.39 24 17.08 24 12 24 5.73 18.27.5 12 .5z"/></svg>
-                                        View on GitHub
-                                    </a>
-                                </div>
+                                <span class="project-btn project-btn-disabled">Private project</span>
                             </div>
                         </div>
-                    </div>
-                    <!-- Project 6: Store Management System -->
-                    <div class="bg-slate-800 rounded-lg overflow-hidden hover-lift fade-in">
-                        <div class="md:flex flex-row-reverse">
-                            <div class="md:w-2/5 bg-slate-700 flex items-center justify-center p-4 h-64 md:h-80 relative">
-                                <img src="assets/images/store-management-screenshot.png" alt="Store Management System" class="max-h-full w-auto object-contain">
-                                <div class="absolute top-6 right-6 flex items-center gap-1.5 bg-slate-800/80 backdrop-blur text-slate-300 px-3 py-1.5 rounded-full text-xs font-medium shadow-md border border-slate-700">
-                                    <span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
-                                    <span>Live</span>
-                                </div>
-                            </div>
-                            <div class="md:w-3/5 p-8">
-                                <h3 class="text-2xl font-bold mb-3">PIN Store Platform</h3>
-                                <p class="text-slate-300 mb-4 leading-relaxed">An e-commerce platform built with Django for selling digital products like exam result checker PINs and other digital services. Features secure payment processing with PayStack integration, product catalog management, user authentication, and admin controls. Customers can browse, purchase, and instantly receive their digital products while admins manage inventory and sales seamlessly.</p>
-                                <div class="mb-6">
-                                    <p class="text-sm font-semibold text-blue-400 mb-2">Key Features:</p>
-                                    <ul class="text-slate-400 text-sm space-y-1 mb-4">
-                                        <li>✓ PayStack Payment Integration</li>
-                                        <li>✓ Digital Product Sales & Catalog</li>
-                                        <li>✓ Admin & Staff Dashboard</li>
-                                        <li>✓ Instant Product Delivery System</li>
-                                        <li>✓ User Authentication & API Management</li>
-                                    </ul>
-                                    <p class="text-sm font-semibold text-blue-400 mb-2">Tech Stack:</p>
-                                    <div class="flex flex-wrap gap-2">
-                                        <span class="bg-slate-700 px-3 py-1 rounded text-sm">Django</span>
-                                        <span class="bg-slate-700 px-3 py-1 rounded text-sm">PostgreSQL</span>
-                                        <span class="bg-slate-700 px-3 py-1 rounded text-sm">PayStack API</span>
-                                        <span class="bg-slate-700 px-3 py-1 rounded text-sm">REST API</span>
-                                        <span class="bg-slate-700 px-3 py-1 rounded text-sm">Bootstrap</span>
-                                    </div>
-                                </div>
-                                <div class="flex gap-4">
-                                    <a href="https://waecpinstore.pythonanywhere.com/pins/" target="_blank" rel="noopener noreferrer" class="border border-blue-600 text-blue-400 hover:bg-blue-600/10 px-6 py-2 rounded font-semibold transition inline-flex items-center gap-2">
-                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 ..405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.015 12.015 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                                        View Live
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </article>
 
-                    <!-- Project 4: Portfolio Website -->
-                    <div class="bg-slate-800 rounded-lg overflow-hidden hover-lift fade-in">
-                        <div class="md:flex flex-row-reverse">
-                            <div class="md:w-2/5 bg-slate-700 flex items-center justify-center p-4 h-64 md:h-80 relative">
-                                <img src="assets/images/portfolio-screenshot.png" alt="Portfolio Website" class="max-h-full w-auto object-contain">
-                                <div class="absolute top-6 right-6 flex items-center gap-1.5 bg-slate-800/80 backdrop-blur text-slate-300 px-3 py-1.5 rounded-full text-xs font-medium shadow-md border border-slate-700">
-                                    <span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
-                                    <span>Live</span>
-                                </div>
+                    <!-- Miss Library -->
+                    <article class="project-card fade-in">
+                        <div class="md:flex md:flex-row-reverse">
+                            <div class="project-media">
+                                <img src="assets/images/library-screenshot.webp" alt="Miss Library screenshot" class="max-h-full w-auto object-contain" width="1200" height="710" loading="lazy" decoding="async">
                             </div>
                             <div class="md:w-3/5 p-8">
-                                <h3 class="text-2xl font-bold mb-3">Portfolio Website</h3>
-                                <p class="text-slate-300 mb-4 leading-relaxed">This portfolio site showcases my projects, about, and contact pages. Built with HTML, Tailwind CSS, and vanilla JavaScript — it's responsive, accessible, and intentionally lightweight to demonstrate front-end craftsmanship.</p>
-                                <div class="mb-6">
-                                    <p class="text-sm font-semibold text-blue-400 mb-2">Tech Stack:</p>
-                                    <div class="flex flex-wrap gap-2">
-                                        <span class="bg-slate-700 px-3 py-1 rounded text-sm">HTML</span>
-                                        <span class="bg-slate-700 px-3 py-1 rounded text-sm">Tailwind CSS</span>
-                                        <span class="bg-slate-700 px-3 py-1 rounded text-sm">JavaScript</span>
-                                    </div>
+                                <h2 class="text-2xl font-bold mb-1">Miss Library</h2>
+                                <p class="text-slate-500 text-sm mb-3">Team project · JUNIA</p>
+                                <p class="text-slate-300 mb-4 leading-relaxed">A library management system where users browse, search and reserve books, and librarians keep the catalogue up to date. I worked on both the frontend and the backend, using feature branches and code reviews.</p>
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                    <span class="tech-tag">React</span>
+                                    <span class="tech-tag">Next.js</span>
+                                    <span class="tech-tag">Node.js</span>
                                 </div>
-                                <div class="flex gap-4">
-                                    <a href="https://alpatsonportfolio.vercel.app/" id="portfolio-github" data-github="https://alpatsonportfolio.vercel.app/" target="_blank" rel="noopener noreferrer" class="border border-blue-600 text-blue-400 hover:bg-blue-600/10 px-6 py-2 rounded font-semibold transition inline-flex items-center gap-2">
-                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.9.58.11.79-.25.79-.56v-2.03c-3.2.7-3.87-1.54-3.87-1.54-.52-1.33-1.27-1.68-1.27-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.67 1.25 3.32.96.1-.75.4-1.25.73-1.54-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.14 1.18.91-.25 1.89-.37 2.86-.38.97.01 1.96.13 2.87.38 2.18-1.49 3.13-1.18 3.13-1.18.62 1.58.23 2.75.11 3.04.73.81 1.18 1.83 1.18 3.09 0 4.44-2.71 5.4-5.29 5.69.41.35.77 1.04.77 2.1v3.12c0 .32.21.68.8.56C20.71 21.39 24 17.08 24 12 24 5.73 18.27.5 12 .5z"/></svg>
-                                        View Live
-                                    </a>
-                                </div>
+                                <a href="https://github.com/ALpatson/Miss_Library" target="_blank" rel="noopener noreferrer" class="project-btn">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.9.58.11.79-.25.79-.56v-2.03c-3.2.7-3.87-1.54-3.87-1.54-.52-1.33-1.27-1.68-1.27-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.67 1.25 3.32.96.1-.75.4-1.25.73-1.54-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.14 1.18.91-.25 1.89-.37 2.86-.38.97.01 1.96.13 2.87.38 2.18-1.49 3.13-1.18 3.13-1.18.62 1.58.23 2.75.11 3.04.73.81 1.18 1.83 1.18 3.09 0 4.44-2.71 5.4-5.29 5.69.41.35.77 1.04.77 2.1v3.12c0 .32.21.68.8.56C20.71 21.39 24 17.08 24 12 24 5.73 18.27.5 12 .5z"/></svg>
+                                    View on GitHub
+                                </a>
                             </div>
                         </div>
-                    </div>
+                    </article>
 
-                    <!-- Project 5: Recipe App -->
-                    <div class="bg-slate-800 rounded-lg overflow-hidden hover-lift fade-in">
+                    <!-- Tales of Knights -->
+                    <article class="project-card fade-in">
                         <div class="md:flex">
-                            <div class="md:w-2/5 bg-slate-700 flex items-center justify-center p-4 h-64 md:h-80">
-                                <img src="assets/images/recipe-app-screenshot.png" alt="Recipe App" class="max-h-full w-auto object-contain">
+                            <div class="project-media">
+                                <pre class="terminal" aria-hidden="true"><span class="text-emerald-400">$</span> java -jar tales-of-knights.jar
+
+  ⚔  TALES OF KNIGHTS  ⚔
+
+  A wild Goblin appears!
+  &gt; 1. Attack
+    2. Use item
+    3. Run
+
+  You strike for <span class="text-amber-300">14</span> damage.</pre>
                             </div>
                             <div class="md:w-3/5 p-8">
-                                <h3 class="text-2xl font-bold mb-3">Recipe App</h3>
-                                <p class="text-slate-300 mb-4 leading-relaxed">A mobile recipe application built with Kotlin that allows users to browse, search, and discover recipes for food they want to prepare. Features include recipe details, categories, and an intuitive user interface for easy navigation.</p>
-                                <div class="mb-6">
-                                    <p class="text-sm font-semibold text-blue-400 mb-2">Tech Stack:</p>
-                                    <div class="flex flex-wrap gap-2">
-                                        <span class="bg-slate-700 px-3 py-1 rounded text-sm">Kotlin</span>
-                                        <span class="bg-slate-700 px-3 py-1 rounded text-sm">Android</span>
-                                        <span class="bg-slate-700 px-3 py-1 rounded text-sm">Mobile App</span>
-                                    </div>
+                                <h2 class="text-2xl font-bold mb-1">Tales of Knights: Text-Based RPG</h2>
+                                <p class="text-slate-500 text-sm mb-3">Oct – Nov 2025</p>
+                                <p class="text-slate-300 mb-4 leading-relaxed">A text-based fantasy role-playing game with its own small game engine, written in Java. It's built with object-oriented design: inheritance, polymorphism, encapsulation and modular packages, with combat and inventory systems that are easy to extend.</p>
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                    <span class="tech-tag">Java</span>
+                                    <span class="tech-tag">OOP</span>
                                 </div>
-                                <div class="flex gap-4">
-                                    <a class="border border-blue-600 text-blue-400 hover:bg-blue-600/10 px-6 py-2 rounded font-semibold transition cursor-not-allowed opacity-50">Private Project</a>
-                                </div>
+                                <a href="https://github.com/ALpatson/Tales-of-Kinghts-2" target="_blank" rel="noopener noreferrer" class="project-btn">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.9.58.11.79-.25.79-.56v-2.03c-3.2.7-3.87-1.54-3.87-1.54-.52-1.33-1.27-1.68-1.27-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.67 1.25 3.32.96.1-.75.4-1.25.73-1.54-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.14 1.18.91-.25 1.89-.37 2.86-.38.97.01 1.96.13 2.87.38 2.18-1.49 3.13-1.18 3.13-1.18.62 1.58.23 2.75.11 3.04.73.81 1.18 1.83 1.18 3.09 0 4.44-2.71 5.4-5.29 5.69.41.35.77 1.04.77 2.1v3.12c0 .32.21.68.8.56C20.71 21.39 24 17.08 24 12 24 5.73 18.27.5 12 .5z"/></svg>
+                                    View on GitHub
+                                </a>
                             </div>
                         </div>
-                    </div>
+                    </article>
 
                 </div>
             </div>
         </section>
-
-        <!-- Footer -->
-        <footer class="mt-12 py-6 border-t border-slate-700 text-center text-sm text-slate-400">
-            &copy; <span id="footerYear"></span> Alpatson Cobbina Siaw. All rights reserved.
-        </footer>
     </main>
 
-    <script src="assets/js/main.js" defer></script>
+    <!-- Footer -->
+    <footer class="border-t border-slate-700 bg-slate-900 pt-12 pb-8 px-6">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10 mb-10">
+            <div>
+                <p class="text-2xl font-bold mb-2">Alpatson</p>
+                <p class="text-slate-400">Software Engineer &amp; Full-Stack Developer</p>
+                <p class="text-slate-500 text-sm mt-2">Lille, France</p>
+            </div>
+            <div>
+                <p class="font-bold mb-4">Quick Links</p>
+                <ul class="space-y-2">
+                    <li><a href="index.html" class="text-slate-400 hover:text-blue-400 transition">Home</a></li>
+                    <li><a href="about.html" class="text-slate-400 hover:text-blue-400 transition">About</a></li>
+                    <li><a href="projects.html" class="text-slate-400 hover:text-blue-400 transition">Projects</a></li>
+                    <li><a href="contact.html" class="text-slate-400 hover:text-blue-400 transition">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <p class="font-bold mb-4">Connect</p>
+                <div class="flex gap-4">
+                    <a href="https://github.com/ALpatson" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="social-btn">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/alpatson-cobbina-siaw/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-btn">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+                    </a>
+                    <a href="mailto:cobbinaalpatson@gmail.com" aria-label="Email" class="social-btn">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <p class="max-w-6xl mx-auto border-t border-slate-700 pt-6 text-center text-slate-400 text-sm">
+            &copy; <span id="footerYear"></span> Alpatson Cobbina Siaw. All rights reserved.
+        </p>
+    </footer>
+
+    <script src="assets/js/main.js?v=4" defer></script>
 </body>
 </html>

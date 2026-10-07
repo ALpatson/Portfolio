@@ -3,220 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About — Alpatson Cobbina Siaw</title>
+    <title>About | Alpatson Cobbina Siaw</title>
+    <meta name="description" content="MSc Software Engineering student at JUNIA ISEN, Lille. Former AI Research Engineer intern at ISIA Lab (Université de Mons) and switch engineering intern at MTN Ghana. BSc Computer Engineering from KNUST and African School Chess Champion.">
+    <link rel="canonical" href="https://alpatsonportfolio.vercel.app/about.html">
 
-    <!-- Tailwind -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Social sharing -->
+    <meta property="og:type" content="profile">
+    <meta property="og:site_name" content="Alpatson Cobbina Siaw">
+    <meta property="og:url" content="https://alpatsonportfolio.vercel.app/about.html">
+    <meta property="og:title" content="About | Alpatson Cobbina Siaw">
+    <meta property="og:description" content="MSc Software Engineering student at JUNIA ISEN, Lille. Former AI Research Engineer intern at ISIA Lab, Université de Mons.">
+    <meta property="og:image" content="https://alpatsonportfolio.vercel.app/assets/images/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <script>document.documentElement.classList.add('js');</script>
 
     <!-- Favicon -->
     <link rel="icon" href="assets/icon/favicon.ico">
     <link rel="shortcut icon" href="assets/icon/favicon.ico">
     <meta name="theme-color" content="#0b1220">
 
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/tailwind.css?v=2">
+    <link rel="stylesheet" href="assets/css/styles.css?v=3">
     <style>
-        /* Route-style roadmap */
-        .timeline {
-            position: relative;
-            padding: 24px 0;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0;
-            transform: translateX(-50%);
-            width: 14px;
-            height: 100%;
-            border-radius: 999px;
-            background: linear-gradient(180deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.95) 100%);
-            border: 2px solid rgba(148, 163, 184, 0.35);
-            box-shadow: inset 0 0 0 2px rgba(15, 23, 42, 0.8), 0 0 24px rgba(59, 130, 246, 0.15);
-        }
-
-        .timeline::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0;
-            transform: translateX(-50%);
-            width: 3px;
-            height: 100%;
-            background: repeating-linear-gradient(
-                to bottom,
-                rgba(241, 245, 249, 0.85) 0,
-                rgba(241, 245, 249, 0.85) 12px,
-                transparent 12px,
-                transparent 24px
-            );
-            opacity: 0.85;
-        }
-
-        .timeline-item {
-            margin-bottom: 56px;
-            position: relative;
-            opacity: 0;
-            animation: fadeInTimeline 0.65s ease-out forwards;
-        }
-
-        .timeline-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
-        .timeline-item:nth-child(2) { animation-delay: 0.28s; }
-        .timeline-item:nth-child(3) { animation-delay: 0.46s; }
-        .timeline-item:nth-child(4) { animation-delay: 0.64s; }
-
-        @keyframes fadeInTimeline {
-            from {
-                opacity: 0;
-                transform: translateY(24px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .timeline-content {
-            width: 44%;
-            padding: 1.2rem 1.25rem;
-            border-radius: 14px;
-            border: 1px solid rgba(148, 163, 184, 0.28);
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.92), rgba(30, 41, 59, 0.9));
-            box-shadow: 0 14px 30px rgba(2, 6, 23, 0.32);
-            position: relative;
-            backdrop-filter: blur(6px);
-            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-        }
-
-        .timeline-content:hover {
-            transform: translateY(-4px);
-            border-color: rgba(96, 165, 250, 0.55);
-            box-shadow: 0 20px 38px rgba(15, 23, 42, 0.5);
-        }
-
-        .timeline-item:nth-child(odd) .timeline-content {
-            margin-right: auto;
-            text-align: right;
-            padding-right: 3rem;
-            animation: slideInRight 0.6s ease-out forwards;
-            animation-delay: inherit;
-        }
-
-        .timeline-item:nth-child(even) .timeline-content {
-            margin-left: auto;
-            text-align: left;
-            padding-left: 3rem;
-            animation: slideInLeft 0.6s ease-out forwards;
-            animation-delay: inherit;
-        }
-
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(-40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        .timeline-dot {
-            position: absolute;
-            left: 50%;
-            top: 16px;
-            transform: translateX(-50%);
-            width: 30px;
-            height: 30px;
-            border-radius: 999px;
-            border: 3px solid rgba(241, 245, 249, 0.7);
-            background: radial-gradient(circle at 30% 30%, #60a5fa, #1d4ed8);
-            box-shadow: 0 0 0 8px rgba(59, 130, 246, 0.16), 0 0 18px rgba(37, 99, 235, 0.55);
-            z-index: 12;
-        }
-
-        .timeline-item:nth-child(even) .timeline-dot {
-            background: radial-gradient(circle at 30% 30%, #c084fc, #7e22ce);
-            box-shadow: 0 0 0 8px rgba(168, 85, 247, 0.16), 0 0 18px rgba(126, 34, 206, 0.55);
-        }
-
-        .timeline-dot::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            width: 8px;
-            height: 8px;
-            border-radius: 999px;
-            background: #f8fafc;
-        }
-
-        .timeline-car {
-            position: absolute;
-            left: 50%;
-            top: 20px;
-            transform: translate(-50%, -50%) rotate(-90deg);
-            z-index: 15;
-            width: 34px;
-            height: 34px;
-            border-radius: 999px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(15, 23, 42, 0.95);
-            border: 1px solid rgba(96, 165, 250, 0.55);
-            box-shadow: 0 0 14px rgba(59, 130, 246, 0.35);
-            transition: top 0.2s linear;
-            pointer-events: none;
-            will-change: top;
-        }
-
-        .timeline-car span {
-            font-size: 0.95rem;
-            display: inline-block;
-        }
-
-        .timeline-item.is-reached .timeline-content {
-            border-color: rgba(96, 165, 250, 0.55);
-            box-shadow: 0 18px 34px rgba(15, 23, 42, 0.5);
-        }
-
-        .timeline-item:nth-child(odd) .timeline-content::before,
-        .timeline-item:nth-child(even) .timeline-content::before {
-            content: '';
-            position: absolute;
-            top: 28px;
-            width: 34px;
-            height: 3px;
-            background: rgba(148, 163, 184, 0.85);
-            border-radius: 999px;
-        }
-
-        .timeline-item:nth-child(odd) .timeline-content::before {
-            right: -34px;
-        }
-
-        .timeline-item:nth-child(even) .timeline-content::before {
-            left: -34px;
-        }
-
         /* Technical Expertise Cards */
         .expertise-card {
             background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.8) 100%);
@@ -253,82 +63,23 @@
             display: inline-block;
         }
 
-        @media (max-width: 768px) {
-            .timeline::before {
-                left: 20px;
-                width: 12px;
-                transform: none;
-            }
-
-            .timeline::after {
-                left: 25px;
-                transform: none;
-            }
-
-            .timeline-item:nth-child(odd) .timeline-content,
-            .timeline-item:nth-child(even) .timeline-content {
-                width: calc(100% - 72px);
-                margin-left: 72px !important;
-                margin-right: 0 !important;
-                text-align: left !important;
-                padding-left: 1.15rem !important;
-                padding-right: 1.15rem !important;
-            }
-
-            .timeline-item {
-                margin-bottom: 40px;
-            }
-
-            .timeline-content h4 {
-                font-size: 1rem;
-                line-height: 1.35;
-            }
-
-            .timeline-content p {
-                font-size: 0.82rem;
-                line-height: 1.55;
-            }
-
-            .timeline-dot {
-                left: 26px;
-                transform: translateX(-50%);
-            }
-
-            .timeline-car {
-                left: 26px;
-                width: 30px;
-                height: 30px;
-            }
-
-            .timeline-item:nth-child(odd) .timeline-content::before,
-            .timeline-item:nth-child(even) .timeline-content::before {
-                left: -28px;
-                right: auto;
-                width: 28px;
-            }
-        }
     </style>
 </head>
 
 <body class="bg-slate-900 text-white">
 
 <!-- Navigation -->
-<nav class="fixed top-0 left-0 w-full bg-slate-900/95 border-b border-slate-700 z-50
-            md:top-6 md:left-1/2 md:w-auto md:-translate-x-1/2 md:rounded-full
-            md:px-6 md:py-2 md:bg-transparent md:border-0">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between md:justify-center relative">
-        <div class="hidden md:flex items-center space-x-6 bg-slate-800/60 rounded-full px-6 py-2 backdrop-blur shadow-md">
+<nav class="fixed top-0 left-0 w-full bg-slate-900/95 border-b border-slate-700 z-50 md:top-6 md:left-1/2 md:w-auto md:-translate-x-1/2 md:border-0 md:bg-transparent">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between md:p-0">
+        <a href="index.html" class="font-bold text-lg md:hidden">Alpatson</a>
+        <div class="hidden md:flex items-center gap-2 bg-slate-800/60 rounded-full px-4 py-2 backdrop-blur shadow-md">
             <a href="index.html" class="nav-link">Home</a>
-            <a href="about.html" class="nav-link nav-active">About</a>
+            <a href="about.html" class="nav-link">About</a>
             <a href="projects.html" class="nav-link">Projects</a>
             <a href="contact.html" class="nav-link">Contact</a>
         </div>
-
-        <!-- Mobile button -->
-        <button onclick="toggleMobileMenu()" class="md:hidden text-2xl">☰</button>
+        <button type="button" id="menuButton" class="md:hidden text-2xl" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">☰</button>
     </div>
-
-    <!-- Mobile menu -->
     <div id="mobileMenu" class="hidden md:hidden bg-slate-800 border-t border-slate-700">
         <a href="index.html" class="block px-6 py-3 hover:bg-slate-700">Home</a>
         <a href="about.html" class="block px-6 py-3 hover:bg-slate-700">About</a>
@@ -343,125 +94,108 @@
 <section class="py-20 px-6 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
     <div class="max-w-6xl mx-auto fade-in">
 
-        <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center">About Me</h2>
+        <h1 class="text-4xl md:text-5xl font-bold mb-12 text-center">About Me</h1>
 
         <!-- Profile Image - Top Section -->
         <div class="flex justify-center mb-20">
             <div class="w-80 h-96 rounded-xl overflow-hidden shadow-2xl hover-lift enter-element border-4 border-blue-500/30">
-                <img src="assets/images/profile.jpg" alt="Alpatson Cobbina Siaw" class="w-full h-full object-cover">
+                <img src="assets/images/profile.webp" alt="Alpatson Cobbina Siaw" class="w-full h-full object-cover" width="800" height="903" loading="lazy" decoding="async">
             </div>
         </div>
 
         <!-- Introduction Text -->
         <div class="max-w-3xl mx-auto mb-20 text-center enter-element">
-            <p class="text-lg text-slate-300 leading-relaxed mb-6">
-                I’m a Software Engineering student passionate about transforming ideas into scalable, real-world applications. Skilled in Java, Python, Django, and modern frontend technologies, I approach every project with a systems mindset, prioritizing clean architecture, performance, and long-term reliability.
-            </p>
             <p class="text-lg text-slate-300 leading-relaxed">
-                My journey, from grassroots teaching to contributing to telecom infrastructure at MTN Ghana and now advancing my software engineering expertise, has shaped my discipline, adaptability, and leadership. I’m driven by curiosity, high standards, and collaboration, because great software isn’t just functional, it’s thoughtfully engineered and built with purpose.
+                I’m a Software Engineering Master’s student at JUNIA ISEN in Lille, working mainly with Python, Java, JavaScript and Linux/Bash. During my research internship at ISIA Lab (Université de Mons), I built a rule-based system that routes free-text requests to the right handler, and I learned to test and measure AI tools before trusting them. I also build and run real products, like a live e-commerce store, and I enjoy documenting my work clearly and explaining it to non-technical people.
             </p>
         </div>
 
-        <!-- Timeline Journey -->
-        <div class="timeline mb-32">
-            <div class="timeline-car" aria-hidden="true"><span>🚗</span></div>
-            <!-- 2025 - MSc -->
-            <div class="timeline-item enter-element">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <span class="inline-block text-[11px] uppercase tracking-[0.18em] text-slate-400 mb-1">Junction 04</span>
-                    <span class="text-blue-400 font-semibold text-sm">2025 — Present</span>
-                    <h4 class="font-bold text-lg mt-2">MSc Software Engineering</h4>
-                    <p class="text-sm text-slate-300 mt-2">JUNIA-ISEN | Lille, France</p>
-                    <p class="text-slate-400 text-sm mt-3">
-                        Currently pursuing advanced training in scalable systems, Software Engineering, full-stack development, and project management.
-                    </p>
-                </div>
-            </div>
-
-            <!-- 2025 - BSc -->
-            <div class="timeline-item enter-element">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <span class="inline-block text-[11px] uppercase tracking-[0.18em] text-slate-400 mb-1">Junction 03</span>
-                    <span class="text-purple-400 font-semibold text-sm">2022 — 2025 </span>
-                    <h4 class="font-bold text-lg mt-2">BSc Computer Engineering</h4>
-                    <p class="text-sm text-slate-300 mt-2">KNUST | Kumasi, Ghana</p>
-                    <p class="text-slate-400 text-sm mt-3">
-                        Completed BSc in Computer Engineering with strong focus on software development, data structures, and Electrical systems.
-                    </p>
-                </div>
-            </div>
-
-            <!-- 2023 - Intern -->
-            <div class="timeline-item enter-element">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <span class="inline-block text-[11px] uppercase tracking-[0.18em] text-slate-400 mb-1">Junction 02</span>
-                    <span class="text-blue-400 font-semibold text-sm">2023</span>
-                    <h4 class="font-bold text-lg mt-2">Switch Engineering Intern</h4>
-                    <p class="text-sm text-slate-300 mt-2">MTN Ghana | Kumasi, Ghana</p>
-                    <p class="text-slate-400 text-sm mt-3">
-                        Worked on telecom switching systems, alarms, and signal routing infrastructure with critical telecom systems.
-                    </p>
-                </div>
-            </div>
-
-            <!-- 2022 - Volunteer -->
-            <div class="timeline-item enter-element">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <span class="inline-block text-[11px] uppercase tracking-[0.18em] text-slate-400 mb-1">Junction 01</span>
-                    <span class="text-purple-400 font-semibold text-sm">2022</span>
-                    <h4 class="font-bold text-lg mt-2">Volunteer IT Instructor</h4>
-                    <p class="text-sm text-slate-300 mt-2">Community Education | Kumasi, Ghana</p>
-                    <p class="text-slate-400 text-sm mt-3">
-                        Taught programming fundamentals and digital skills to students and communities, passionate about knowledge sharing.
-                    </p>
-                </div>
-            </div>
-        </div>
+        <!-- Journey: compact timeline, oldest to newest -->
+        <section class="mb-32" aria-labelledby="journey-heading">
+            <h3 id="journey-heading" class="text-3xl md:text-4xl font-bold mb-12 text-center">My Journey</h3>
+            <ol class="journey">
+                <li class="journey-step" style="--i:0">
+                    <span class="journey-dot" aria-hidden="true"></span>
+                    <p class="journey-date">2022</p>
+                    <h4 class="journey-title">Volunteer IT Instructor</h4>
+                    <p class="journey-place">Community Education, Kumasi</p>
+                    <p class="journey-text">Taught programming basics and digital skills.</p>
+                </li>
+                <li class="journey-step" style="--i:1">
+                    <span class="journey-dot" aria-hidden="true"></span>
+                    <p class="journey-date">2022 – 2025</p>
+                    <h4 class="journey-title">BSc Computer Engineering</h4>
+                    <p class="journey-place">KNUST, Ghana</p>
+                    <p class="journey-text">Software development, data structures and electrical systems.</p>
+                </li>
+                <li class="journey-step" style="--i:2">
+                    <span class="journey-dot" aria-hidden="true"></span>
+                    <p class="journey-date">2023</p>
+                    <h4 class="journey-title">Switch Engineering Intern</h4>
+                    <p class="journey-place">MTN Ghana, Kumasi</p>
+                    <p class="journey-text">Telecom switching, alarms and signal routing.</p>
+                </li>
+                <li class="journey-step" style="--i:3">
+                    <span class="journey-dot" aria-hidden="true"></span>
+                    <p class="journey-date">2025 – 2027</p>
+                    <h4 class="journey-title">MSc Software Engineering</h4>
+                    <p class="journey-place">JUNIA ISEN, Lille</p>
+                    <p class="journey-text">Scalable systems, full-stack development and project management.</p>
+                </li>
+                <li class="journey-step journey-current" style="--i:4">
+                    <span class="journey-dot" aria-hidden="true"></span>
+                    <p class="journey-date">May – Aug 2026</p>
+                    <h4 class="journey-title">AI Research Engineer Intern</h4>
+                    <p class="journey-place">ISIA Lab, Université de Mons</p>
+                    <p class="journey-text">Built a request-routing system and benchmarked AI tools against simple baselines.</p>
+                </li>
+            </ol>
+        </section>
 
         <!-- Technical Expertise Section -->
         <section class="mb-32">
             <h3 class="text-3xl md:text-4xl font-bold mb-12 text-center">Technical Expertise</h3>
             
-            <div class="grid md:grid-cols-4 gap-6">
-                <!-- Full-Stack Development -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="expertise-card p-8 rounded-xl enter-element">
                     <h4 class="text-xl font-bold mb-3">Full-Stack Development</h4>
                     <p class="text-sm text-slate-300 leading-relaxed">
-                        Python, Java, JavaScript, React, Next.js, Node.js, Django, Flask
+                        Python, Java, JavaScript, Django, React, Next.js, Node.js
                     </p>
                 </div>
 
-                <!-- UI/UX Design & Prototyping -->
                 <div class="expertise-card p-8 rounded-xl enter-element">
-                    <h4 class="text-xl font-bold mb-3">UI/UX Design & Prototyping</h4>
+                    <h4 class="text-xl font-bold mb-3">Databases &amp; APIs</h4>
                     <p class="text-sm text-slate-300 leading-relaxed">
-                        Figma, Canva, Wireframing, Responsive Design
+                        SQL, PostgreSQL, MySQL, SQLite, Firebase, REST APIs, JWT authentication
                     </p>
                 </div>
 
-                <!-- Databases & Backend -->
                 <div class="expertise-card p-8 rounded-xl enter-element">
-                    <h4 class="text-xl font-bold mb-3">Databases & Backend</h4>
+                    <h4 class="text-xl font-bold mb-3">AI / ML Evaluation</h4>
                     <p class="text-sm text-slate-300 leading-relaxed">
-                        PostgreSQL, MySQL, SQLite, Firebase, REST APIs, Authentication
+                        Model benchmarking and evaluation, model selection and routing, LLM integration
                     </p>
                 </div>
 
-                <!-- Tools & DevOps -->
                 <div class="expertise-card p-8 rounded-xl enter-element">
-                    <h4 class="text-xl font-bold mb-3">Tools, DevOps & QA</h4>
+                    <h4 class="text-xl font-bold mb-3">Linux &amp; Systems</h4>
                     <p class="text-sm text-slate-300 leading-relaxed">
-                        Git, GitHub, VS Code, Linux, Agile Methodologies, QA Testing, Robot Framework
+                        Linux/Unix, Bash scripting, remote servers over VPN and JupyterLab, root-cause debugging
                     </p>
                 </div>
+
                 <div class="expertise-card p-8 rounded-xl enter-element">
-                    <h4 class="text-xl font-bold mb-3">Linux Scripting</h4>
+                    <h4 class="text-xl font-bold mb-3">Tools, CI &amp; QA</h4>
                     <p class="text-sm text-slate-300 leading-relaxed">
-                        Bash, Shell Scripting, Automation, Command Line Tools
+                        Git, GitHub Actions, Agile, QA testing, Robot Framework, technical documentation
+                    </p>
+                </div>
+
+                <div class="expertise-card p-8 rounded-xl enter-element">
+                    <h4 class="text-xl font-bold mb-3">UI/UX &amp; Prototyping</h4>
+                    <p class="text-sm text-slate-300 leading-relaxed">
+                        Figma, Canva, wireframing, responsive design
                     </p>
                 </div>
             </div>
@@ -474,11 +208,11 @@
                 <p class="text-slate-400 mb-4">Preview or download my full resume.</p>
 
                 <div class="flex justify-center gap-4">
-                    <a href="assets/resume.pdf" target="_blank"
+                    <a href="assets/resume.pdf?v=2" target="_blank"
                        class="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-lg font-semibold transition hover-lift">
                         Open PDF
                     </a>
-                    <a href="assets/resume.pdf" download
+                    <a href="assets/resume.pdf?v=2" download
                        class="border border-blue-500 text-blue-400 hover:bg-blue-600/10 px-6 py-2 rounded-lg transition hover-lift">
                         Download
                     </a>
@@ -486,11 +220,11 @@
             </div>
 
             <div class="max-w-4xl mx-auto">
-                <object data="assets/resume.pdf" type="application/pdf"
+                <object data="assets/resume.pdf?v=2" type="application/pdf"
                         class="w-full h-[500px] rounded-lg border border-slate-700">
                     <p class="text-center text-slate-400 py-12">
                         PDF not supported.
-                        <a href="assets/resume.pdf" class="text-blue-400 hover:text-blue-300">Download here</a>
+                        <a href="assets/resume.pdf?v=2" class="text-blue-400 hover:text-blue-300">Download here</a>
                     </p>
                 </object>
             </div>
@@ -504,7 +238,7 @@
                 <!-- ALX - Professional Foundations Certificate -->
                 <div class="bg-slate-800 rounded-lg overflow-hidden hover-lift border border-slate-700 transition enter-element">
                     <div class="h-56 bg-slate-700 flex items-center justify-center p-4 overflow-hidden">
-                        <img src="assets/images/professional foundations certificate.png" alt="Professional Foundations Certificate" class="max-h-full w-auto object-contain">
+                        <img src="assets/images/professional-foundations-certificate.webp" alt="Professional Foundations Certificate" class="max-h-full w-auto object-contain" width="900" height="506" loading="lazy" decoding="async">
                     </div>
                     <div class="p-6">
                         <h4 class="text-xl font-bold mb-2">Professional Foundations</h4>
@@ -513,7 +247,7 @@
                             Comprehensive training in soft skills, personal development, professional communication, and foundational career competencies.
                         </p>
                         <div class="mt-4">
-                            <span class="inline-block bg-purple-600/20 text-purple-300 px-3 py-1 rounded-full text-xs font-semibold border border-purple-500/30">
+                            <span class="inline-block bg-slate-600/30 text-slate-300 px-3 py-1 rounded-full text-xs font-semibold border border-slate-500/40">
                                 Foundational
                             </span>
                         </div>
@@ -523,7 +257,7 @@
                 <!-- HackerRank - Software Engineering Certificate -->
                 <div class="bg-slate-800 rounded-lg overflow-hidden hover-lift border border-slate-700 transition enter-element">
                     <div class="h-56 bg-slate-700 flex items-center justify-center p-4 overflow-hidden">
-                        <img src="assets/images/Software.png" alt="Software Engineering Certificate" class="max-h-full w-auto object-contain">
+                        <img src="assets/images/software.webp" alt="Software Engineering Certificate" class="max-h-full w-auto object-contain" width="900" height="683" loading="lazy" decoding="async">
                     </div>
                     <div class="p-6">
                         <h4 class="text-xl font-bold mb-2">Software Engineering Certificate</h4>
@@ -542,7 +276,7 @@
                 <!-- HackerRank - SQL Certificate -->
                 <div class="bg-slate-800 rounded-lg overflow-hidden hover-lift border border-slate-700 transition enter-element">
                     <div class="h-56 bg-slate-700 flex items-center justify-center p-4 overflow-hidden">
-                        <img src="assets/images/SQL.png" alt="SQL Certificate" class="max-h-full w-auto object-contain">
+                        <img src="assets/images/sql.webp" alt="SQL Certificate" class="max-h-full w-auto object-contain" width="900" height="684" loading="lazy" decoding="async">
                     </div>
                     <div class="p-6">
                         <h4 class="text-xl font-bold mb-2">SQL Certificate</h4>
@@ -557,6 +291,15 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="max-w-5xl mx-auto mt-10 bg-slate-800/60 border border-slate-700 rounded-lg p-6 enter-element">
+                <h4 class="font-bold mb-4">Also completed</h4>
+                <ul class="grid md:grid-cols-3 gap-4 text-sm text-slate-300">
+                    <li class="flex gap-2"><span class="text-blue-400" aria-hidden="true">✓</span>Mastering Software Architecture Patterns and System Design</li>
+                    <li class="flex gap-2"><span class="text-blue-400" aria-hidden="true">✓</span>AWS Foundations of Prompt Engineering</li>
+                    <li class="flex gap-2"><span class="text-blue-400" aria-hidden="true">✓</span>IBM Prompt Engineering for Everyone</li>
+                </ul>
             </div>
         </section>
 
@@ -610,7 +353,7 @@
                 <!-- Chess -->
                 <div class="bg-slate-700 p-8 rounded-lg hover-lift">
                     <div class="w-full h-64 mb-4 rounded-lg overflow-hidden flex items-center justify-center bg-slate-600">
-                        <img src="assets/images/chess.jpeg" alt="Chess Champion" class="w-full h-full object-contain">
+                        <img src="assets/images/chess.webp" alt="Chess Champion" class="w-full h-full object-contain" width="810" height="799" loading="lazy" decoding="async">
                     </div>
                     <h3 class="text-2xl font-bold mb-4">Chess Champion</h3>
                     <div class="space-y-2 text-sm text-slate-300">
@@ -619,14 +362,14 @@
                         <p>🏆 Tertiary Championship - 3rd (2023)</p>
                         <p>🏆 Tertiary Championship - 2nd (2024)</p>
                         <p>🏆 Blitz Championship Champion (2024)</p>
-                        <p>📍 Vice President, KNUST Chess Club</p>
+                        <p>📍 President, KNUST Chess Club (2023 – 2025)</p>
                     </div>
                 </div>
 
                 <!-- Card Games -->
                 <div class="bg-slate-700 p-8 rounded-lg hover-lift">
                     <div class="w-full h-48 mb-4 rounded-lg overflow-hidden">
-                        <img src="assets/images/cardgames.jpg" alt="Card Game Lover" class="w-full h-full object-cover">
+                        <img src="assets/images/cardgames.webp" alt="Card Game Lover" class="w-full h-full object-cover" width="275" height="183" loading="lazy" decoding="async">
                     </div>
                     <h3 class="text-2xl font-bold mb-4">Card Game Lover</h3>
                     <p class="text-slate-300 mb-4">
@@ -640,54 +383,45 @@
     </div>
 </section>
 
-<!-- Footer -->
-<footer class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border-t border-slate-700 py-16 px-6">
-    <div class="max-w-6xl mx-auto">
-        <div class="grid md:grid-cols-3 gap-12 mb-12">
-            <!-- Branding -->
-            <div class="enter-element">
-                <h3 class="text-2xl font-bold mb-2">Alpatson</h3>
-                <p class="text-slate-400">Full-Stack Developer & Software Engineer</p>
-            </div>
+</main>
 
-            <!-- Quick Links -->
-            <div class="enter-element">
-                <h4 class="font-bold mb-4 text-white">Quick Links</h4>
+    <!-- Footer -->
+    <footer class="border-t border-slate-700 bg-slate-900 pt-12 pb-8 px-6">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10 mb-10">
+            <div>
+                <p class="text-2xl font-bold mb-2">Alpatson</p>
+                <p class="text-slate-400">Software Engineer &amp; Full-Stack Developer</p>
+                <p class="text-slate-500 text-sm mt-2">Lille, France</p>
+            </div>
+            <div>
+                <p class="font-bold mb-4">Quick Links</p>
                 <ul class="space-y-2">
                     <li><a href="index.html" class="text-slate-400 hover:text-blue-400 transition">Home</a></li>
-                    <li><a href="projects.html" class="text-slate-400 hover:text-blue-400 transition">Projects</a></li>
                     <li><a href="about.html" class="text-slate-400 hover:text-blue-400 transition">About</a></li>
+                    <li><a href="projects.html" class="text-slate-400 hover:text-blue-400 transition">Projects</a></li>
                     <li><a href="contact.html" class="text-slate-400 hover:text-blue-400 transition">Contact</a></li>
                 </ul>
             </div>
-
-            <!-- Connect -->
-            <div class="enter-element">
-                <h4 class="font-bold mb-4 text-white">Connect</h4>
+            <div>
+                <p class="font-bold mb-4">Connect</p>
                 <div class="flex gap-4">
-                    <a href="https://github.com/ALpatson" target="_blank" rel="noopener noreferrer" 
-                       class="w-10 h-10 bg-slate-700 hover:bg-blue-600 rounded-lg flex items-center justify-center transition transform hover:scale-110">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    <a href="https://github.com/ALpatson" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="social-btn">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                     </a>
-                    <a href="https://www.linkedin.com/in/alpatson-cobbina-siaw/" target="_blank" rel="noopener noreferrer" 
-                       class="w-10 h-10 bg-slate-700 hover:bg-blue-600 rounded-lg flex items-center justify-center transition transform hover:scale-110">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+                    <a href="https://www.linkedin.com/in/alpatson-cobbina-siaw/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-btn">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+                    </a>
+                    <a href="mailto:cobbinaalpatson@gmail.com" aria-label="Email" class="social-btn">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
                     </a>
                 </div>
             </div>
         </div>
+        <p class="max-w-6xl mx-auto border-t border-slate-700 pt-6 text-center text-slate-400 text-sm">
+            &copy; <span id="footerYear"></span> Alpatson Cobbina Siaw. All rights reserved.
+        </p>
+    </footer>
 
-        <!-- Divider -->
-        <div class="border-t border-slate-700 pt-8">
-            <p class="text-center text-slate-400 text-sm">
-                &copy; <span id="footerYear"></span> Alpatson Cobbina Siaw. All rights reserved.
-            </p>
-        </div>
-    </div>
-</footer>
-
-</main>
-
-<script src="assets/js/main.js" defer></script>
+    <script src="assets/js/main.js?v=4" defer></script>
 </body>
 </html>
