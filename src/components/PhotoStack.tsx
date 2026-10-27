@@ -82,7 +82,7 @@ export default function PhotoStack({ photos, hint }: { photos: Photo[]; hint: st
                 setTimeout(() => (dragged.current = false), 0);
                 if (Math.abs(info.offset.x) > 70) next(info.offset.x > 0 ? 1 : -1);
               }}
-              className={`absolute inset-0 overflow-hidden rounded-sm border-[6px] border-[#f1ece3] bg-surface shadow-[0_24px_50px_-18px_rgba(0,0,0,0.75)] ${
+              className={`absolute inset-0 overflow-hidden rounded-[1.4rem] border-[6px] border-[#f1ece3] bg-surface shadow-[0_24px_50px_-18px_rgba(0,0,0,0.75)] ${
                 front ? "cursor-grab active:cursor-grabbing" : "pointer-events-none"
               }`}
               style={{ zIndex: photos.length - slot }}
@@ -94,7 +94,7 @@ export default function PhotoStack({ photos, hint }: { photos: Photo[]; hint: st
               }
               transition={tossed ? { duration: 0.26, ease: "easeIn" } : { type: "spring", stiffness: 220, damping: 26 }}
             >
-              <img src={photo.src} alt="" draggable={false} className="h-full w-full object-cover" loading={front ? "eager" : "lazy"} />
+              <img src={photo.src} alt="" draggable={false} className="h-full w-full rounded-[1rem] object-cover" loading={front ? "eager" : "lazy"} />
             </motion.button>
           );
         })}

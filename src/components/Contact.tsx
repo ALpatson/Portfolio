@@ -52,7 +52,7 @@ export default function Contact({ t }: { t: Dictionary["contact"] }) {
   )}`;
 
   const input =
-    "w-full border-0 border-b border-line-strong bg-transparent px-0 py-3 text-fg placeholder:text-faint focus:border-accent focus:ring-0 focus:outline-none transition-colors";
+    "mt-2 w-full rounded-xl border border-line-strong bg-bg px-4 py-3 text-fg placeholder:text-faint transition-colors focus:border-accent focus:outline-none";
 
   return (
     <section id="contact" className="relative overflow-hidden border-t border-line bg-bg-raised">
@@ -77,8 +77,8 @@ export default function Contact({ t }: { t: Dictionary["contact"] }) {
 
         <div className="mt-16 grid gap-14 md:grid-cols-[1.3fr_1fr]">
           <Reveal>
-            <form onSubmit={onSubmit} noValidate className="space-y-8">
-              <div className="grid gap-8 sm:grid-cols-2">
+            <form onSubmit={onSubmit} noValidate className="space-y-6 rounded-3xl border border-line bg-surface p-6 sm:p-8">
+              <div className="grid gap-6 sm:grid-cols-2">
                 <label className="block">
                   <span className="font-mono text-[11px] uppercase tracking-wider text-muted">{t.name}</span>
                   <input
@@ -146,7 +146,7 @@ export default function Contact({ t }: { t: Dictionary["contact"] }) {
           </Reveal>
 
           <Reveal delay={0.1}>
-            <dl className="space-y-7">
+            <dl className="space-y-7 rounded-3xl border border-line p-6 sm:p-8">
               <div>
                 <dt className="font-mono text-[11px] uppercase tracking-wider text-muted">{t.emailLabel}</dt>
                 <dd className="mt-1">

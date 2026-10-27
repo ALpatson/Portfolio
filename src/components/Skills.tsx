@@ -16,7 +16,7 @@ export default function Skills({ t }: { t: Dictionary["skills"] }) {
         <SectionHeader index="04" label={t.label} heading={t.heading} sub={t.sub} />
 
         {/* A back rank: one square per piece */}
-        <div role="tablist" aria-label={t.label} className="grid grid-cols-6 overflow-hidden rounded-md border border-line-strong">
+        <div role="tablist" aria-label={t.label} className="grid grid-cols-6 overflow-hidden rounded-3xl border border-line-strong">
           {t.groups.map((g, i) => {
             const light = i % 2 === 0;
             const selected = i === active;

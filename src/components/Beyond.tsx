@@ -15,18 +15,18 @@ export default function Beyond({ t }: { t: Dictionary["beyond"] }) {
           <h3 className="mb-6 font-mono text-xs uppercase tracking-[0.2em] text-muted">{t.certsTitle}</h3>
           <div className="grid gap-4 sm:grid-cols-3">
             {withImage.map((c, i) => (
-              <Reveal key={c.name} delay={0.06 * i} className="group overflow-hidden rounded-md border border-line bg-surface">
-                <div className="flex aspect-[4/3] items-center justify-center overflow-hidden bg-[#f3efe7] p-3">
+              <Reveal key={c.name} delay={0.06 * i} className="group overflow-hidden rounded-3xl border border-line bg-surface p-1.5">
+                <div className="flex aspect-[4/3] items-center justify-center overflow-hidden rounded-[1.1rem] bg-[#f3efe7] p-3">
                   <img src={c.image} alt={`${c.name} certificate`} loading="lazy" className="max-h-full object-contain transition-transform duration-500 group-hover:scale-105" />
                 </div>
-                <div className="p-4">
+                <div className="px-3 pt-3.5 pb-3">
                   <p className="font-medium leading-snug text-fg">{c.name}</p>
                   <p className="mt-1 font-mono text-[11px] text-muted">{c.issuer}</p>
                 </div>
               </Reveal>
             ))}
           </div>
-          <ul className="mt-4 divide-y divide-line rounded-md border border-line">
+          <ul className="mt-4 divide-y divide-line overflow-hidden rounded-2xl border border-line bg-surface/50">
             {textOnly.map((c) => (
               <li key={c.name} className="flex items-baseline justify-between gap-4 px-4 py-3">
                 <span className="text-sm text-fg-soft">{c.name}</span>
@@ -36,11 +36,11 @@ export default function Beyond({ t }: { t: Dictionary["beyond"] }) {
           </ul>
         </div>
 
-        <Reveal className="overflow-hidden rounded-md border border-line bg-surface">
-          <div className="aspect-[16/10] overflow-hidden">
+        <Reveal className="overflow-hidden rounded-3xl border border-line bg-surface p-1.5">
+          <div className="aspect-[16/10] overflow-hidden rounded-[1.1rem]">
             <img src="/images/chess.webp" alt={t.chessImageAlt} loading="lazy" className="h-full w-full object-cover" />
           </div>
-          <div className="p-6">
+          <div className="px-5 pt-5 pb-4">
             <h3 className="font-display text-2xl font-medium text-fg">{t.chessTitle}</h3>
             <p className="mt-2 leading-relaxed text-muted">{t.chessText}</p>
             <ul className="mt-5 space-y-2.5">

@@ -47,7 +47,7 @@ export default function Journey({ t }: { t: Dictionary["journey"] }) {
             </span>
             <span className="absolute top-[2.1rem] left-[5.5rem] h-3.5 w-3.5 -translate-x-1/2 rotate-45 bg-accent sm:left-[7.5rem]" aria-hidden="true" />
             <div className="py-6 pl-8 sm:pl-10">
-              <div className="rounded-sm border border-accent/40 bg-accent/[0.06] p-6">
+              <div className="rounded-3xl border border-accent/40 bg-accent/[0.06] p-6 sm:p-7">
                 <p className="font-mono text-xs uppercase tracking-wider text-accent">{t.next.period}</p>
                 <h3 className="mt-1.5 font-display text-3xl font-medium italic text-fg">{t.next.title}</h3>
                 <p className="mt-3 max-w-xl leading-relaxed text-fg-soft">{t.next.text}</p>

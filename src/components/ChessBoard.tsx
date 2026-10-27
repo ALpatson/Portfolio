@@ -186,7 +186,8 @@ export default function ChessBoard({ t }: { t: BoardText }) {
 
   return (
     <div className="w-full max-w-[min(30rem,88vw)]">
-      <div className="relative aspect-square overflow-hidden rounded-md border border-line-strong shadow-[0_30px_80px_-20px_rgba(0,0,0,0.7)]">
+      <div className="rounded-[1.6rem] border border-line-strong bg-surface p-2 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.7)]">
+      <div className="relative aspect-square overflow-hidden rounded-[1.1rem]">
         {/* Squares (also the click targets in play mode) */}
         <div className="absolute inset-0 grid grid-cols-8 grid-rows-8">
           {Array.from({ length: 64 }, (_, i) => {
@@ -245,6 +246,7 @@ export default function ChessBoard({ t }: { t: BoardText }) {
             ))}
           </AnimatePresence>
         </div>
+      </div>
       </div>
 
       <div className="mt-4 flex flex-wrap items-center justify-between gap-3">

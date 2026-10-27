@@ -69,16 +69,16 @@ function Card({ p, index, t, onOpen }: { p: Project; index: number; t: T; onOpen
         onPointerMove={onMove}
         onPointerLeave={onLeave}
         style={{ rotateX: rx, rotateY: ry }}
-        className="group flex h-full w-full flex-col overflow-hidden rounded-md border border-line bg-surface text-left transition-colors hover:border-line-strong"
+        className="group flex h-full w-full flex-col overflow-hidden rounded-3xl border border-line bg-surface p-1.5 text-left transition-colors hover:border-line-strong"
       >
-        <div className="relative aspect-[16/10] overflow-hidden border-b border-line bg-bg">
+        <div className="relative aspect-[16/10] overflow-hidden rounded-[1.1rem] border border-line bg-bg">
           <Cover p={p} className="transition-transform duration-700 ease-out group-hover:scale-[1.04]" />
           <div className="absolute top-3 left-3">
             <Badges p={p} t={t} />
           </div>
           <span className="absolute top-3 right-3 font-mono text-[11px] text-fg/70">{String(index + 1).padStart(2, "0")}</span>
         </div>
-        <div className="flex flex-1 flex-col p-5">
+        <div className="flex flex-1 flex-col px-4 pt-4 pb-3.5">
           <h3 className="font-display text-xl font-medium text-fg">{p.title}</h3>
           <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">{p.summary}</p>
           <div className="mt-4 flex items-center justify-between">
@@ -122,14 +122,14 @@ function Details({ p, t, onClose }: { p: Project; t: T; onClose: () => void }) {
         role="dialog"
         aria-modal="true"
         aria-labelledby="project-title"
-        className="relative max-h-[92dvh] w-full max-w-3xl overflow-y-auto rounded-t-xl border border-line-strong bg-bg-raised sm:rounded-xl"
+        className="relative max-h-[92dvh] w-full max-w-3xl overflow-y-auto rounded-t-3xl border border-line-strong bg-bg-raised p-2 sm:rounded-3xl"
         initial={{ y: 60, opacity: 0, scale: 0.98 }}
         animate={{ y: 0, opacity: 1, scale: 1 }}
         exit={{ y: 40, opacity: 0, transition: { duration: 0.2 } }}
         transition={{ duration: 0.45, ease }}
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="relative aspect-[16/8] overflow-hidden border-b border-line bg-bg">
+        <div className="relative aspect-[16/8] overflow-hidden rounded-[1.25rem] border border-line bg-bg">
           <Cover p={p} />
           <div className="absolute top-4 left-4">
             <Badges p={p} t={t} />
@@ -140,19 +140,19 @@ function Details({ p, t, onClose }: { p: Project; t: T; onClose: () => void }) {
           type="button"
           onClick={onClose}
           aria-label={t.close}
-          className="absolute top-3 right-3 flex h-9 w-9 items-center justify-center rounded-full bg-bg/85 text-fg backdrop-blur transition hover:bg-accent hover:text-accent-ink"
+          className="absolute top-4 right-4 flex h-9 w-9 items-center justify-center rounded-full bg-bg/85 text-fg backdrop-blur transition hover:bg-accent hover:text-accent-ink"
         >
           ✕
         </button>
 
-        <div className="p-6 sm:p-8">
+        <div className="px-4 pt-6 pb-5 sm:px-6 sm:pt-8 sm:pb-6">
           {p.period && <p className="font-mono text-xs uppercase tracking-wider text-muted">{p.period}</p>}
           <h3 id="project-title" className="mt-1 font-display text-3xl font-medium text-fg sm:text-4xl">
             {p.title}
           </h3>
           <p className="mt-4 leading-relaxed text-fg-soft">{p.description}</p>
 
-          <div className="mt-6 rounded-sm border-l-2 border-accent bg-accent/[0.06] py-3 pr-4 pl-4">
+          <div className="mt-6 rounded-2xl border border-accent/30 bg-accent/[0.06] px-5 py-4">
             <p className="font-mono text-[11px] uppercase tracking-wider text-accent">{t.role}</p>
             <p className="mt-1 leading-relaxed text-fg">{p.role}</p>
           </div>
