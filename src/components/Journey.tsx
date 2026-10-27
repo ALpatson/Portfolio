@@ -12,7 +12,7 @@ export default function Journey({ t }: { t: Dictionary["journey"] }) {
   const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 30 });
 
   return (
-    <section id="journey" className="border-y border-line bg-bg-raised/60">
+    <section id="journey" className="overflow-x-clip border-y border-line bg-bg-raised/60">
       <div className="mx-auto max-w-6xl px-5 py-24 sm:px-8 md:py-32">
         <SectionHeader index="02" label={t.label} heading={t.heading} sub={t.sub} />
 

@@ -55,6 +55,15 @@
   --font-mono: var(--font-plex-mono);
 }
 
+/* Nothing may widen the page: on iPhone Safari any element poking past the
+   edge (the notation ticker, a tossed photo, a sliding card) lets the whole
+   page be dragged sideways. "clip" (unlike "hidden") keeps sticky/fixed working. */
+html,
+body {
+  overflow-x: hidden;
+  overflow-x: clip;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 5rem;

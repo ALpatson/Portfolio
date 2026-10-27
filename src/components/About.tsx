@@ -43,7 +43,7 @@ function Stat({ value, label, delay }: { value: string; label: string; delay: nu
 
 export default function About({ t }: { t: Dictionary["about"] }) {
   return (
-    <section id="about" className="mx-auto max-w-6xl px-5 py-24 sm:px-8 md:py-32">
+    <section id="about" className="mx-auto max-w-6xl overflow-x-clip px-5 py-24 sm:px-8 md:py-32">
       <SectionHeader index="01" label={t.label} heading={t.heading} />
       <div className="grid gap-12 md:grid-cols-[0.8fr_1.2fr] md:gap-16">
         <Reveal>
