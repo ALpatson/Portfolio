@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import type { Dictionary } from "@/content/types";
 import ChessBoard from "./ChessBoard";
 import KnightField from "./KnightField";
+import TypedRoles from "./TypedRoles";
 import { ease } from "./Reveal";
 
 // Letters rise in one by one. Each word is kept in a no-wrap group so a line
@@ -68,7 +69,11 @@ export default function Hero({ t }: { t: Dictionary["hero"] }) {
             <Letters text="Cobbina Siaw" delay={0.5} className="italic text-accent" />
           </h1>
 
-          <motion.p {...fade(0.9)} className="mt-8 max-w-xl font-display text-2xl leading-snug text-fg sm:text-[1.7rem]">
+          <motion.div {...fade(0.85)}>
+            <TypedRoles roles={t.roles} label={t.rolesLabel} />
+          </motion.div>
+
+          <motion.p {...fade(0.9)} className="mt-6 max-w-xl font-display text-2xl leading-snug text-fg sm:text-[1.7rem]">
             {t.lead}
           </motion.p>
           <motion.p {...fade(1.0)} className="mt-4 max-w-xl leading-relaxed text-muted">

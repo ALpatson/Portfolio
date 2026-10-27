@@ -23,7 +23,9 @@ const fr: Dictionary = {
   },
   hero: {
     badge: "Disponible pour un stage de 26 semaines · dès mars 2027",
-    kicker: "Ingénieur logiciel · Lille, France",
+    kicker: "Bonjour, je suis",
+    roles: ["Ingénieur logiciel full-stack", "Ingénieur logiciel", "Développeur backend", "Ingénieur IA", "Ingénieur DevOps", "Joueur d'échecs"],
+    rolesLabel: "Rôles :",
     lead: "Je crée des logiciels que les gens utilisent vraiment, et je mesure avant de faire confiance.",
     body: "Étudiant en Master à JUNIA ISEN. Je gère de bout en bout une plateforme e-commerce en ligne, j'ai créé le site et le système de classement du club d'échecs de la KNUST, et j'ai passé l'été 2026 comme stagiaire ingénieur de recherche en IA à l'ISIA Lab.",
     ctaWork: "Voir mes projets",

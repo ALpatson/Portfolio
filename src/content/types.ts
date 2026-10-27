@@ -43,6 +43,8 @@ export type Dictionary = {
   hero: {
     badge: string;
     kicker: string;
+    roles: string[];
+    rolesLabel: string;
     lead: string;
     body: string;
     ctaWork: string;

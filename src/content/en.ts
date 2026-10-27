@@ -18,7 +18,9 @@ const en: Dictionary = {
   },
   hero: {
     badge: "Open to a 26-week internship · from March 2027",
-    kicker: "Software engineer · Lille, France",
+    kicker: "Hello, I'm",
+    roles: ["Full-Stack Software Engineer", "Software Engineer", "Backend Developer", "AI Engineer", "DevOps Engineer", "Chess Player"],
+    rolesLabel: "Roles:",
     lead: "I build software people actually use, and I measure before I trust.",
     body: "Master's student at JUNIA ISEN. I run a live e-commerce platform end to end, built the KNUST Chess Club's website and rating system, and spent the summer of 2026 as an AI Research Engineer intern at ISIA Lab.",
     ctaWork: "See my work",
