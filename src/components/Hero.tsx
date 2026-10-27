@@ -3,7 +3,6 @@
 import { motion } from "motion/react";
 import type { Dictionary } from "@/content/types";
 import ChessBoard from "./ChessBoard";
-import KnightField from "./KnightField";
 import TypedRoles from "./TypedRoles";
 import { ease } from "./Reveal";
 
@@ -45,7 +44,6 @@ export default function Hero({ t }: { t: Dictionary["hero"] }) {
 
   return (
     <section id="top" className="relative overflow-hidden pt-28 pb-20 md:pt-36 md:pb-28">
-      <KnightField />
       <div className="relative mx-auto grid max-w-6xl items-center gap-14 px-5 sm:px-8 lg:grid-cols-[1.15fr_1fr]">
         <div>
           <motion.p

@@ -3,83 +3,34 @@
 /*
   Palette. Every colour on the site comes from these variables, so swapping the
   background (or the whole look) only means editing this block.
-  Current: "Paper" (ivory paper, ink-black text, muted brass). The earlier dark
-  "Ink & Brass" palette is in the git history (commit 10421e4) if it's wanted back.
+  Current: "Night" (near-black, white text, gold accents) under the animated dot
+  grid + network background. Earlier palettes are in the git history:
+  "Paper" (light) in 8eb86ec, "Ink & Brass" (warm dark) in 10421e4.
 */
 :root {
-  --bg: #f2ede3;
-  --bg-raised: #ebe4d6;
-  --surface: #faf7f1;
-  --line: #dcd3c2;
-  --line-strong: #c4b8a2;
-  --fg: #1a1612;
-  --fg-soft: #3b352d;
-  --muted: #6c6457;
-  --faint: #998f7d;
-  --accent: #8a6a35;
-  --accent-soft: #6e5328;
-  --accent-ink: #fbf8f2;
-  --ok: #4f7a4c;
-  --danger: #a4402c;
-  --square-light: #e9dcc0;
-  --square-dark: #a07c52;
-  --shadow: 70, 50, 25; /* rgb of the warm brown used for soft shadows */
-  --glow: transparent; /* soft background light; used by the dark palettes */
-  --glow-2: transparent;
-}
-
-/* TEMPORARY: the dark "Ink & Brass" palette, for comparing with ?theme=ink. */
-:root[data-theme="ink"] { --glow: transparent; --glow-2: transparent; }
-:root[data-theme="ink"] {
-  --bg: #12100d;
-  --bg-raised: #191612;
-  --surface: #1e1a16;
-  --line: #2f2a23;
-  --line-strong: #463f35;
-  --fg: #f4f3f0;
-  --fg-soft: #cfcdc8;
-  --muted: #9c9a94;
-  --faint: #6c6a64;
+  --bg: #07080c;
+  --bg-raised: #0b0d12;
+  --surface: #10131a;
+  --line: #1d212b;
+  --line-strong: #2c3140;
+  --fg: #f3f4f6;
+  --fg-soft: #c9ccd3;
+  --muted: #8d919c;
+  --faint: #5f636e;
   --accent: #c6a46c;
   --accent-soft: #e0c48f;
-  --accent-ink: #1a140b;
-  --ok: #8fae8b;
-  --danger: #e08a7a;
+  --accent-ink: #15110a;
+  --ok: #7fd6a8;
+  --danger: #ff8f8f;
   --square-light: #d6c5a2;
   --square-dark: #8a6b45;
   --shadow: 0, 0, 0;
 }
-/* TEMPORARY: dark "tech" palettes to compare, chosen with ?theme=... in the URL. */
-:root[data-theme="midnight"] {
-  --bg: #07080f; --bg-raised: #0b0d17; --surface: #11131f; --line: #1d2133; --line-strong: #2d3350;
-  --fg: #f3f4f8; --fg-soft: #c9ccda; --muted: #8e93aa; --faint: #5d6280;
-  --accent: #9b9cff; --accent-soft: #babbff; --accent-ink: #0b0c1d; --ok: #7fd6a8; --danger: #ff8f8f;
-  --square-light: #c8cbe6; --square-dark: #535a8c; --shadow: 0, 0, 0;
-  --glow: #4f46e5; --glow-2: #a855f7;
+
+/* The piece icons are drawn black; flip them to white on the dark palette. */
+.dark-invert {
+  filter: invert(1);
 }
-:root[data-theme="terminal"] {
-  --bg: #060908; --bg-raised: #0a0f0c; --surface: #0f1612; --line: #1a2620; --line-strong: #27392f;
-  --fg: #eef4f0; --fg-soft: #c3d1c8; --muted: #86998d; --faint: #56685c;
-  --accent: #6ee7a0; --accent-soft: #9af0bd; --accent-ink: #04130a; --ok: #6ee7a0; --danger: #ff8f8f;
-  --square-light: #cfe2d5; --square-dark: #3d6b51; --shadow: 0, 0, 0;
-  --glow: #10b981; --glow-2: #0e7490;
-}
-:root[data-theme="ocean"] {
-  --bg: #050d10; --bg-raised: #081418; --surface: #0c1b20; --line: #16303a; --line-strong: #234553;
-  --fg: #eef6f8; --fg-soft: #c2d6dc; --muted: #84a1aa; --faint: #557079;
-  --accent: #5fd3c8; --accent-soft: #8ee3db; --accent-ink: #031312; --ok: #7fd6a8; --danger: #ff8f8f;
-  --square-light: #cde4e2; --square-dark: #2f6f6c; --shadow: 0, 0, 0;
-  --glow: #0891b2; --glow-2: #2563eb;
-}
-:root[data-theme="graphite"] {
-  --bg: #0a0b0e; --bg-raised: #0f1014; --surface: #15171c; --line: #23262e; --line-strong: #353945;
-  --fg: #f4f4f5; --fg-soft: #cfd0d5; --muted: #93959f; --faint: #61646e;
-  --accent: #d7b26a; --accent-soft: #e8c98d; --accent-ink: #15110a; --ok: #8fd19e; --danger: #ff8f8f;
-  --square-light: #d9cfb8; --square-dark: #7c6a4c; --shadow: 0, 0, 0;
-  --glow: #3b4252; --glow-2: #8a6d3f;
-}
-/* Every preview palette is dark: flip the black-piece icons to white. */
-:root[data-theme] .dark-invert { filter: invert(1); }
 
 @theme inline {
   --color-bg: var(--bg);
@@ -111,11 +62,7 @@ html {
 }
 
 body {
-  background:
-    radial-gradient(60rem 40rem at 10% -10%, color-mix(in srgb, var(--glow) 22%, transparent), transparent 65%),
-    radial-gradient(50rem 36rem at 100% 15%, color-mix(in srgb, var(--glow-2) 14%, transparent), transparent 65%),
-    var(--bg);
-  background-attachment: fixed;
+  background: var(--bg);
   color: var(--fg);
   font-family: var(--font-plex-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -126,7 +73,7 @@ body {
   color: var(--accent-ink);
 }
 
-/* Film-grain overlay: gives the flat background a little paper texture. */
+/* Film-grain overlay: a little texture over the flat background. */
 .grain::after {
   content: "";
   position: fixed;
