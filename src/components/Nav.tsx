@@ -45,6 +45,7 @@ export default function Nav({ t, lang }: { t: Dictionary["nav"]; lang: Locale })
   const links = SECTIONS.map((id, i) => ({ id, n: i + 1, label: t[id] }));
 
   return (
+    <>
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-300 ${
         scrolled ? "border-b border-line bg-bg/80 backdrop-blur-md" : "border-b border-transparent"
@@ -101,11 +102,15 @@ export default function Nav({ t, lang }: { t: Dictionary["nav"]; lang: Locale })
         </div>
       </nav>
 
+    </header>
+
+      {/* Outside the header on purpose: its backdrop blur would trap this fixed
+          panel inside the 64px bar, leaving the links with no background. */}
       <AnimatePresence>
         {open && (
           <motion.div
             id="mobile-menu"
-            className="fixed inset-x-0 top-16 bottom-0 z-40 bg-bg px-6 pt-8 md:hidden"
+            className="fixed inset-x-0 top-16 bottom-0 z-40 overflow-y-auto border-t border-line bg-bg px-6 pt-8 pb-10 md:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -123,6 +128,6 @@ export default function Nav({ t, lang }: { t: Dictionary["nav"]; lang: Locale })
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </>
   );
 }
