@@ -1,29 +1,26 @@
 # Portfolio
 
-Personal portfolio site for Alpatson Cobbina Siaw: plain HTML, Tailwind CSS and vanilla JavaScript.
-Live at https://alpatsonportfolio.vercel.app/
+Personal portfolio of Alpatson Cobbina Siaw. One page, in English (`/en`) and French (`/fr`), built with Next.js 16, Tailwind CSS 4 and Motion. The hero chessboard replays Morphy's Opera Game, and visitors can play a game against a small built-in engine (`chess.js` handles the rules).
 
 ## Run locally
 
 ```bash
-python -m http.server 8000
-# then open http://localhost:8000
+npm install
+npm run dev        # http://localhost:3000
 ```
 
-## Styles
+Production build: `npm run build`, then `npm start`.
 
-Tailwind is compiled to `assets/css/tailwind.css` (committed, so Vercel needs no build step).
-After adding or changing Tailwind classes in the HTML, rebuild it:
+## Where things live
 
-```bash
-npm install          # first time only
-npm run build:css    # or: npm run watch:css while editing
-```
-
-Custom styles that aren't Tailwind utilities live in `assets/css/styles.css`.
+- `src/content/en.ts`, `src/content/fr.ts`: all text, projects, journey and skills. Edit content here, not in the components.
+- `src/app/globals.css`: the colour palette (one block of CSS variables at the top).
+- `src/components/`: one file per section, plus `ChessBoard.tsx` and `KnightField.tsx`.
+- `src/proxy.ts`: sends `/` to `/en` or `/fr` based on the browser language, and redirects the old `*.html` pages.
+- `public/`: images, the CV (`resume.pdf`) and the chess pieces.
 
 ## Contact form
 
-The form posts to [FormSubmit](https://formsubmit.co), which forwards messages to the address in
-`CONTACT_EMAIL` (`assets/js/main.js`). The first message sent triggers an activation email to that
-inbox, so click the link in it once.
+The form posts to [FormSubmit](https://formsubmit.co), which forwards messages to the address in `src/components/Contact.tsx`.
+
+Chess pieces: cburnett set from Lichess, CC BY-SA 3.0.

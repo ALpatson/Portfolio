@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+/*
+  Palette. Every colour on the site comes from these variables, so swapping the
+  background (or the whole look) only means editing this block.
+  Current: "Ink & Brass" (warm charcoal, muted gold, neutral text).
+*/
+:root {
+  --bg: #12100d;
+  --bg-raised: #191612;
+  --surface: #1e1a16;
+  --line: #2f2a23;
+  --line-strong: #463f35;
+  --fg: #f4f3f0;
+  --fg-soft: #cfcdc8;
+  --muted: #9c9a94;
+  --faint: #6c6a64;
+  --accent: #c6a46c;
+  --accent-soft: #e0c48f;
+  --accent-ink: #1a140b;
+  --ok: #8fae8b;
+  --square-light: #d6c5a2;
+  --square-dark: #8a6b45;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-raised: var(--bg-raised);
+  --color-surface: var(--surface);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-fg: var(--fg);
+  --color-fg-soft: var(--fg-soft);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-ink: var(--accent-ink);
+  --color-ok: var(--ok);
+  --color-square-light: var(--square-light);
+  --color-square-dark: var(--square-dark);
+
+  --font-display: var(--font-fraunces);
+  --font-sans: var(--font-plex-sans);
+  --font-mono: var(--font-plex-mono);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  background: var(--bg);
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-plex-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+/* Film-grain overlay: gives the flat dark background some texture. */
+.grain::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 60;
+  opacity: 0.06;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Slow notation ticker between sections. */
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.ticker-track {
+  animation: ticker 60s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .ticker-track { animation: none; }
+}
