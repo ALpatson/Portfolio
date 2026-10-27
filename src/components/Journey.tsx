@@ -25,28 +25,13 @@ export default function Journey({ t }: { t: Dictionary["journey"] }) {
             aria-hidden="true"
           />
 
-          {t.moves.map((m, i) => (
-            <Reveal as="li" key={m.move} x={-20} y={0} delay={0.04 * i} className="relative grid grid-cols-[5.5rem_1fr] sm:grid-cols-[7.5rem_1fr]">
-              <span className="pt-6 pr-5 text-right font-mono text-sm text-accent sm:text-base">{m.move}</span>
-              <span className="absolute top-[1.85rem] left-[5.5rem] h-2.5 w-2.5 -translate-x-1/2 rotate-45 border border-accent bg-bg-raised sm:left-[7.5rem]" aria-hidden="true" />
-              <div className="group border-b border-line py-6 pl-8 transition-colors hover:border-line-strong sm:pl-10">
-                <p className="font-mono text-xs uppercase tracking-wider text-muted">{m.period}</p>
-                <h3 className="mt-1.5 font-display text-2xl font-medium text-fg transition-colors group-hover:text-accent-soft sm:text-[1.7rem]">
-                  {m.title}
-                </h3>
-                <p className="mt-0.5 text-sm text-fg-soft">{m.place}</p>
-                <p className="mt-3 max-w-2xl leading-relaxed text-muted">{m.text}</p>
-              </div>
-            </Reveal>
-          ))}
-
           <Reveal as="li" x={-20} y={0} className="relative grid grid-cols-[5.5rem_1fr] sm:grid-cols-[7.5rem_1fr]">
-            <span className="pt-7 pr-5 text-right font-mono text-sm text-accent sm:text-base">
+            <span className="pt-3 pr-5 text-right font-mono text-sm text-accent sm:text-base">
               {t.next.move}
               <span className="ml-0.5 inline-block h-3.5 w-1.5 translate-y-0.5 animate-pulse bg-accent" aria-hidden="true" />
             </span>
-            <span className="absolute top-[2.1rem] left-[5.5rem] h-3.5 w-3.5 -translate-x-1/2 rotate-45 bg-accent sm:left-[7.5rem]" aria-hidden="true" />
-            <div className="py-6 pl-8 sm:pl-10">
+            <span className="absolute top-[1.1rem] left-[5.5rem] h-3.5 w-3.5 -translate-x-1/2 rotate-45 bg-accent sm:left-[7.5rem]" aria-hidden="true" />
+            <div className="pt-2 pb-6 pl-8 sm:pl-10">
               <div className="rounded-3xl border border-accent/40 bg-accent/[0.06] p-6 sm:p-7">
                 <p className="font-mono text-xs uppercase tracking-wider text-accent">{t.next.period}</p>
                 <h3 className="mt-1.5 font-display text-3xl font-medium italic text-fg">{t.next.title}</h3>
@@ -61,6 +46,21 @@ export default function Journey({ t }: { t: Dictionary["journey"] }) {
               </div>
             </div>
           </Reveal>
+          {[...t.moves].reverse().map((m, i) => (
+            <Reveal as="li" key={m.move} x={-20} y={0} delay={0.04 * i} className="relative grid grid-cols-[5.5rem_1fr] sm:grid-cols-[7.5rem_1fr]">
+              <span className="pt-6 pr-5 text-right font-mono text-sm text-accent sm:text-base">{m.move}</span>
+              <span className="absolute top-[1.85rem] left-[5.5rem] h-2.5 w-2.5 -translate-x-1/2 rotate-45 border border-accent bg-bg-raised sm:left-[7.5rem]" aria-hidden="true" />
+              <div className="group border-b border-line py-6 pl-8 transition-colors hover:border-line-strong sm:pl-10">
+                <p className="font-mono text-xs uppercase tracking-wider text-muted">{m.period}</p>
+                <h3 className="mt-1.5 font-display text-2xl font-medium text-fg transition-colors group-hover:text-accent-soft sm:text-[1.7rem]">
+                  {m.title}
+                </h3>
+                <p className="mt-0.5 text-sm text-fg-soft">{m.place}</p>
+                <p className="mt-3 max-w-2xl leading-relaxed text-muted">{m.text}</p>
+              </div>
+            </Reveal>
+          ))}
+
         </ol>
       </div>
     </section>

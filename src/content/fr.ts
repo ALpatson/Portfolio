@@ -9,7 +9,7 @@ const fr: Dictionary = {
   meta: {
     title: "Alpatson Cobbina Siaw | Ingénieur logiciel",
     description:
-      "Étudiant en Master Génie Logiciel à JUNIA ISEN et ancien stagiaire ingénieur de recherche en IA à l'ISIA Lab. Je conçois et déploie des applications web en Python, Django et JavaScript. Disponible pour un stage de 26 semaines à partir de mars 2027.",
+      "Ingénieur logiciel basé à Lille et ancien stagiaire ingénieur de recherche en IA à l'ISIA Lab. Je conçois et déploie des applications web en Python, Django et JavaScript. Disponible pour un stage de 26 semaines à partir de mars 2027.",
   },
   nav: {
     about: "À propos",
@@ -27,7 +27,7 @@ const fr: Dictionary = {
     roles: ["Ingénieur logiciel full-stack", "Ingénieur logiciel", "Développeur backend", "Ingénieur IA", "Ingénieur DevOps", "Joueur d'échecs"],
     rolesLabel: "Rôles :",
     lead: "Je crée des logiciels que les gens utilisent vraiment, et je mesure avant de faire confiance.",
-    body: "Étudiant en Master à JUNIA ISEN. Je gère de bout en bout une plateforme e-commerce en ligne, j'ai créé le site et le système de classement du club d'échecs de la KNUST, et j'ai passé l'été 2026 comme stagiaire ingénieur de recherche en IA à l'ISIA Lab.",
+    body: "Je gère de bout en bout une plateforme e-commerce en ligne, j'ai créé le site et le système de classement du club d'échecs de la KNUST, et j'ai passé l'été 2026 comme stagiaire ingénieur de recherche en IA à l'ISIA Lab.",
     ctaWork: "Voir mes projets",
     ctaContact: "Me contacter",
     ctaCv: "Télécharger mon CV",
@@ -48,7 +48,7 @@ const fr: Dictionary = {
   about: {
     label: "À propos",
     heading: "En bref",
-    text: "Je suis étudiant en Master Génie Logiciel à JUNIA ISEN, à Lille, et je travaille surtout avec Python, Java, JavaScript et Linux/Bash. Pendant mon stage de recherche à l'ISIA Lab (Université de Mons), j'ai conçu un système à base de règles qui oriente des demandes en texte libre vers le bon traitement, et j'ai appris à tester et mesurer les outils d'IA avant de leur faire confiance. Je crée et fais aussi tourner de vrais produits, comme une boutique e-commerce en ligne, et j'aime documenter clairement mon travail et l'expliquer à des personnes non techniques.",
+    text: "Je suis ingénieur logiciel et je construis des produits de bout en bout : de la base de données et des API jusqu'au déploiement, et à la maintenance qui suit. Je travaille surtout avec Python, Java, JavaScript et Linux/Bash, en parallèle de mon Master Génie Logiciel à JUNIA ISEN, à Lille.\n\nJ'ai travaillé au Ghana, en France et en Belgique : sur l'infrastructure télécom de MTN Ghana, sur un système de routage des demandes à l'ISIA Lab (Université de Mons), et sur ma propre plateforme e-commerce, que je gère de bout en bout. J'explique mes choix techniques simplement et je reste impliqué de la première idée jusqu'à la mise en production.",
     stats: [
       { value: "5", label: "produits en ligne créés ou co-créés" },
       { value: "3", label: "pays où j'ai travaillé : Ghana, France, Belgique" },
@@ -65,7 +65,7 @@ const fr: Dictionary = {
   journey: {
     label: "Parcours",
     heading: "Ma partie jusqu'ici",
-    sub: "Une carrière, c'est une partie d'échecs. Voici mes coups, joués dans le même ordre que la partie de l'Opéra de Morphy.",
+    sub: "Une carrière, c'est une partie d'échecs. Voici mes coups, du plus récent au plus ancien, numérotés comme la partie de l'Opéra de Morphy.",
     moves: [
       {
         move: "1. e4",

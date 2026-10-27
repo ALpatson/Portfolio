@@ -4,7 +4,7 @@ const en: Dictionary = {
   meta: {
     title: "Alpatson Cobbina Siaw | Software Engineer",
     description:
-      "Software Engineering Master's student at JUNIA ISEN and former AI Research Engineer intern at ISIA Lab. I build and ship web applications with Python, Django and modern JavaScript. Open to a 26-week internship from March 2027.",
+      "Software engineer based in Lille, France, and former AI Research Engineer intern at ISIA Lab. I build and ship web applications with Python, Django and modern JavaScript. Open to a 26-week internship from March 2027.",
   },
   nav: {
     about: "About",
@@ -22,7 +22,7 @@ const en: Dictionary = {
     roles: ["Full-Stack Software Engineer", "Software Engineer", "Backend Developer", "AI Engineer", "DevOps Engineer", "Chess Player"],
     rolesLabel: "Roles:",
     lead: "I build software people actually use, and I measure before I trust.",
-    body: "Master's student at JUNIA ISEN. I run a live e-commerce platform end to end, built the KNUST Chess Club's website and rating system, and spent the summer of 2026 as an AI Research Engineer intern at ISIA Lab.",
+    body: "I run a live e-commerce platform end to end, built the KNUST Chess Club's website and rating system, and spent the summer of 2026 as an AI Research Engineer intern at ISIA Lab.",
     ctaWork: "See my work",
     ctaContact: "Get in touch",
     ctaCv: "Download CV",
@@ -43,7 +43,7 @@ const en: Dictionary = {
   about: {
     label: "About",
     heading: "The short version",
-    text: "I'm a Software Engineering Master's student at JUNIA ISEN in Lille, working mainly with Python, Java, JavaScript and Linux/Bash. During my research internship at ISIA Lab (Université de Mons), I built a rule-based system that routes free-text requests to the right handler, and I learned to test and measure AI tools before trusting them. I also build and run real products, like a live e-commerce store, and I enjoy documenting my work clearly and explaining it to non-technical people.",
+    text: "I'm a software engineer who builds things end to end: from the database and APIs to deployment, and the maintenance that comes after. I work mainly with Python, Java, JavaScript and Linux/Bash, alongside my Master's in Software Engineering at JUNIA ISEN in Lille.\n\nI've worked in Ghana, France and Belgium: on telecom infrastructure at MTN Ghana, on a request-routing system at ISIA Lab (Université de Mons), and on my own live e-commerce platform, which I run end to end. I explain technical choices in plain language and stay involved from the first idea to production.",
     stats: [
       { value: "5", label: "live products built or co-built" },
       { value: "3", label: "countries worked in: Ghana, France, Belgium" },
@@ -60,7 +60,7 @@ const en: Dictionary = {
   journey: {
     label: "Journey",
     heading: "My game so far",
-    sub: "Every career is a game of chess. These are my moves, played in the same order as Morphy's Opera Game.",
+    sub: "Every career is a game of chess. Here are my moves, latest first, numbered like Morphy's Opera Game.",
     moves: [
       {
         move: "1. e4",

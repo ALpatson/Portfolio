@@ -50,9 +50,11 @@ export default function About({ t }: { t: Dictionary["about"] }) {
           <PhotoStack photos={t.photos} hint={t.photoHint} />
         </Reveal>
         <div>
-          <Reveal>
-            <p className="font-display text-xl leading-relaxed text-fg-soft md:text-2xl md:leading-relaxed">{t.text}</p>
-          </Reveal>
+          {t.text.split("\n\n").map((para, i) => (
+            <Reveal key={i} delay={0.08 * i}>
+              <p className={`font-display leading-relaxed ${i === 0 ? "text-xl text-fg md:text-2xl md:leading-relaxed" : "mt-5 text-lg text-fg-soft"}`}>{para}</p>
+            </Reveal>
+          ))}
           <div className="mt-12 grid grid-cols-2 gap-x-8 gap-y-10">
             {t.stats.map((s, i) => (
               <Stat key={s.label} value={s.value} label={s.label} delay={0.08 * i} />
