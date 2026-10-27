@@ -53,7 +53,12 @@ const fr: Dictionary = {
       { value: "<0,05 %", label: "d'erreur sur les valeurs propres de notre solveur quantique" },
       { value: "2018", label: "Champion d'Afrique scolaire d'échecs" },
     ],
-    photoAlt: "Portrait d'Alpatson Cobbina Siaw",
+    photos: [
+      { src: "/images/profile.webp", alt: "Portrait d'Alpatson Cobbina Siaw" },
+      { src: "/images/photo-laptop.webp", alt: "Alpatson travaillant sur un ordinateur portable en salle de classe" },
+      { src: "/images/photo-desk.webp", alt: "Alpatson assis sur une table, regardant son téléphone" },
+    ],
+    photoHint: "Cliquez ou balayez pour la photo suivante",
   },
   journey: {
     label: "Parcours",

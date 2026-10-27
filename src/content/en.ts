@@ -48,7 +48,12 @@ const en: Dictionary = {
       { value: "<0.05%", label: "eigenvalue error in our quantum solver" },
       { value: "2018", label: "African School Chess Champion" },
     ],
-    photoAlt: "Portrait of Alpatson Cobbina Siaw",
+    photos: [
+      { src: "/images/profile.webp", alt: "Portrait of Alpatson Cobbina Siaw" },
+      { src: "/images/photo-laptop.webp", alt: "Alpatson working on a laptop in a classroom" },
+      { src: "/images/photo-desk.webp", alt: "Alpatson sitting on a desk, looking at his phone" },
+    ],
+    photoHint: "Click or swipe for the next photo",
   },
   journey: {
     label: "Journey",

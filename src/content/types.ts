@@ -67,7 +67,8 @@ export type Dictionary = {
     heading: string;
     text: string;
     stats: { value: string; label: string }[];
-    photoAlt: string;
+    photos: { src: string; alt: string }[];
+    photoHint: string;
   };
   journey: {
     label: string;
