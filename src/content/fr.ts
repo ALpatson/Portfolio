@@ -114,7 +114,7 @@ const fr: Dictionary = {
       move: "7. ?",
       period: "Dès mars 2027",
       title: "À vous de jouer",
-      text: "Je recherche un stage de 26 semaines en génie logiciel, backend ou fiabilité des systèmes (SRE).",
+      text: "Je recherche un stage de 26 semaines en génie logiciel, développement backend ou full-stack.",
       cta: "Parlons-en",
     },
   },

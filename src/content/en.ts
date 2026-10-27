@@ -109,7 +109,7 @@ const en: Dictionary = {
       move: "7. ?",
       period: "From March 2027",
       title: "Your move",
-      text: "I'm looking for a 26-week internship in software engineering, backend or site reliability.",
+      text: "I'm looking for a 26-week internship in software engineering, backend or full-stack development.",
       cta: "Let's talk",
     },
   },
