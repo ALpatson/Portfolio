@@ -79,7 +79,13 @@ export default function Skills({ t }: { t: Dictionary["skills"] }) {
                     transition={{ delay: 0.04 * i, duration: 0.3 }}
                     className="flex items-center gap-2.5 rounded-full border border-line-strong bg-surface px-4 py-2.5 text-sm text-fg transition-colors hover:border-accent"
                   >
-                    {item.icon && <img src={`https://cdn.simpleicons.org/${item.icon}/3b352d`} alt="" className="h-4 w-4" loading="lazy" />}
+                    {item.icon && (
+                      <span
+                        aria-hidden="true"
+                        className="h-4 w-4 bg-fg-soft"
+                        style={{ mask: `url(https://cdn.simpleicons.org/${item.icon}) center / contain no-repeat`, WebkitMask: `url(https://cdn.simpleicons.org/${item.icon}) center / contain no-repeat` }}
+                      />
+                    )}
                     {item.name}
                   </motion.li>
                 ))}

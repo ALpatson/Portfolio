@@ -53,7 +53,7 @@ export default function Nav({ t, lang }: { t: Dictionary["nav"]; lang: Locale })
     >
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
         <a href="#top" className="group flex items-center gap-2.5" aria-label="Alpatson Cobbina Siaw">
-          <img src="/pieces/bN.svg" alt="" className="nav-logo h-7 w-7 transition-transform duration-500 group-hover:-rotate-12" />
+          <img src="/pieces/bN.svg" alt="" className="dark-invert h-7 w-7 transition-transform duration-500 group-hover:-rotate-12" />
           <span className="font-display text-lg font-medium tracking-tight">
             Alpatson<span className="text-accent">.</span>
           </span>

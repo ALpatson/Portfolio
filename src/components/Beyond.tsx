@@ -46,7 +46,7 @@ export default function Beyond({ t }: { t: Dictionary["beyond"] }) {
             <ul className="mt-5 space-y-2.5">
               {t.chess.map((c, i) => (
                 <li key={c} className="flex gap-3 text-sm text-fg-soft">
-                  <img src={`/pieces/${i === t.chess.length - 1 ? "bK" : "bQ"}.svg`} alt="" className="h-5 w-5 shrink-0" />
+                  <img src={`/pieces/${i === t.chess.length - 1 ? "bK" : "bQ"}.svg`} alt="" className="dark-invert h-5 w-5 shrink-0" />
                   {c}
                 </li>
               ))}
