@@ -119,8 +119,8 @@ const fr: Dictionary = {
   projects: {
     label: "Projets",
     heading: "Projets choisis",
-    sub: "Produits en ligne, projets d'équipe et recherche. Cliquez sur une carte pour tout savoir.",
-    filters: { all: "Tous", web: "Web", backend: "Backend", mobile: "Mobile", research: "Recherche" },
+    sub: "Produits en ligne et projets d'équipe. Cliquez sur une carte pour tout savoir.",
+    filters: { all: "Tous", web: "Web", backend: "Backend", mobile: "Mobile" },
     live: "En ligne",
     team: "Équipe",
     private: "Privé",
@@ -254,6 +254,7 @@ const fr: Dictionary = {
     label: "Compétences",
     heading: "Les pièces de mon échiquier",
     sub: "Chaque pièce a un rôle. Chaque outil aussi.",
+    hint: "Choisissez une pièce pour voir ses compétences",
     groups: [
       { ...en.skills.groups[0], name: "Langages", job: "Le roi : tout le reste le protège." },
       {

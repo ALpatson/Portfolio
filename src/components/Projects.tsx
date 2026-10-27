@@ -7,7 +7,7 @@ import SectionHeader from "./SectionHeader";
 import { ease } from "./Reveal";
 
 type T = Dictionary["projects"];
-const FILTERS: ("all" | ProjectTag)[] = ["all", "web", "backend", "mobile", "research"];
+const FILTERS: ("all" | ProjectTag)[] = ["all", "web", "backend", "mobile"];
 
 function Badges({ p, t }: { p: Project; t: T }) {
   return (

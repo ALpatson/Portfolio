@@ -1,6 +1,6 @@
 export type Locale = "en" | "fr";
 
-export type ProjectTag = "web" | "backend" | "mobile" | "research";
+export type ProjectTag = "web" | "backend" | "mobile";
 
 export type ProjectLink = { label: string; href: string };
 
@@ -92,7 +92,7 @@ export type Dictionary = {
     stack: string;
     items: Project[];
   };
-  skills: { label: string; heading: string; sub: string; groups: SkillGroup[] };
+  skills: { label: string; heading: string; sub: string; hint: string; groups: SkillGroup[] };
   beyond: {
     label: string;
     heading: string;

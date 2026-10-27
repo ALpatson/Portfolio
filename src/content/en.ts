@@ -114,8 +114,8 @@ const en: Dictionary = {
   projects: {
     label: "Projects",
     heading: "Selected work",
-    sub: "Live products, team projects and research. Click any card for the full story.",
-    filters: { all: "All", web: "Web", backend: "Backend", mobile: "Mobile", research: "Research" },
+    sub: "Live products and team projects. Click any card for the full story.",
+    filters: { all: "All", web: "Web", backend: "Backend", mobile: "Mobile" },
     live: "Live",
     team: "Team",
     private: "Private",
@@ -218,7 +218,7 @@ const en: Dictionary = {
         id: "quantum",
         title: "Quantum Mechanics Toolkit",
         period: "2025 – 2026",
-        tags: ["research", "backend"],
+        tags: ["web", "backend"],
         image: "/images/quantum-toolkit.jpg",
         team: true,
         summary: "Interactive Schrödinger-equation simulator, built as a team at JUNIA.",
@@ -298,6 +298,7 @@ const en: Dictionary = {
     label: "Skills",
     heading: "Pieces on my board",
     sub: "Every piece has a job. So does every tool.",
+    hint: "Choose a piece to see its skills",
     groups: [
       {
         piece: "K",
