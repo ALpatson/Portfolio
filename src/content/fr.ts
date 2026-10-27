@@ -330,7 +330,7 @@ const fr: Dictionary = {
     locationLabel: "Basé à",
     location: "Lille, France",
     languagesLabel: "Langues",
-    languages: "Anglais (courant) · Français (notions)",
+    languages: "Anglais (courant) · Français (intermédiaire)",
     availabilityLabel: "Disponible",
     availability: "Stage de 26 semaines dès mars 2027",
     cv: "Télécharger mon CV",

@@ -423,7 +423,7 @@ const en: Dictionary = {
     locationLabel: "Based in",
     location: "Lille, France",
     languagesLabel: "Languages",
-    languages: "English (fluent) · French (basic)",
+    languages: "English (fluent) · French (intermediate)",
     availabilityLabel: "Available",
     availability: "26-week internship from March 2027",
     cv: "Download my CV",
