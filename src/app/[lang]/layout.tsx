@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
       title: meta.title,
       description: meta.description,
       locale: lang === "fr" ? "fr_FR" : "en_US",
-      images: ["/images/og-image.jpg"],
+      images: [{ url: "/images/og-image-v2.jpg", width: 1200, height: 630, alt: "Alpatson Cobbina Siaw, Full-Stack Software Engineer" }],
     },
     twitter: { card: "summary_large_image" },
     other: { "theme-color": "#f2ede3" },
