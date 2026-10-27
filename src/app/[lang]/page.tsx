@@ -11,7 +11,7 @@ import Beyond from "@/components/Beyond";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import MotionProvider from "@/components/MotionProvider";
-import BackgroundPreview from "@/components/BackgroundPreview";
+import TechBackground from "@/components/TechBackground";
 
 export default async function Home({ params }: PageProps<"/[lang]">) {
   const { lang } = await params;
@@ -20,7 +20,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
 
   return (
     <MotionProvider>
-      <BackgroundPreview />
+      <TechBackground />
       <Nav t={t.nav} lang={lang} />
       <main className="relative z-[1]">
         <Hero t={t.hero} />
