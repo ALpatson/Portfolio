@@ -11,7 +11,7 @@ export default function Skills({ t }: { t: Dictionary["skills"] }) {
   const group = t.groups[active];
 
   return (
-    <section id="skills" className="border-y border-line bg-bg-raised">
+    <section id="skills" className="border-y border-line bg-bg-raised/60">
       <div className="mx-auto max-w-6xl px-5 py-24 sm:px-8 md:py-32">
         <SectionHeader index="04" label={t.label} heading={t.heading} sub={t.sub} />
 

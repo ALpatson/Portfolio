@@ -55,7 +55,7 @@ export default function Contact({ t }: { t: Dictionary["contact"] }) {
     "mt-2 w-full rounded-xl border border-line-strong bg-bg px-4 py-3 text-fg placeholder:text-faint transition-colors focus:border-accent focus:outline-none";
 
   return (
-    <section id="contact" className="relative overflow-hidden border-t border-line bg-bg-raised">
+    <section id="contact" className="relative overflow-hidden border-t border-line bg-bg-raised/60">
       <div className="mx-auto max-w-6xl px-5 py-24 sm:px-8 md:py-32">
         <p className="mb-4 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.2em] text-accent">
           <span>§ 06</span>

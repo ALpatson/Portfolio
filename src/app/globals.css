@@ -26,6 +26,28 @@
   --shadow: 70, 50, 25; /* rgb of the warm brown used for soft shadows */
 }
 
+/* TEMPORARY: the dark "Ink & Brass" palette, for comparing with ?theme=ink. */
+:root[data-theme="ink"] {
+  --bg: #12100d;
+  --bg-raised: #191612;
+  --surface: #1e1a16;
+  --line: #2f2a23;
+  --line-strong: #463f35;
+  --fg: #f4f3f0;
+  --fg-soft: #cfcdc8;
+  --muted: #9c9a94;
+  --faint: #6c6a64;
+  --accent: #c6a46c;
+  --accent-soft: #e0c48f;
+  --accent-ink: #1a140b;
+  --ok: #8fae8b;
+  --danger: #e08a7a;
+  --square-light: #d6c5a2;
+  --square-dark: #8a6b45;
+  --shadow: 0, 0, 0;
+}
+:root[data-theme="ink"] .nav-logo { filter: invert(1); }
+
 @theme inline {
   --color-bg: var(--bg);
   --color-bg-raised: var(--bg-raised);
