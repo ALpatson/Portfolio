@@ -131,7 +131,7 @@ export default function Contact({ t }: { t: Dictionary["contact"] }) {
                 <p role="status" aria-live="polite" className="text-sm">
                   {status.kind === "sent" && <span className="text-ok">{t.sent}</span>}
                   {status.kind === "failed" && (
-                    <span className="text-[#e08a7a]">
+                    <span className="text-danger">
                       {t.failed}
                       {status.reason ? ` (${status.reason})` : ""}{" "}
                       <a href={mailto} className="font-semibold underline underline-offset-2">

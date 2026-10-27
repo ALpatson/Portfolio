@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
       images: ["/images/og-image.jpg"],
     },
     twitter: { card: "summary_large_image" },
-    other: { "theme-color": "#12100d" },
+    other: { "theme-color": "#f2ede3" },
   };
 }
 

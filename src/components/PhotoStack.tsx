@@ -82,7 +82,7 @@ export default function PhotoStack({ photos, hint }: { photos: Photo[]; hint: st
                 setTimeout(() => (dragged.current = false), 0);
                 if (Math.abs(info.offset.x) > 70) next(info.offset.x > 0 ? 1 : -1);
               }}
-              className={`absolute inset-0 overflow-hidden rounded-[1.4rem] border-[6px] border-[#f1ece3] bg-surface shadow-[0_24px_50px_-18px_rgba(0,0,0,0.75)] ${
+              className={`absolute inset-0 overflow-hidden rounded-[1.4rem] border-[6px] border-white bg-surface shadow-[0_22px_40px_-18px_rgba(var(--shadow),0.5)] ${
                 front ? "cursor-grab active:cursor-grabbing" : "pointer-events-none"
               }`}
               style={{ zIndex: photos.length - slot }}

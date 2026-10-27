@@ -3,24 +3,27 @@
 /*
   Palette. Every colour on the site comes from these variables, so swapping the
   background (or the whole look) only means editing this block.
-  Current: "Ink & Brass" (warm charcoal, muted gold, neutral text).
+  Current: "Paper" (ivory paper, ink-black text, muted brass). The earlier dark
+  "Ink & Brass" palette is in the git history (commit 10421e4) if it's wanted back.
 */
 :root {
-  --bg: #12100d;
-  --bg-raised: #191612;
-  --surface: #1e1a16;
-  --line: #2f2a23;
-  --line-strong: #463f35;
-  --fg: #f4f3f0;
-  --fg-soft: #cfcdc8;
-  --muted: #9c9a94;
-  --faint: #6c6a64;
-  --accent: #c6a46c;
-  --accent-soft: #e0c48f;
-  --accent-ink: #1a140b;
-  --ok: #8fae8b;
-  --square-light: #d6c5a2;
-  --square-dark: #8a6b45;
+  --bg: #f2ede3;
+  --bg-raised: #ebe4d6;
+  --surface: #faf7f1;
+  --line: #dcd3c2;
+  --line-strong: #c4b8a2;
+  --fg: #1a1612;
+  --fg-soft: #3b352d;
+  --muted: #6c6457;
+  --faint: #998f7d;
+  --accent: #8a6a35;
+  --accent-soft: #6e5328;
+  --accent-ink: #fbf8f2;
+  --ok: #4f7a4c;
+  --danger: #a4402c;
+  --square-light: #e9dcc0;
+  --square-dark: #a07c52;
+  --shadow: 70, 50, 25; /* rgb of the warm brown used for soft shadows */
 }
 
 @theme inline {
@@ -37,6 +40,7 @@
   --color-accent-soft: var(--accent-soft);
   --color-accent-ink: var(--accent-ink);
   --color-ok: var(--ok);
+  --color-danger: var(--danger);
   --color-square-light: var(--square-light);
   --color-square-dark: var(--square-dark);
 
@@ -63,14 +67,14 @@ body {
   color: var(--accent-ink);
 }
 
-/* Film-grain overlay: gives the flat dark background some texture. */
+/* Film-grain overlay: gives the flat background a little paper texture. */
 .grain::after {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 60;
-  opacity: 0.06;
+  opacity: 0.045;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
 }
 
