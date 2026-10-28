@@ -45,10 +45,10 @@ const fr: Dictionary = {
     heading: "En bref",
     text: "Je suis ingénieur logiciel et je construis des produits de bout en bout : de la base de données et des API jusqu'au déploiement, et à la maintenance qui suit. Je travaille surtout avec Python, Java, JavaScript et Linux/Bash, en parallèle de mon Master Génie Logiciel à JUNIA ISEN, à Lille.\n\nJ'ai travaillé au Ghana, en France et en Belgique : sur l'infrastructure télécom de MTN Ghana, sur un système de routage des demandes à l'ISIA Lab (Université de Mons), et sur ma propre plateforme e-commerce, que je gère de bout en bout. J'explique mes choix techniques simplement et je reste impliqué de la première idée jusqu'à la mise en production.",
     stats: [
+      { value: "4+", label: "années de programmation" },
+      { value: "10+", label: "projets réalisés" },
       { value: "5", label: "produits en ligne créés ou co-créés" },
       { value: "3", label: "pays où j'ai travaillé : Ghana, France, Belgique" },
-      { value: "<0,05 %", label: "d'erreur sur les valeurs propres de notre solveur quantique" },
-      { value: "2018", label: "Champion d'Afrique scolaire d'échecs" },
     ],
     photos: [
       { src: "/images/profile.webp", alt: "Portrait d'Alpatson Cobbina Siaw" },

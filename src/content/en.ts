@@ -40,10 +40,10 @@ const en: Dictionary = {
     heading: "The short version",
     text: "I'm a software engineer who builds things end to end: from the database and APIs to deployment, and the maintenance that comes after. I work mainly with Python, Java, JavaScript and Linux/Bash, alongside my Master's in Software Engineering at JUNIA ISEN in Lille.\n\nI've worked in Ghana, France and Belgium: on telecom infrastructure at MTN Ghana, on a request-routing system at ISIA Lab (Université de Mons), and on my own live e-commerce platform, which I run end to end. I explain technical choices in plain language and stay involved from the first idea to production.",
     stats: [
+      { value: "4+", label: "years of coding" },
+      { value: "10+", label: "projects built" },
       { value: "5", label: "live products built or co-built" },
       { value: "3", label: "countries worked in: Ghana, France, Belgium" },
-      { value: "<0.05%", label: "eigenvalue error in our quantum solver" },
-      { value: "2018", label: "African School Chess Champion" },
     ],
     photos: [
       { src: "/images/profile.webp", alt: "Portrait of Alpatson Cobbina Siaw" },
