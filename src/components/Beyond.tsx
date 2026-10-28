@@ -9,7 +9,7 @@ export default function Beyond({ t }: { t: Dictionary["beyond"] }) {
 
   return (
     <section id="beyond" className="mx-auto max-w-6xl px-5 py-24 sm:px-8 md:py-32">
-      <SectionHeader index="05" label={t.label} heading={t.heading} />
+      <SectionHeader index="06" label={t.label} heading={t.heading} />
 
       <div className="grid items-start gap-10 lg:grid-cols-[1.05fr_1fr] lg:gap-14">
         <Reveal>

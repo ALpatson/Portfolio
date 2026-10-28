@@ -28,8 +28,8 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
         <Journey t={t.journey} />
         <Projects t={t.projects} />
         <Skills t={t.skills} />
-        <Beyond t={t.beyond} />
         <Resume t={t.resume} />
+        <Beyond t={t.beyond} />
         <Contact t={t.contact} />
       </main>
       <div className="relative z-[1]">

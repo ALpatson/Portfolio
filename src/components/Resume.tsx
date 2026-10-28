@@ -6,7 +6,7 @@ import SectionHeader from "./SectionHeader";
 export default function Resume({ t }: { t: Dictionary["resume"] }) {
   return (
     <section id="resume" className="mx-auto max-w-6xl px-5 py-24 sm:px-8 md:py-32">
-      <SectionHeader index="06" label={t.label} heading={t.heading} sub={t.sub} />
+      <SectionHeader index="05" label={t.label} heading={t.heading} sub={t.sub} />
       <p className="-mt-8 mb-10 font-mono text-xs uppercase tracking-wider text-muted">{t.updated}</p>
 
       <div className="grid gap-6 sm:grid-cols-2">
