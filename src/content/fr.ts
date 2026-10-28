@@ -36,7 +36,7 @@ const fr: Dictionary = {
       basedIn: "Lille, France",
       lastStop: "ISIA Lab · stage de recherche en IA",
       openTo: "stage de 26 semaines · dès mars 2027",
-      outro: "# à vous de jouer →",
+      outro: "# à vous de coder →",
     },
   },
   about: {

@@ -31,7 +31,7 @@ const en: Dictionary = {
       basedIn: "Lille, France",
       lastStop: "ISIA Lab · AI research intern",
       openTo: "26-week internship · from March 2027",
-      outro: "# your move →",
+      outro: "# your code →",
     },
   },
   about: {
