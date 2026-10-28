@@ -18,7 +18,7 @@ const C = {
 const START_MS = 900;
 const CHAR_MS = 14;
 
-// A small editor window that types out a "profile" object, as if it were code.
+// A small editor window that types out a "profile" dictionary, as if it were Python.
 export default function CodeCard({ t, role }: { t: Dictionary["hero"]["code"]; role: string }) {
   const reduced = useReducedMotion();
 
@@ -29,19 +29,19 @@ export default function CodeCard({ t, role }: { t: Dictionary["hero"]["code"]; r
       ...vs.flatMap((v, i): Token[] => (i ? [[", ", C.punct], str(v)] : [str(v)])),
       ["]", C.punct],
     ];
-    const prop = (k: string, value: Token[]): Token[] => [["  ", ""], [k, C.key], [": ", C.punct], ...value, [",", C.punct]];
+    const prop = (k: string, value: Token[]): Token[] => [["    ", ""], [`"${k}"`, C.key], [": ", C.punct], ...value, [",", C.punct]];
     return [
       [[t.comment, C.comment]],
-      [["const ", C.kw], ["alpatson", C.name], [" = {", C.punct]],
+      [["alpatson", C.name], [" = {", C.punct]],
       prop("role", [str(role)]),
-      prop("basedIn", [str(t.basedIn)]),
+      prop("based_in", [str(t.basedIn)]),
       prop("stack", arr(["Python", "Django", "TypeScript", "React", "PostgreSQL"])),
       prop("shipped", arr(["Pin and Codes Store", "KNUST Chess Platform"])),
-      prop("lastStop", [str(t.lastStop)]),
-      prop("openTo", [str(t.openTo)]),
-      [["};", C.punct]],
+      prop("last_stop", [str(t.lastStop)]),
+      prop("open_to", [str(t.openTo)]),
+      [["}", C.punct]],
       [],
-      [["export default ", C.kw], ["alpatson", C.name], [";", C.punct]],
+      [["print", C.kw], ["(", C.punct], ["alpatson", C.name], ["[", C.punct], ['"open_to"', C.str], ["])", C.punct]],
     ];
   }, [t, role]);
 
@@ -96,7 +96,7 @@ export default function CodeCard({ t, role }: { t: Dictionary["hero"]["code"]; r
           <span className="h-3 w-3 rounded-full bg-[#28c840]/80" />
         </div>
         <div className="flex gap-1 overflow-hidden font-mono text-[11px]">
-          <span className="rounded-md bg-bg px-2.5 py-1 text-fg">developer.ts</span>
+          <span className="rounded-md bg-bg px-2.5 py-1 text-fg">developer.py</span>
           <span className="hidden px-2.5 py-1 text-faint sm:inline">projects.json</span>
           <span className="hidden px-2.5 py-1 text-faint sm:inline">opera.pgn</span>
         </div>
@@ -110,7 +110,7 @@ export default function CodeCard({ t, role }: { t: Dictionary["hero"]["code"]; r
               <span className="mr-4 w-5 shrink-0 text-right text-faint/70 select-none" aria-hidden="true">
                 {li + 1}
               </span>
-              <code className="min-w-0 whitespace-pre-wrap break-words [overflow-wrap:anywhere] pl-[2ch] -indent-[2ch]">
+              <code className="min-w-0 whitespace-pre-wrap break-words [overflow-wrap:anywhere] pl-[4ch] -indent-[4ch]">
                 {parts}
                 {li === cursorLine && <span className="ml-px inline-block h-[1.05em] w-[7px] translate-y-[2px] animate-pulse bg-accent" aria-hidden="true" />}
               </code>
@@ -128,7 +128,7 @@ export default function CodeCard({ t, role }: { t: Dictionary["hero"]["code"]; r
         <a href="#contact" className={`transition-colors hover:text-accent ${done ? "text-accent" : ""}`}>
           {t.outro}
         </a>
-        <span className="hidden sm:inline">TypeScript · UTF-8</span>
+        <span className="hidden sm:inline">Python 3.12 · UTF-8</span>
       </div>
     </div>
   );

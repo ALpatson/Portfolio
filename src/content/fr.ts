@@ -32,11 +32,11 @@ const fr: Dictionary = {
     ctaContact: "Me contacter",
     ctaCv: "Télécharger mon CV",
     code: {
-      comment: "// l'essentiel, toujours à jour",
+      comment: "# l'essentiel, toujours à jour",
       basedIn: "Lille, France",
       lastStop: "ISIA Lab · stage de recherche en IA",
       openTo: "stage de 26 semaines · dès mars 2027",
-      outro: "// à vous de jouer →",
+      outro: "# à vous de jouer →",
     },
   },
   about: {

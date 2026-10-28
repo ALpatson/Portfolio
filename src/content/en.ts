@@ -27,11 +27,11 @@ const en: Dictionary = {
     ctaContact: "Get in touch",
     ctaCv: "Download CV",
     code: {
-      comment: "// quick facts, kept up to date",
+      comment: "# quick facts, kept up to date",
       basedIn: "Lille, France",
       lastStop: "ISIA Lab · AI research intern",
       openTo: "26-week internship · from March 2027",
-      outro: "// your move →",
+      outro: "# your move →",
     },
   },
   about: {
