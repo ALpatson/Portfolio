@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { Chess, type Move, type Square } from "chess.js";
 import type { Dictionary } from "@/content/types";
 
-type BoardText = Dictionary["hero"]["board"];
+type BoardText = Dictionary["beyond"]["board"];
 
 // Morphy vs. the Duke of Brunswick and Count Isouard, Paris 1858.
 const OPERA_GAME =

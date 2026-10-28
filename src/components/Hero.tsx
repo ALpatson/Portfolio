@@ -2,7 +2,7 @@
 
 import { motion } from "motion/react";
 import type { Dictionary } from "@/content/types";
-import ChessBoard from "./ChessBoard";
+import CodeCard from "./CodeCard";
 import TypedRoles from "./TypedRoles";
 import { ease } from "./Reveal";
 
@@ -45,7 +45,7 @@ export default function Hero({ t }: { t: Dictionary["hero"] }) {
   return (
     <section id="top" className="relative overflow-hidden pt-28 pb-20 md:pt-36 md:pb-28">
       <div className="relative mx-auto grid max-w-6xl items-center gap-14 px-5 sm:px-8 lg:grid-cols-[1.15fr_1fr]">
-        <div>
+        <div className="min-w-0">
           <motion.p
             {...fade(0.1)}
             className="mb-8 inline-flex items-center gap-2 rounded-full border border-line-strong bg-bg-raised/70 px-3.5 py-1.5 text-xs text-fg-soft"
@@ -99,12 +99,12 @@ export default function Hero({ t }: { t: Dictionary["hero"] }) {
         </div>
 
         <motion.div
-          className="flex justify-center lg:justify-end"
+          className="flex min-w-0 justify-center lg:justify-end"
           initial={{ opacity: 0, y: 40, rotate: -2 }}
           animate={{ opacity: 1, y: 0, rotate: 0 }}
           transition={{ duration: 1.1, ease, delay: 0.4 }}
         >
-          <ChessBoard t={t.board} />
+          <CodeCard t={t.code} role={t.roles[0]} />
         </motion.div>
       </div>
     </section>

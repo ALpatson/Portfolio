@@ -50,19 +50,7 @@ export type Dictionary = {
     ctaWork: string;
     ctaContact: string;
     ctaCv: string;
-    board: {
-      caption: string;
-      play: string;
-      watch: string;
-      yourMove: string;
-      thinking: string;
-      youWon: string;
-      iWon: string;
-      draw: string;
-      check: string;
-      reset: string;
-      hint: string;
-    };
+    code: { comment: string; basedIn: string; lastStop: string; openTo: string; outro: string };
   };
   about: {
     label: string;
@@ -104,6 +92,21 @@ export type Dictionary = {
     chessText: string;
     chess: string[];
     chessImageAlt: string;
+    playTitle: string;
+    playText: string;
+    board: {
+      caption: string;
+      play: string;
+      watch: string;
+      yourMove: string;
+      thinking: string;
+      youWon: string;
+      iWon: string;
+      draw: string;
+      check: string;
+      reset: string;
+      hint: string;
+    };
   };
   contact: {
     label: string;
