@@ -11,6 +11,7 @@ const en: Dictionary = {
     journey: "Journey",
     projects: "Projects",
     skills: "Skills",
+    resume: "Resume",
     contact: "Contact",
     menu: "Open menu",
     close: "Close menu",
@@ -26,7 +27,6 @@ const en: Dictionary = {
     ctaWork: "See my work",
     ctaContact: "Get in touch",
     ctaCv: "Download CV",
-    cvHref: "/resume.pdf",
     code: {
       comment: "# quick facts, kept up to date",
       basedIn: "Lille, France",
@@ -414,6 +414,19 @@ const en: Dictionary = {
       hint: "Click a piece, then a square.",
     },
   },
+  resume: {
+    label: "Resume",
+    heading: "Download my CV",
+    sub: "A PDF copy of my CV in English or French: the same content, written for each language.",
+    updated: "Updated October 2026",
+    meta: "2 pages · PDF",
+    open: "Open",
+    download: "Download",
+    files: [
+      { code: "EN", name: "English", href: "/resume.pdf", fileName: "Alpatson_Cobbina_Siaw_CV_EN.pdf", preview: "/images/cv-en.webp" },
+      { code: "FR", name: "French", href: "/resume-fr.pdf", fileName: "Alpatson_Cobbina_Siaw_CV_FR.pdf", preview: "/images/cv-fr.webp" },
+    ],
+  },
   contact: {
     label: "Contact",
     heading: "Your move.",
@@ -436,9 +449,6 @@ const en: Dictionary = {
     languages: "English (fluent) · French (intermediate)",
     availabilityLabel: "Available",
     availability: "6-month internship from March 2027",
-    cv: "Download my CV",
-    cvEn: "CV (English)",
-    cvFr: "CV (French)",
   },
   footer: {
     rights: "All rights reserved.",

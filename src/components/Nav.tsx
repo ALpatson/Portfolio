@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import type { Dictionary, Locale } from "@/content/types";
 
-const SECTIONS = ["about", "journey", "projects", "skills", "contact"] as const;
+const SECTIONS = ["about", "journey", "projects", "skills", "resume", "contact"] as const;
 
 export default function Nav({ t, lang }: { t: Dictionary["nav"]; lang: Locale }) {
   const [active, setActive] = useState<string>("");

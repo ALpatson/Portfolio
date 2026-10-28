@@ -92,7 +92,7 @@ export default function Hero({ t }: { t: Dictionary["hero"] }) {
             >
               {t.ctaContact}
             </a>
-            <a href={t.cvHref} target="_blank" rel="noopener" className="px-2 py-3 text-sm text-muted underline decoration-line-strong underline-offset-4 transition hover:text-fg">
+            <a href="#resume" className="px-2 py-3 text-sm text-muted underline decoration-line-strong underline-offset-4 transition hover:text-fg">
               {t.ctaCv}
             </a>
           </motion.div>

@@ -16,6 +16,7 @@ const fr: Dictionary = {
     journey: "Parcours",
     projects: "Projets",
     skills: "Compétences",
+    resume: "CV",
     contact: "Contact",
     menu: "Ouvrir le menu",
     close: "Fermer le menu",
@@ -31,7 +32,6 @@ const fr: Dictionary = {
     ctaWork: "Voir mes projets",
     ctaContact: "Me contacter",
     ctaCv: "Télécharger mon CV",
-    cvHref: "/resume-fr.pdf",
     code: {
       comment: "# l'essentiel, toujours à jour",
       basedIn: "Lille, France",
@@ -321,6 +321,19 @@ const fr: Dictionary = {
       hint: "Cliquez sur une pièce, puis sur une case.",
     },
   },
+  resume: {
+    label: "CV",
+    heading: "Télécharger mon CV",
+    sub: "Mon CV au format PDF, en anglais ou en français : le même contenu, rédigé pour chaque langue.",
+    updated: "Mis à jour en octobre 2026",
+    meta: "2 pages · PDF",
+    open: "Ouvrir",
+    download: "Télécharger",
+    files: [
+      { code: "FR", name: "Français", href: "/resume-fr.pdf", fileName: "Alpatson_Cobbina_Siaw_CV_FR.pdf", preview: "/images/cv-fr.webp" },
+      { code: "EN", name: "Anglais", href: "/resume.pdf", fileName: "Alpatson_Cobbina_Siaw_CV_EN.pdf", preview: "/images/cv-en.webp" },
+    ],
+  },
   contact: {
     label: "Contact",
     heading: "À vous de jouer.",
@@ -343,9 +356,6 @@ const fr: Dictionary = {
     languages: "Anglais (courant) · Français (intermédiaire)",
     availabilityLabel: "Disponible",
     availability: "Stage de 6 mois dès mars 2027",
-    cv: "Télécharger mon CV",
-    cvEn: "CV (anglais)",
-    cvFr: "CV (français)",
   },
   footer: {
     rights: "Tous droits réservés.",

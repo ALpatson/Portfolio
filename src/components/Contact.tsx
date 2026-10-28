@@ -58,7 +58,7 @@ export default function Contact({ t }: { t: Dictionary["contact"] }) {
     <section id="contact" className="relative overflow-hidden border-t border-line bg-bg-raised/60">
       <div className="mx-auto max-w-6xl px-5 py-24 sm:px-8 md:py-32">
         <p className="mb-4 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.2em] text-accent">
-          <span>§ 06</span>
+          <span>§ 07</span>
           <span className="h-px w-10 bg-accent/50" aria-hidden="true" />
           <span>{t.label}</span>
         </p>
@@ -167,12 +167,6 @@ export default function Contact({ t }: { t: Dictionary["contact"] }) {
                 </dd>
               </div>
               <div className="flex flex-wrap gap-2 pt-2">
-                <a href="/resume.pdf" target="_blank" rel="noopener" className="rounded-full border border-line-strong px-4 py-2 text-sm text-fg transition hover:border-accent hover:text-accent">
-                  {t.cvEn} ↓
-                </a>
-                <a href="/resume-fr.pdf" target="_blank" rel="noopener" className="rounded-full border border-line-strong px-4 py-2 text-sm text-fg transition hover:border-accent hover:text-accent">
-                  {t.cvFr} ↓
-                </a>
                 <a href="https://github.com/ALpatson" target="_blank" rel="noopener noreferrer" className="rounded-full border border-line-strong px-4 py-2 text-sm text-fg transition hover:border-accent hover:text-accent">
                   GitHub ↗
                 </a>

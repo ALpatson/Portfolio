@@ -39,7 +39,7 @@ export type SkillGroup = {
 
 export type Dictionary = {
   meta: { title: string; description: string };
-  nav: { about: string; journey: string; projects: string; skills: string; contact: string; menu: string; close: string; switchTo: string };
+  nav: { about: string; journey: string; projects: string; skills: string; resume: string; contact: string; menu: string; close: string; switchTo: string };
   hero: {
     badge: string;
     kicker: string;
@@ -50,7 +50,6 @@ export type Dictionary = {
     ctaWork: string;
     ctaContact: string;
     ctaCv: string;
-    cvHref: string;
     code: { comment: string; basedIn: string; lastStop: string; openTo: string; outro: string };
   };
   about: {
@@ -109,6 +108,16 @@ export type Dictionary = {
       hint: string;
     };
   };
+  resume: {
+    label: string;
+    heading: string;
+    sub: string;
+    updated: string;
+    meta: string;
+    open: string;
+    download: string;
+    files: { code: string; name: string; href: string; fileName: string; preview: string }[];
+  };
   contact: {
     label: string;
     heading: string;
@@ -131,9 +140,6 @@ export type Dictionary = {
     languages: string;
     availabilityLabel: string;
     availability: string;
-    cv: string;
-    cvEn: string;
-    cvFr: string;
   };
   footer: { rights: string; credit: string; top: string };
 };

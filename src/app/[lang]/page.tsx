@@ -7,6 +7,7 @@ import Journey from "@/components/Journey";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import Beyond from "@/components/Beyond";
+import Resume from "@/components/Resume";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import MotionProvider from "@/components/MotionProvider";
@@ -28,6 +29,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
         <Projects t={t.projects} />
         <Skills t={t.skills} />
         <Beyond t={t.beyond} />
+        <Resume t={t.resume} />
         <Contact t={t.contact} />
       </main>
       <div className="relative z-[1]">
