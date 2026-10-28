@@ -323,7 +323,7 @@ const fr: Dictionary = {
   contact: {
     label: "Contact",
     heading: "À vous de jouer.",
-    sub: "Offres de stage, projets ou une partie d'échecs. Je réponds généralement sous un ou deux jours.",
+    sub: "Je suis ouvert aux offres de stage et aux collaborations sur des projets. N'hésitez pas à me contacter par e-mail ou via le formulaire ci-dessous.",
     name: "Votre nom",
     email: "Votre e-mail",
     message: "Message",

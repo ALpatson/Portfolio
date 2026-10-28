@@ -1,41 +1,14 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { useInView } from "motion/react";
 import type { Dictionary } from "@/content/types";
 import PhotoStack from "./PhotoStack";
 import Reveal from "./Reveal";
 import SectionHeader from "./SectionHeader";
 
-// Counts up to whole numbers when they come into view; anything else
-// (like "<0.05%") is shown as written.
 function Stat({ value, label, delay }: { value: string; label: string; delay: number }) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true });
-  const target = /^\d+$/.test(value) ? Number(value) : null;
-  const [shown, setShown] = useState(target === null ? value : "0");
-
-  useEffect(() => {
-    if (!inView || target === null) return;
-    const start = performance.now();
-    const duration = target > 100 ? 1400 : 900;
-    const from = target > 100 ? target - 40 : 0;
-    let frame = 0;
-    const tick = (now: number) => {
-      const p = Math.min(1, (now - start) / duration);
-      const eased = 1 - Math.pow(1 - p, 3);
-      setShown(String(Math.round(from + (target - from) * eased)));
-      if (p < 1) frame = requestAnimationFrame(tick);
-    };
-    frame = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(frame);
-  }, [inView, target]);
-
   return (
     <Reveal delay={delay} className="border-t border-line pt-5">
-      <span ref={ref} className="block font-display text-4xl font-medium text-fg tabular-nums md:text-5xl">
-        {shown}
-      </span>
+      <span className="block font-display text-4xl font-medium text-fg tabular-nums md:text-5xl">{value}</span>
       <span className="mt-2 block text-sm leading-snug text-muted">{label}</span>
     </Reveal>
   );

@@ -416,7 +416,7 @@ const en: Dictionary = {
   contact: {
     label: "Contact",
     heading: "Your move.",
-    sub: "Internship offers, projects or a game of chess. I usually reply within a day or two.",
+    sub: "I am open to internship opportunities and project collaborations. Please get in touch by email or through the form below.",
     name: "Your name",
     email: "Your email",
     message: "Message",
