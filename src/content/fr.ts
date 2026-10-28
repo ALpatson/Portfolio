@@ -9,7 +9,7 @@ const fr: Dictionary = {
   meta: {
     title: "Alpatson Cobbina Siaw | Ingénieur logiciel",
     description:
-      "Ingénieur logiciel basé à Lille et ancien stagiaire ingénieur de recherche en IA à l'ISIA Lab. Je conçois et déploie des applications web en Python, Django et JavaScript. Disponible pour un stage de 26 semaines à partir de mars 2027.",
+      "Ingénieur logiciel basé à Lille et ancien stagiaire ingénieur de recherche en IA à l'ISIA Lab. Je conçois et déploie des applications web en Python, Django et JavaScript. Disponible pour un stage de 6 mois à partir de mars 2027.",
   },
   nav: {
     about: "À propos",
@@ -22,7 +22,7 @@ const fr: Dictionary = {
     switchTo: "View in English",
   },
   hero: {
-    badge: "Disponible pour un stage de 26 semaines · dès mars 2027",
+    badge: "Disponible pour un stage de 6 mois · dès mars 2027",
     kicker: "Bonjour, je suis",
     roles: ["Ingénieur logiciel full-stack", "Ingénieur logiciel", "Développeur backend", "Ingénieur IA", "Ingénieur DevOps", "Joueur d'échecs"],
     rolesLabel: "Rôles :",
@@ -35,7 +35,7 @@ const fr: Dictionary = {
       comment: "# l'essentiel, toujours à jour",
       basedIn: "Lille, France",
       lastStop: "ISIA Lab · stage de recherche en IA",
-      openTo: "stage de 26 semaines · dès mars 2027",
+      openTo: "stage de 6 mois · dès mars 2027",
       outro: "# à vous de coder →",
     },
   },
@@ -108,7 +108,7 @@ const fr: Dictionary = {
       move: "7. ?",
       period: "Dès mars 2027",
       title: "À vous de jouer",
-      text: "Je recherche un stage de 26 semaines en génie logiciel, développement backend ou full-stack.",
+      text: "Je recherche un stage de 6 mois en génie logiciel, développement backend ou full-stack.",
       cta: "Parlons-en",
     },
   },
@@ -341,7 +341,7 @@ const fr: Dictionary = {
     languagesLabel: "Langues",
     languages: "Anglais (courant) · Français (intermédiaire)",
     availabilityLabel: "Disponible",
-    availability: "Stage de 26 semaines dès mars 2027",
+    availability: "Stage de 6 mois dès mars 2027",
     cv: "Télécharger mon CV",
   },
   footer: {

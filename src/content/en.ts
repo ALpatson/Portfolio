@@ -4,7 +4,7 @@ const en: Dictionary = {
   meta: {
     title: "Alpatson Cobbina Siaw | Software Engineer",
     description:
-      "Software engineer based in Lille, France, and former AI Research Engineer intern at ISIA Lab. I build and ship web applications with Python, Django and modern JavaScript. Open to a 26-week internship from March 2027.",
+      "Software engineer based in Lille, France, and former AI Research Engineer intern at ISIA Lab. I build and ship web applications with Python, Django and modern JavaScript. Open to a 6-month internship from March 2027.",
   },
   nav: {
     about: "About",
@@ -17,7 +17,7 @@ const en: Dictionary = {
     switchTo: "Voir en français",
   },
   hero: {
-    badge: "Open to a 26-week internship · from March 2027",
+    badge: "Open to a 6-month internship · from March 2027",
     kicker: "Hello, I'm",
     roles: ["Full-Stack Software Engineer", "Software Engineer", "Backend Developer", "AI Engineer", "DevOps Engineer", "Chess Player"],
     rolesLabel: "Roles:",
@@ -30,7 +30,7 @@ const en: Dictionary = {
       comment: "# quick facts, kept up to date",
       basedIn: "Lille, France",
       lastStop: "ISIA Lab · AI research intern",
-      openTo: "26-week internship · from March 2027",
+      openTo: "6-month internship · from March 2027",
       outro: "# your code →",
     },
   },
@@ -103,7 +103,7 @@ const en: Dictionary = {
       move: "7. ?",
       period: "From March 2027",
       title: "Your move",
-      text: "I'm looking for a 26-week internship in software engineering, backend or full-stack development.",
+      text: "I'm looking for a 6-month internship in software engineering, backend or full-stack development.",
       cta: "Let's talk",
     },
   },
@@ -434,7 +434,7 @@ const en: Dictionary = {
     languagesLabel: "Languages",
     languages: "English (fluent) · French (intermediate)",
     availabilityLabel: "Available",
-    availability: "26-week internship from March 2027",
+    availability: "6-month internship from March 2027",
     cv: "Download my CV",
   },
   footer: {
