@@ -26,6 +26,7 @@ const en: Dictionary = {
     ctaWork: "See my work",
     ctaContact: "Get in touch",
     ctaCv: "Download CV",
+    cvHref: "/resume.pdf",
     code: {
       comment: "# quick facts, kept up to date",
       basedIn: "Lille, France",
@@ -436,6 +437,8 @@ const en: Dictionary = {
     availabilityLabel: "Available",
     availability: "6-month internship from March 2027",
     cv: "Download my CV",
+    cvEn: "CV (English)",
+    cvFr: "CV (French)",
   },
   footer: {
     rights: "All rights reserved.",

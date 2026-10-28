@@ -31,6 +31,7 @@ const fr: Dictionary = {
     ctaWork: "Voir mes projets",
     ctaContact: "Me contacter",
     ctaCv: "Télécharger mon CV",
+    cvHref: "/resume-fr.pdf",
     code: {
       comment: "# l'essentiel, toujours à jour",
       basedIn: "Lille, France",
@@ -343,6 +344,8 @@ const fr: Dictionary = {
     availabilityLabel: "Disponible",
     availability: "Stage de 6 mois dès mars 2027",
     cv: "Télécharger mon CV",
+    cvEn: "CV (anglais)",
+    cvFr: "CV (français)",
   },
   footer: {
     rights: "Tous droits réservés.",

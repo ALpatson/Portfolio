@@ -168,7 +168,10 @@ export default function Contact({ t }: { t: Dictionary["contact"] }) {
               </div>
               <div className="flex flex-wrap gap-2 pt-2">
                 <a href="/resume.pdf" target="_blank" rel="noopener" className="rounded-full border border-line-strong px-4 py-2 text-sm text-fg transition hover:border-accent hover:text-accent">
-                  {t.cv} ↓
+                  {t.cvEn} ↓
+                </a>
+                <a href="/resume-fr.pdf" target="_blank" rel="noopener" className="rounded-full border border-line-strong px-4 py-2 text-sm text-fg transition hover:border-accent hover:text-accent">
+                  {t.cvFr} ↓
                 </a>
                 <a href="https://github.com/ALpatson" target="_blank" rel="noopener noreferrer" className="rounded-full border border-line-strong px-4 py-2 text-sm text-fg transition hover:border-accent hover:text-accent">
                   GitHub ↗

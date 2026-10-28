@@ -50,6 +50,7 @@ export type Dictionary = {
     ctaWork: string;
     ctaContact: string;
     ctaCv: string;
+    cvHref: string;
     code: { comment: string; basedIn: string; lastStop: string; openTo: string; outro: string };
   };
   about: {
@@ -131,6 +132,8 @@ export type Dictionary = {
     availabilityLabel: string;
     availability: string;
     cv: string;
+    cvEn: string;
+    cvFr: string;
   };
   footer: { rights: string; credit: string; top: string };
 };
