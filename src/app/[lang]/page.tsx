@@ -2,7 +2,6 @@ import { notFound } from "next/navigation";
 import { getDictionary, hasLocale } from "@/content";
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
-import Ticker from "@/components/Ticker";
 import About from "@/components/About";
 import Journey from "@/components/Journey";
 import Projects from "@/components/Projects";
@@ -24,7 +23,6 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
       <Nav t={t.nav} lang={lang} />
       <main className="relative z-[1]">
         <Hero t={t.hero} />
-        <Ticker text={t.ticker} />
         <About t={t.about} />
         <Journey t={t.journey} />
         <Projects t={t.projects} />

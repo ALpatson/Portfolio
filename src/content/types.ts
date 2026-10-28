@@ -132,6 +132,5 @@ export type Dictionary = {
     availability: string;
     cv: string;
   };
-  ticker: string;
   footer: { rights: string; credit: string; top: string };
 };

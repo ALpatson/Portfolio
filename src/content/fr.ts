@@ -344,8 +344,6 @@ const fr: Dictionary = {
     availability: "Stage de 26 semaines dès mars 2027",
     cv: "Télécharger mon CV",
   },
-  ticker:
-    "1. e4 e5 2. Cf3 d6 3. d4 Fg4 4. dxe5 Fxf3 5. Dxf3 dxe5 6. Fc4 Cf6 7. Db3 De7 8. Cc3 c6 9. Fg5 b5 10. Cxb5 cxb5 11. Fxb5+ Cbd7 12. O-O-O Td8 13. Txd7 Txd7 14. Td1 De6 15. Fxd7+ Cxd7 16. Db8+ Cxb8 17. Td8#",
   footer: {
     rights: "Tous droits réservés.",
     credit: "Pièces d'échecs : cburnett, CC BY-SA 3.0",
