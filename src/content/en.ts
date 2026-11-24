@@ -42,7 +42,7 @@ const en: Dictionary = {
     stats: [
       { value: "4+", label: "years of experience" },
       { value: "10+", label: "projects built" },
-      { value: "5", label: "live products built or co-built" },
+      { value: "6", label: "live products built or co-built" },
       { value: "3", label: "countries worked in: Ghana, France, Belgium" },
     ],
     photos: [
@@ -99,9 +99,16 @@ const en: Dictionary = {
         place: "ISIA Lab, Université de Mons, Belgium",
         text: "Built a rule-based request-routing system, benchmarked AI tools against simple baselines, and fixed a recurring crash plus five architectural bugs.",
       },
+      {
+        move: "7. Qb3",
+        period: "Since Oct 2026",
+        title: "Full-Stack Developer",
+        place: "PɛDan · pedan.homes",
+        text: "Building a house-rental platform for Ghana end to end: the web app, the mobile app, payments and the admin tools.",
+      },
     ],
     next: {
-      move: "7. ?",
+      move: "8. ?",
       period: "From March 2027",
       title: "Your move",
       text: "I'm looking for a 6-month internship in software engineering, backend or full-stack development.",
@@ -122,6 +129,27 @@ const en: Dictionary = {
     highlights: "Highlights",
     stack: "Stack",
     items: [
+      {
+        id: "pedan",
+        title: "PɛDan",
+        period: "Since Oct 2026",
+        tags: ["web", "backend", "mobile"],
+        image: "/images/pedan-screenshot.webp",
+        live: true,
+        summary: "House rentals in Ghana with verified landlords and rent held in escrow.",
+        description:
+          "A rental marketplace built for Ghana, where fake agents and upfront cash payments make renting risky. Landlords are verified before they can list, viewings are escorted, and rent is paid through the platform and only released to the landlord once the tenant moves in. PɛDan means \"looking for a house\" in Twi.",
+        role: "Full-stack developer: I design and build the whole product, from the database and its security rules to the web app, the mobile app, payments and the admin tools.",
+        highlights: [
+          "Landlord identity and property checks, reviewed by admins before a listing goes live",
+          "Rent held in escrow through Paystack and released after move-in",
+          "Landlord contact details stay hidden until rent is paid",
+          "Row-level security so each user only sees their own data",
+          "A web app and a companion mobile app for Android and iOS",
+        ],
+        stack: ["Next.js", "TypeScript", "Supabase", "PostgreSQL", "Tailwind CSS", "React Native", "Expo", "Paystack"],
+        links: [{ label: "Visit pedan.homes", href: "https://pedan.homes/" }],
+      },
       {
         id: "pin-and-codes",
         title: "Pin and Codes Store",

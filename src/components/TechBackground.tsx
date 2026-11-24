@@ -132,5 +132,5 @@ export default function TechBackground({ mode = "both" }: { mode?: TechMode }) {
     };
   }, [mode]);
 
-  return <canvas ref={ref} aria-hidden="true" className="pointer-events-none fixed inset-0 z-0" />;
+  return <canvas ref={ref} aria-hidden="true" className="pointer-events-none fixed inset-0 z-0" style={{ opacity: "var(--backdrop)" }} />;
 }

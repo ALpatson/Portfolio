@@ -6,17 +6,13 @@ import type { Dictionary, Locale } from "@/content/types";
 
 const SECTIONS = ["about", "journey", "projects", "skills", "resume", "contact"] as const;
 
+// Apple-style global nav: a slim, frosted bar with small quiet links.
 export default function Nav({ t, lang }: { t: Dictionary["nav"]; lang: Locale }) {
   const [active, setActive] = useState<string>("");
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const other: Locale = lang === "en" ? "fr" : "en";
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-
     // Highlight whichever section fills the middle of the screen.
     const observer = new IntersectionObserver(
       (entries) => entries.forEach((e) => e.isIntersecting && setActive(e.target.id)),
@@ -26,12 +22,8 @@ export default function Nav({ t, lang }: { t: Dictionary["nav"]; lang: Locale })
       const el = document.getElementById(id);
       if (el) observer.observe(el);
     });
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      observer.disconnect();
-    };
+    return () => observer.disconnect();
   }, []);
-
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -42,84 +34,74 @@ export default function Nav({ t, lang }: { t: Dictionary["nav"]; lang: Locale })
 
   // Keep the visitor's place when switching language.
   const hash = active ? `#${active}` : "";
-  const links = SECTIONS.map((id, i) => ({ id, n: i + 1, label: t[id] }));
+  const links = SECTIONS.map((id) => ({ id, label: t[id] }));
 
   return (
     <>
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-300 ${
-        scrolled ? "border-b border-line bg-bg/80 backdrop-blur-md" : "border-b border-transparent"
-      }`}
-    >
-      <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
-        <a href="#top" className="group flex items-center gap-2.5" aria-label="Alpatson Cobbina Siaw">
-          <img src="/pieces/bN.svg" alt="" className="dark-invert h-7 w-7 transition-transform duration-500 group-hover:-rotate-12" />
-          <span className="font-display text-lg font-medium tracking-tight">
-            Alpatson<span className="text-accent">.</span>
-          </span>
-        </a>
-
-        <ul className="hidden items-center gap-1 md:flex">
-          {links.map(({ id, n, label }) => (
-            <li key={id}>
-              <a
-                href={`#${id}`}
-                className={`relative rounded-full px-3.5 py-2 text-sm transition-colors ${active === id ? "text-fg" : "text-muted hover:text-fg"}`}
-              >
-                {active === id && (
-                  <motion.span layoutId="nav-pill" className="absolute inset-0 rounded-full bg-surface" transition={{ type: "spring", stiffness: 380, damping: 32 }} />
-                )}
-                <span className="relative">
-                  <span className="mr-1.5 font-mono text-[10px] text-accent">{n}.</span>
-                  {label}
-                </span>
-              </a>
-            </li>
-          ))}
-        </ul>
-
-        <div className="flex items-center gap-2">
-          <a
-            href={`/${other}${hash}`}
-            aria-label={t.switchTo}
-            title={t.switchTo}
-            className="flex items-center rounded-full border border-line-strong p-0.5 font-mono text-[11px]"
-          >
-            <span className={`rounded-full px-2.5 py-1 ${lang === "en" ? "bg-fg text-bg" : "text-muted"}`}>EN</span>
-            <span className={`rounded-full px-2.5 py-1 ${lang === "fr" ? "bg-fg text-bg" : "text-muted"}`}>FR</span>
+      <header
+        className="fixed inset-x-0 top-0 z-50 border-b border-line/60 backdrop-blur-xl backdrop-saturate-150"
+        style={{ background: "var(--nav-bg)" }}
+      >
+        <nav className="mx-auto flex h-12 max-w-5xl items-center justify-between px-5 sm:px-8">
+          <a href="#top" className="flex items-center gap-2 text-fg" aria-label="Alpatson Cobbina Siaw">
+            <img src="/pieces/bN.svg" alt="" className="dark-invert h-5 w-5" />
+            <span className="text-[15px] font-semibold tracking-tight">Alpatson</span>
           </a>
-          <button
-            type="button"
-            className="relative h-10 w-10 md:hidden"
-            aria-label={open ? t.close : t.menu}
-            aria-expanded={open}
-            aria-controls="mobile-menu"
-            onClick={() => setOpen((v) => !v)}
-          >
-            <span className={`absolute left-2.5 h-px w-5 bg-fg transition ${open ? "top-5 rotate-45" : "top-[15px]"}`} />
-            <span className={`absolute left-2.5 h-px w-5 bg-fg transition ${open ? "top-5 -rotate-45" : "top-[25px]"}`} />
-          </button>
-        </div>
-      </nav>
 
-    </header>
+          <ul className="hidden items-center gap-7 md:flex">
+            {links.map(({ id, label }) => (
+              <li key={id}>
+                <a
+                  href={`#${id}`}
+                  className={`text-[13px] transition-colors ${active === id ? "text-fg" : "text-fg-soft/80 hover:text-fg"}`}
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          <div className="flex items-center gap-3">
+            <a
+              href={`/${other}${hash}`}
+              aria-label={t.switchTo}
+              title={t.switchTo}
+              className="text-[13px] text-fg-soft/80 transition-colors hover:text-fg"
+            >
+              <span className={lang === "en" ? "font-semibold text-fg" : ""}>EN</span>
+              <span className="mx-1.5 text-faint">/</span>
+              <span className={lang === "fr" ? "font-semibold text-fg" : ""}>FR</span>
+            </a>
+            <button
+              type="button"
+              className="relative h-10 w-8 md:hidden"
+              aria-label={open ? t.close : t.menu}
+              aria-expanded={open}
+              aria-controls="mobile-menu"
+              onClick={() => setOpen((v) => !v)}
+            >
+              <span className={`absolute left-1.5 h-[1.5px] w-5 rounded-full bg-fg transition ${open ? "top-5 rotate-45" : "top-[15px]"}`} />
+              <span className={`absolute left-1.5 h-[1.5px] w-5 rounded-full bg-fg transition ${open ? "top-5 -rotate-45" : "top-[24px]"}`} />
+            </button>
+          </div>
+        </nav>
+      </header>
 
       {/* Outside the header on purpose: its backdrop blur would trap this fixed
-          panel inside the 64px bar, leaving the links with no background. */}
+          panel inside the bar, leaving the links with no background. */}
       <AnimatePresence>
         {open && (
           <motion.div
             id="mobile-menu"
-            className="fixed inset-x-0 top-16 bottom-0 z-40 overflow-y-auto border-t border-line bg-bg px-6 pt-8 pb-10 md:hidden"
+            className="fixed inset-x-0 top-12 bottom-0 z-40 overflow-y-auto bg-bg px-8 pt-8 pb-10 md:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <ul className="space-y-2">
-              {links.map(({ id, n, label }, i) => (
-                <motion.li key={id} initial={{ opacity: 0, x: -16 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.05 * i }}>
-                  <a href={`#${id}`} onClick={() => setOpen(false)} className="flex items-baseline gap-4 border-b border-line py-4 font-display text-3xl">
-                    <span className="font-mono text-sm text-accent">{n}.</span>
+            <ul className="space-y-1">
+              {links.map(({ id, label }, i) => (
+                <motion.li key={id} initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.04 * i }}>
+                  <a href={`#${id}`} onClick={() => setOpen(false)} className="block py-2.5 text-[28px] font-semibold tracking-tight text-fg">
                     {label}
                   </a>
                 </motion.li>

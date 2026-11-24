@@ -1,35 +1,62 @@
 @import "tailwindcss";
 
 /*
-  Palette. Every colour on the site comes from these variables, so swapping the
-  background (or the whole look) only means editing this block.
-  Current: "Night" (near-black, white text, gold accents) under the animated dot
-  grid + network background. Earlier palettes are in the git history:
-  "Paper" (light) in 8eb86ec, "Ink & Brass" (warm dark) in 10421e4.
+  Palette, following Apple's design principles: one accent colour (Apple blue),
+  greys that recede, and content first. Every colour on the site comes from
+  these variables. Dark ("Pro" style) is the default; the light version is
+  previewed with ?theme=light. Earlier looks are in the git history:
+  "Night" gold in 7544687, "Paper" in 8eb86ec, "Ink & Brass" in 10421e4.
 */
 :root {
-  --bg: #07080c;
-  --bg-raised: #0b0d12;
-  --surface: #10131a;
-  --line: #1d212b;
-  --line-strong: #2c3140;
-  --fg: #f3f4f6;
-  --fg-soft: #c9ccd3;
-  --muted: #8d919c;
-  --faint: #5f636e;
-  --accent: #c6a46c;
-  --accent-soft: #e0c48f;
-  --accent-ink: #15110a;
-  --ok: #7fd6a8;
-  --danger: #ff8f8f;
+  --bg: #000000;
+  --bg-raised: #0b0b0c;
+  --surface: #1c1c1e;
+  --line: #262628;
+  --line-strong: #3a3a3c;
+  --fg: #f5f5f7;
+  --fg-soft: #d2d2d7;
+  --muted: #a1a1a6;
+  --faint: #6e6e73;
+  --accent: #2997ff;
+  --accent-soft: #5eb0ff;
+  --accent-ink: #ffffff;
+  --ok: #30d158;
+  --danger: #ff453a;
   --square-light: #d6c5a2;
   --square-dark: #8a6b45;
   --shadow: 0, 0, 0;
+  --icon-filter: invert(1); /* piece icons are drawn black */
+  --backdrop: 0.45; /* how strongly the animated background shows */
+  --nav-bg: rgba(22, 22, 23, 0.8);
 }
 
-/* The piece icons are drawn black; flip them to white on the dark palette. */
+/* TEMPORARY: Apple's light look, for comparing with ?theme=light. */
+:root[data-theme="light"] {
+  --bg: #ffffff;
+  --bg-raised: #f5f5f7;
+  --surface: #ffffff;
+  --line: #e8e8ed;
+  --line-strong: #d2d2d7;
+  --fg: #1d1d1f;
+  --fg-soft: #424245;
+  --muted: #6e6e73;
+  --faint: #86868b;
+  --accent: #0071e3;
+  --accent-soft: #0077ed;
+  --accent-ink: #ffffff;
+  --ok: #248a3d;
+  --danger: #d70015;
+  --shadow: 0, 0, 0;
+  --icon-filter: none;
+  --backdrop: 0;
+  --nav-bg: rgba(255, 255, 255, 0.8);
+}
+:root[data-theme="light"] .bg-surface {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
 .dark-invert {
-  filter: invert(1);
+  filter: var(--icon-filter);
 }
 
 @theme inline {
@@ -50,9 +77,9 @@
   --color-square-light: var(--square-light);
   --color-square-dark: var(--square-dark);
 
-  --font-display: var(--font-fraunces);
-  --font-sans: var(--font-plex-sans);
-  --font-mono: var(--font-plex-mono);
+  --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", var(--font-inter), "Helvetica Neue", Arial, sans-serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", var(--font-inter), "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, var(--font-plex-mono), monospace;
 }
 
 /* Nothing may widen the page: on iPhone Safari any element poking past the
@@ -73,8 +100,9 @@ html {
 body {
   background: var(--bg);
   color: var(--fg);
-  font-family: var(--font-plex-sans), system-ui, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", var(--font-inter), "Helvetica Neue", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.011em;
 }
 
 ::selection {
@@ -82,15 +110,10 @@ body {
   color: var(--accent-ink);
 }
 
-/* Film-grain overlay: a little texture over the flat background. */
-.grain::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 60;
-  opacity: 0.045;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+h1,
+h2,
+h3 {
+  letter-spacing: -0.025em;
 }
 
 :focus-visible {

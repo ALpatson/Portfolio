@@ -36,7 +36,7 @@ export default function CodeCard({ t, role }: { t: Dictionary["hero"]["code"]; r
       prop("role", [str(role)]),
       prop("based_in", [str(t.basedIn)]),
       prop("stack", arr(["Python", "Django", "TypeScript", "React", "PostgreSQL"])),
-      prop("shipped", arr(["Pin and Codes Store", "KNUST Chess Platform"])),
+      prop("shipped", arr(["PɛDan", "Pin and Codes Store", "KNUST Chess Platform"])),
       prop("last_stop", [str(t.lastStop)]),
       prop("open_to", [str(t.openTo)]),
       [["}", C.punct]],
@@ -87,7 +87,7 @@ export default function CodeCard({ t, role }: { t: Dictionary["hero"]["code"]; r
   });
 
   return (
-    <div className="w-full max-w-[34rem] overflow-hidden rounded-[1.6rem] border border-line-strong bg-surface/85 shadow-[0_30px_80px_-25px_rgba(0,0,0,0.8)] backdrop-blur-sm">
+    <div className="w-full max-w-[42rem] overflow-hidden rounded-[1.75rem] border border-line bg-surface/90 shadow-[0_40px_100px_-30px_rgba(var(--shadow),0.7)] backdrop-blur-sm">
       {/* Title bar with tabs */}
       <div className="flex items-center gap-4 border-b border-line px-4 py-3">
         <div className="flex gap-1.5" aria-hidden="true">

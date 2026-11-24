@@ -13,7 +13,7 @@ export default function Beyond({ t }: { t: Dictionary["beyond"] }) {
 
       <div className="grid items-start gap-10 lg:grid-cols-[1.05fr_1fr] lg:gap-14">
         <Reveal>
-          <h3 className="font-display text-3xl font-medium text-fg">{t.playTitle}</h3>
+          <h3 className="font-display text-3xl font-semibold text-fg">{t.playTitle}</h3>
           <p className="mt-2 mb-6 max-w-md leading-relaxed text-muted">{t.playText}</p>
           <ChessBoard t={t.board} />
         </Reveal>
@@ -23,7 +23,7 @@ export default function Beyond({ t }: { t: Dictionary["beyond"] }) {
             <img src="/images/chess.webp" alt={t.chessImageAlt} loading="lazy" className="h-full w-full object-cover" />
           </div>
           <div className="px-5 pt-5 pb-4">
-            <h3 className="font-display text-2xl font-medium text-fg">{t.chessTitle}</h3>
+            <h3 className="font-display text-2xl font-semibold text-fg">{t.chessTitle}</h3>
             <p className="mt-2 leading-relaxed text-muted">{t.chessText}</p>
             <ul className="mt-5 space-y-2.5">
               {t.chess.map((c, i) => (

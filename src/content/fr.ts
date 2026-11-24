@@ -47,7 +47,7 @@ const fr: Dictionary = {
     stats: [
       { value: "4+", label: "années d'expérience" },
       { value: "10+", label: "projets réalisés" },
-      { value: "5", label: "produits en ligne créés ou co-créés" },
+      { value: "6", label: "produits en ligne créés ou co-créés" },
       { value: "3", label: "pays où j'ai travaillé : Ghana, France, Belgique" },
     ],
     photos: [
@@ -104,9 +104,16 @@ const fr: Dictionary = {
         place: "ISIA Lab, Université de Mons, Belgique",
         text: "Conception d'un système de routage des demandes à base de règles, comparaison d'outils d'IA à des références simples, et correction d'un plantage récurrent ainsi que de cinq bugs d'architecture.",
       },
+      {
+        move: "7. Db3",
+        period: "Depuis oct. 2026",
+        title: "Développeur full-stack",
+        place: "PɛDan · pedan.homes",
+        text: "Je construis de bout en bout une plateforme de location de maisons au Ghana : l'application web, l'application mobile, les paiements et les outils d'administration.",
+      },
     ],
     next: {
-      move: "7. ?",
+      move: "8. ?",
       period: "Dès mars 2027",
       title: "À vous de jouer",
       text: "Je recherche un stage de 6 mois en génie logiciel, développement backend ou full-stack.",
@@ -127,6 +134,22 @@ const fr: Dictionary = {
     highlights: "Points forts",
     stack: "Technologies",
     items: [
+      {
+        ...base["pedan"],
+        period: "Depuis oct. 2026",
+        summary: "Location de maisons au Ghana avec propriétaires vérifiés et loyer bloqué sous séquestre.",
+        description:
+          "Une plateforme de location pensée pour le Ghana, où les faux agents et les loyers payés d'avance en espèces rendent la location risquée. Les propriétaires sont vérifiés avant de publier, les visites sont accompagnées, et le loyer est payé via la plateforme puis versé au propriétaire seulement une fois le locataire installé. PɛDan signifie « je cherche une maison » en twi.",
+        role: "Développeur full-stack : je conçois et développe tout le produit, de la base de données et de ses règles de sécurité à l'application web, l'application mobile, les paiements et les outils d'administration.",
+        highlights: [
+          "Vérification de l'identité et du bien des propriétaires, validée par un administrateur avant publication",
+          "Loyer bloqué sous séquestre via Paystack et versé après l'emménagement",
+          "Coordonnées du propriétaire masquées jusqu'au paiement du loyer",
+          "Sécurité au niveau des lignes : chaque utilisateur ne voit que ses propres données",
+          "Une application web et une application mobile pour Android et iOS",
+        ],
+        links: [{ label: "Visiter pedan.homes", href: "https://pedan.homes/" }],
+      },
       {
         ...base["pin-and-codes"],
         period: "Depuis nov. 2025",

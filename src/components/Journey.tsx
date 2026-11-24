@@ -34,7 +34,7 @@ export default function Journey({ t }: { t: Dictionary["journey"] }) {
             <div className="pt-2 pb-6 pl-8 sm:pl-10">
               <div className="rounded-3xl border border-accent/40 bg-accent/[0.06] p-6 sm:p-7">
                 <p className="font-mono text-xs uppercase tracking-wider text-accent">{t.next.period}</p>
-                <h3 className="mt-1.5 font-display text-3xl font-medium italic text-fg">{t.next.title}</h3>
+                <h3 className="mt-1.5 font-display text-3xl font-semibold text-fg">{t.next.title}</h3>
                 <p className="mt-3 max-w-xl leading-relaxed text-fg-soft">{t.next.text}</p>
                 <a
                   href="#contact"
@@ -52,7 +52,7 @@ export default function Journey({ t }: { t: Dictionary["journey"] }) {
               <span className="absolute top-[1.85rem] left-[5.5rem] h-2.5 w-2.5 -translate-x-1/2 rotate-45 border border-accent bg-bg-raised sm:left-[7.5rem]" aria-hidden="true" />
               <div className="group border-b border-line py-6 pl-8 transition-colors hover:border-line-strong sm:pl-10">
                 <p className="font-mono text-xs uppercase tracking-wider text-muted">{m.period}</p>
-                <h3 className="mt-1.5 font-display text-2xl font-medium text-fg transition-colors group-hover:text-accent-soft sm:text-[1.7rem]">
+                <h3 className="mt-1.5 font-display text-2xl font-semibold text-fg transition-colors group-hover:text-accent-soft sm:text-[1.7rem]">
                   {m.title}
                 </h3>
                 <p className="mt-0.5 text-sm text-fg-soft">{m.place}</p>

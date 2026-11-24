@@ -67,8 +67,8 @@ export default function Skills({ t }: { t: Dictionary["skills"] }) {
               className="grid gap-8 md:grid-cols-[1fr_1.6fr]"
             >
               <div>
-                <h3 className="font-display text-3xl font-medium text-fg">{group.name}</h3>
-                <p className="mt-2 font-display text-lg italic text-accent">{group.job}</p>
+                <h3 className="font-display text-3xl font-semibold text-fg">{group.name}</h3>
+                <p className="mt-2 text-lg text-muted">{group.job}</p>
               </div>
               <ul className="flex flex-wrap content-start gap-3">
                 {group.items.map((item, i) => (

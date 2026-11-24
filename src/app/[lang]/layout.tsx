@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Fraunces, IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
+import { IBM_Plex_Mono, Inter } from "next/font/google";
 import { getDictionary, hasLocale, locales } from "@/content";
 import "../globals.css";
 
-const fraunces = Fraunces({ variable: "--font-fraunces", subsets: ["latin"], axes: ["opsz", "SOFT"] });
-const plexSans = IBM_Plex_Sans({ variable: "--font-plex-sans", subsets: ["latin"], weight: ["400", "500", "600", "700"] });
+// Apple devices use the system font (San Francisco); Inter is the closest match elsewhere.
+const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
 const plexMono = IBM_Plex_Mono({ variable: "--font-plex-mono", subsets: ["latin"], weight: ["400", "500"] });
 
 const siteUrl = "https://alpatsonportfolio.vercel.app";
@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
       images: [{ url: "/images/og-image-v4.jpg", width: 1200, height: 630, alt: "Alpatson Cobbina Siaw, Full-Stack Software Engineer" }],
     },
     twitter: { card: "summary_large_image" },
-    other: { "theme-color": "#07080c" },
+    other: { "theme-color": "#000000" },
   };
 }
 
@@ -42,8 +42,8 @@ export default async function LangLayout({ children, params }: LayoutProps<"/[la
   if (!hasLocale(lang)) notFound();
 
   return (
-    <html lang={lang} className={`${fraunces.variable} ${plexSans.variable} ${plexMono.variable}`}>
-      <body className="grain min-h-dvh">{children}</body>
+    <html lang={lang} className={`${inter.variable} ${plexMono.variable}`}>
+      <body className="min-h-dvh">{children}</body>
     </html>
   );
 }

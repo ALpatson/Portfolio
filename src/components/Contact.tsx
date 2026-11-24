@@ -57,13 +57,9 @@ export default function Contact({ t }: { t: Dictionary["contact"] }) {
   return (
     <section id="contact" className="relative overflow-hidden border-t border-line bg-bg-raised/60">
       <div className="mx-auto max-w-6xl px-5 py-24 sm:px-8 md:py-32">
-        <p className="mb-4 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.2em] text-accent">
-          <span>§ 07</span>
-          <span className="h-px w-10 bg-accent/50" aria-hidden="true" />
-          <span>{t.label}</span>
-        </p>
+        <p className="mb-3 text-base font-semibold text-accent md:text-lg">{t.label}</p>
         <motion.h2
-          className="font-display text-[clamp(3.5rem,11vw,9rem)] leading-[0.9] font-medium tracking-tight text-fg italic"
+          className="font-display text-[clamp(3.5rem,11vw,8rem)] leading-[0.95] font-semibold tracking-[-0.045em] text-fg"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

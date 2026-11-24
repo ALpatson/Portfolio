@@ -8,7 +8,7 @@ import SectionHeader from "./SectionHeader";
 function Stat({ value, label, delay }: { value: string; label: string; delay: number }) {
   return (
     <Reveal delay={delay} className="border-t border-line pt-5">
-      <span className="block font-display text-4xl font-medium text-fg tabular-nums md:text-5xl">{value}</span>
+      <span className="block font-display text-4xl font-semibold text-fg tabular-nums md:text-5xl">{value}</span>
       <span className="mt-2 block text-sm leading-snug text-muted">{label}</span>
     </Reveal>
   );

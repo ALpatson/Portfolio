@@ -7,7 +7,7 @@ export default function Resume({ t }: { t: Dictionary["resume"] }) {
   return (
     <section id="resume" className="mx-auto max-w-6xl px-5 py-24 sm:px-8 md:py-32">
       <SectionHeader index="05" label={t.label} heading={t.heading} sub={t.sub} />
-      <p className="-mt-8 mb-10 font-mono text-xs uppercase tracking-wider text-muted">{t.updated}</p>
+      <p className="-mt-10 mb-12 text-center text-sm text-faint">{t.updated}</p>
 
       <div className="grid gap-6 sm:grid-cols-2">
         {t.files.map((f, i) => (
@@ -24,7 +24,7 @@ export default function Resume({ t }: { t: Dictionary["resume"] }) {
             </a>
             <div className="flex flex-wrap items-center justify-between gap-3 px-4 pt-4 pb-3">
               <div>
-                <p className="font-display text-xl font-medium text-fg">{f.name}</p>
+                <p className="font-display text-xl font-semibold text-fg">{f.name}</p>
                 <p className="mt-0.5 font-mono text-[11px] text-muted">{t.meta}</p>
               </div>
               <div className="flex gap-2">

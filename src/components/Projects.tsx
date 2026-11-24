@@ -79,7 +79,7 @@ function Card({ p, index, t, onOpen }: { p: Project; index: number; t: T; onOpen
           <span className="absolute top-3 right-3 font-mono text-[11px] text-fg/70">{String(index + 1).padStart(2, "0")}</span>
         </div>
         <div className="flex flex-1 flex-col px-4 pt-4 pb-3.5">
-          <h3 className="font-display text-xl font-medium text-fg">{p.title}</h3>
+          <h3 className="font-display text-xl font-semibold text-fg">{p.title}</h3>
           <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">{p.summary}</p>
           <div className="mt-4 flex items-center justify-between">
             <span className="font-mono text-[11px] text-faint">{p.stack.slice(0, 3).join(" · ")}</span>
@@ -147,7 +147,7 @@ function Details({ p, t, onClose }: { p: Project; t: T; onClose: () => void }) {
 
         <div className="px-4 pt-6 pb-5 sm:px-6 sm:pt-8 sm:pb-6">
           {p.period && <p className="font-mono text-xs uppercase tracking-wider text-muted">{p.period}</p>}
-          <h3 id="project-title" className="mt-1 font-display text-3xl font-medium text-fg sm:text-4xl">
+          <h3 id="project-title" className="mt-1 font-display text-3xl font-semibold text-fg sm:text-4xl">
             {p.title}
           </h3>
           <p className="mt-4 leading-relaxed text-fg-soft">{p.description}</p>
@@ -222,7 +222,7 @@ export default function Projects({ t }: { t: T }) {
     <section id="projects" className="mx-auto max-w-6xl px-5 py-24 sm:px-8 md:py-32">
       <SectionHeader index="03" label={t.label} heading={t.heading} sub={t.sub} />
 
-      <div className="mb-10 flex flex-wrap gap-2" role="tablist" aria-label={t.label}>
+      <div className="mb-12 flex flex-wrap justify-center gap-2" role="tablist" aria-label={t.label}>
         {FILTERS.map((f) => (
           <button
             key={f}
