@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import type { Dictionary, Locale } from "@/content/types";
+import ThemeToggle from "./ThemeToggle";
 
 const SECTIONS = ["about", "journey", "projects", "skills", "resume", "contact"] as const;
 
@@ -61,7 +62,8 @@ export default function Nav({ t, lang }: { t: Dictionary["nav"]; lang: Locale })
             ))}
           </ul>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
+            <ThemeToggle toLight={t.light} toDark={t.dark} />
             <a
               href={`/${other}${hash}`}
               aria-label={t.switchTo}

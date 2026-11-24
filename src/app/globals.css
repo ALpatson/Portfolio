@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 /*
-  Palette, following Apple's design principles: one accent colour (Apple blue),
-  greys that recede, and content first. Every colour on the site comes from
-  these variables. Dark ("Pro" style) is the default; the light version is
-  previewed with ?theme=light. Earlier looks are in the git history:
-  "Night" gold in 7544687, "Paper" in 8eb86ec, "Ink & Brass" in 10421e4.
+  Palette, following Apple's design principles (one accent colour, greys that
+  recede, content first) with a gold accent. Every colour on the site comes
+  from these variables. Dark is the default; light is set by the visitor's
+  system setting or the sun/moon switch (data-theme on <html>).
 */
-:root {
+:root,
+.force-dark {
   --bg: #000000;
   --bg-raised: #0b0b0c;
   --surface: #1c1c1e;
@@ -17,9 +17,9 @@
   --fg-soft: #d2d2d7;
   --muted: #a1a1a6;
   --faint: #6e6e73;
-  --accent: #2997ff;
-  --accent-soft: #5eb0ff;
-  --accent-ink: #ffffff;
+  --accent: #c6a46c;
+  --accent-soft: #e0c48f;
+  --accent-ink: #15110a;
   --ok: #30d158;
   --danger: #ff453a;
   --square-light: #d6c5a2;
@@ -30,7 +30,6 @@
   --nav-bg: rgba(22, 22, 23, 0.8);
 }
 
-/* TEMPORARY: Apple's light look, for comparing with ?theme=light. */
 :root[data-theme="light"] {
   --bg: #ffffff;
   --bg-raised: #f5f5f7;
@@ -41,8 +40,8 @@
   --fg-soft: #424245;
   --muted: #6e6e73;
   --faint: #86868b;
-  --accent: #0071e3;
-  --accent-soft: #0077ed;
+  --accent: #8a6a35;
+  --accent-soft: #6e5328;
   --accent-ink: #ffffff;
   --ok: #248a3d;
   --danger: #d70015;
@@ -50,9 +49,18 @@
   --icon-filter: none;
   --backdrop: 0;
   --nav-bg: rgba(255, 255, 255, 0.8);
+  color-scheme: light;
 }
-:root[data-theme="light"] .bg-surface {
+:root {
+  color-scheme: dark;
+}
+:root[data-theme="light"] .bg-surface:not(.force-dark *) {
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* Things that always look dark, whatever the mode (the code editor card). */
+.force-dark {
+  color: var(--fg);
 }
 
 .dark-invert {

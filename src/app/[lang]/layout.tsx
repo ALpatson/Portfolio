@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
 import { IBM_Plex_Mono, Inter } from "next/font/google";
 import { getDictionary, hasLocale, locales } from "@/content";
@@ -33,16 +33,29 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
       images: [{ url: "/images/og-image-v4.jpg", width: 1200, height: 630, alt: "Alpatson Cobbina Siaw, Full-Stack Software Engineer" }],
     },
     twitter: { card: "summary_large_image" },
-    other: { "theme-color": "#000000" },
   };
 }
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#000000" },
+  ],
+};
+
+// Runs before the page paints, so a light-mode visitor never sees a flash of
+// dark: use the saved choice if there is one, otherwise the system setting.
+const themeScript = `try{var t=localStorage.getItem("theme");if(t!=="light"&&t!=="dark")t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t}catch(e){}`;
 
 export default async function LangLayout({ children, params }: LayoutProps<"/[lang]">) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
 
   return (
-    <html lang={lang} className={`${inter.variable} ${plexMono.variable}`}>
+    <html lang={lang} className={`${inter.variable} ${plexMono.variable}`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body className="min-h-dvh">{children}</body>
     </html>
   );

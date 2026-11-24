@@ -87,7 +87,7 @@ export default function CodeCard({ t, role }: { t: Dictionary["hero"]["code"]; r
   });
 
   return (
-    <div className="w-full max-w-[42rem] overflow-hidden rounded-[1.75rem] border border-line bg-surface/90 shadow-[0_40px_100px_-30px_rgba(var(--shadow),0.7)] backdrop-blur-sm">
+    <div className="force-dark w-full max-w-[42rem] overflow-hidden rounded-[1.75rem] border border-line bg-surface/90 shadow-[0_40px_100px_-30px_rgba(var(--shadow),0.7)] backdrop-blur-sm">
       {/* Title bar with tabs */}
       <div className="flex items-center gap-4 border-b border-line px-4 py-3">
         <div className="flex gap-1.5" aria-hidden="true">

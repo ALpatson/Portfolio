@@ -21,6 +21,8 @@ const fr: Dictionary = {
     menu: "Ouvrir le menu",
     close: "Fermer le menu",
     switchTo: "View in English",
+    light: "Passer en mode clair",
+    dark: "Passer en mode sombre",
   },
   hero: {
     badge: "Disponible pour un stage de 6 mois · dès mars 2027",

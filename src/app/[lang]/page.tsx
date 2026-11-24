@@ -12,7 +12,6 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import MotionProvider from "@/components/MotionProvider";
 import TechBackground from "@/components/TechBackground";
-import ThemePreview from "@/components/ThemePreview";
 
 export default async function Home({ params }: PageProps<"/[lang]">) {
   const { lang } = await params;
@@ -21,7 +20,6 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
 
   return (
     <MotionProvider>
-      <ThemePreview />
       <TechBackground />
       <Nav t={t.nav} lang={lang} />
       <main className="relative z-[1]">

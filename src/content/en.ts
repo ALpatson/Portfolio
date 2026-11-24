@@ -16,6 +16,8 @@ const en: Dictionary = {
     menu: "Open menu",
     close: "Close menu",
     switchTo: "Voir en français",
+    light: "Switch to light mode",
+    dark: "Switch to dark mode",
   },
   hero: {
     badge: "Open to a 6-month internship · from March 2027",
