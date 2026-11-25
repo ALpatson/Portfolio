@@ -1,65 +1,58 @@
 @import "tailwindcss";
 
 /*
-  Palette, following Apple's design principles (one accent colour, greys that
-  recede, content first) with a gold accent. Every colour on the site comes
-  from these variables. Dark is the default; light is set by the visitor's
-  system setting or the sun/moon switch (data-theme on <html>).
+  Palette: a gallery wall. Cool white, near-black type and one electric
+  ultramarine accent. Every colour on the site comes from these variables.
 */
-:root,
-.force-dark {
-  --bg: #000000;
-  --bg-raised: #0b0b0c;
-  --surface: #1c1c1e;
-  --line: #262628;
-  --line-strong: #3a3a3c;
-  --fg: #f5f5f7;
-  --fg-soft: #d2d2d7;
-  --muted: #a1a1a6;
-  --faint: #6e6e73;
-  --accent: #c6a46c;
-  --accent-soft: #e0c48f;
-  --accent-ink: #15110a;
-  --ok: #30d158;
-  --danger: #ff453a;
-  --square-light: #d6c5a2;
-  --square-dark: #8a6b45;
-  --shadow: 0, 0, 0;
-  --icon-filter: invert(1); /* piece icons are drawn black */
-  --backdrop: 0.45; /* how strongly the animated background shows */
-  --nav-bg: rgba(22, 22, 23, 0.8);
-}
-
-:root[data-theme="light"] {
-  --bg: #ffffff;
-  --bg-raised: #f5f5f7;
+:root {
+  --bg: #f5f6f8;
+  --bg-raised: #eceef2;
   --surface: #ffffff;
-  --line: #e8e8ed;
-  --line-strong: #d2d2d7;
-  --fg: #1d1d1f;
-  --fg-soft: #424245;
-  --muted: #6e6e73;
-  --faint: #86868b;
-  --accent: #8a6a35;
-  --accent-soft: #6e5328;
+  --line: #e1e4ea;
+  --line-strong: #c9ced8;
+  --fg: #0c0d12;
+  --fg-soft: #2b2e38;
+  --muted: #5d6270;
+  --faint: #8a8f9c;
+  --accent: #2f3cff;
+  --accent-soft: #1f2ce0;
   --accent-ink: #ffffff;
-  --ok: #248a3d;
-  --danger: #d70015;
-  --shadow: 0, 0, 0;
+  --ok: #12805c;
+  --danger: #d7263d;
+  --square-light: #e7e9f2;
+  --square-dark: #7d86c4;
+  --shadow: 12, 13, 18;
   --icon-filter: none;
-  --backdrop: 0;
-  --nav-bg: rgba(255, 255, 255, 0.8);
+  --backdrop: 0.6;
+  --nav-bg: rgba(245, 246, 248, 0.82);
   color-scheme: light;
 }
-:root {
-  color-scheme: dark;
-}
-:root[data-theme="light"] .bg-surface:not(.force-dark *) {
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+:root .bg-surface:not(.force-dark *) {
+  box-shadow: 0 2px 14px rgba(12, 13, 18, 0.07);
 }
 
-/* Things that always look dark, whatever the mode (the code editor card). */
+/* The code editor card stays dark on purpose, like a real editor. */
 .force-dark {
+  --bg: #0a0b10;
+  --bg-raised: #0f1117;
+  --surface: #161821;
+  --line: #23262f;
+  --line-strong: #343845;
+  --fg: #f3f4f8;
+  --fg-soft: #cfd2dc;
+  --muted: #9a9fae;
+  --faint: #6a6f7e;
+  --accent: #6f78ff;
+  --accent-soft: #8f96ff;
+  --accent-ink: #ffffff;
+  --ok: #34d399;
+  --danger: #ff5c6c;
+  --square-light: #c9cde0;
+  --square-dark: #5a63a8;
+  --shadow: 0, 0, 0;
+  --icon-filter: invert(1); /* piece icons are drawn black */
+  --backdrop: 0.5; /* how strongly the animated background shows */
+  --nav-bg: rgba(10, 11, 16, 0.8);
   color: var(--fg);
 }
 

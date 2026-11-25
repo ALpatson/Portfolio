@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "motion/react";
 import type { Dictionary, Project, ProjectTag } from "@/content/types";
 import SectionHeader from "./SectionHeader";
@@ -194,6 +195,10 @@ export default function Projects({ t }: { t: T }) {
   const [openId, setOpenId] = useState<string | null>(null);
   // Stable, so the dialog's focus/scroll-lock effect doesn't re-run on every render.
   const close = useCallback(() => setOpenId(null), []);
+  // document.body only exists in the browser, so the portal waits for mount.
+  const [mounted, setMounted] = useState(false);
+  // eslint-disable-next-line react-hooks/set-state-in-effect
+  useEffect(() => setMounted(true), []);
   const shown = t.items.filter((p) => filter === "all" || p.tags.includes(filter));
   const open = t.items.find((p) => p.id === openId) ?? null;
   const count = (f: "all" | ProjectTag) => (f === "all" ? t.items.length : t.items.filter((p) => p.tags.includes(f)).length);
@@ -228,7 +233,9 @@ export default function Projects({ t }: { t: T }) {
         </AnimatePresence>
       </motion.ul>
 
-      <AnimatePresence>{open && <Details key={open.id} p={open} t={t} onClose={close} />}</AnimatePresence>
+      {/* Rendered into <body> so it sits above the fixed nav bar, not under it. */}
+      {mounted &&
+        createPortal(<AnimatePresence>{open && <Details key={open.id} p={open} t={t} onClose={close} />}</AnimatePresence>, document.body)}
     </section>
   );
 }

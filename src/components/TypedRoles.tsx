@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useReducedMotion } from "motion/react";
+import { useSettledReducedMotion } from "./useSettledReducedMotion";
 
 const TYPE_MS = 65;
 const DELETE_MS = 32;
@@ -10,7 +10,7 @@ const START_MS = 1300; // wait for the name animation to finish first
 
 // Types a role, holds it, erases it, then types the next one, forever.
 export default function TypedRoles({ roles, label }: { roles: string[]; label: string }) {
-  const reduced = useReducedMotion();
+  const reduced = useSettledReducedMotion();
   const [index, setIndex] = useState(0);
   const [text, setText] = useState("");
   const [deleting, setDeleting] = useState(false);

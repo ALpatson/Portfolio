@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import type { Dictionary, Locale } from "@/content/types";
-import ThemeToggle from "./ThemeToggle";
+import Logo from "./Logo";
 
 const SECTIONS = ["about", "journey", "projects", "skills", "resume", "contact"] as const;
 
@@ -45,7 +45,7 @@ export default function Nav({ t, lang }: { t: Dictionary["nav"]; lang: Locale })
       >
         <nav className="mx-auto flex h-12 max-w-5xl items-center justify-between px-5 sm:px-8">
           <a href="#top" className="flex items-center gap-2 text-fg" aria-label="Alpatson Cobbina Siaw">
-            <img src="/pieces/bN.svg" alt="" className="dark-invert h-5 w-5" />
+            <Logo />
             <span className="text-[15px] font-semibold tracking-tight">Alpatson</span>
           </a>
 
@@ -63,7 +63,6 @@ export default function Nav({ t, lang }: { t: Dictionary["nav"]; lang: Locale })
           </ul>
 
           <div className="flex items-center gap-2">
-            <ThemeToggle toLight={t.light} toDark={t.dark} />
             <a
               href={`/${other}${hash}`}
               aria-label={t.switchTo}

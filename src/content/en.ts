@@ -16,8 +16,6 @@ const en: Dictionary = {
     menu: "Open menu",
     close: "Close menu",
     switchTo: "Voir en français",
-    light: "Switch to light mode",
-    dark: "Switch to dark mode",
   },
   hero: {
     badge: "Open to a 6-month internship from March 2027",
@@ -29,7 +27,6 @@ const en: Dictionary = {
     ctaWork: "See my work",
     ctaContact: "Get in touch",
     ctaCv: "Download CV",
-    live: { title: "Running right now", online: "online", offline: "not responding", checking: "checking…" },
     code: {
       comment: "# quick facts, kept up to date",
       basedIn: "Lille, France",
@@ -158,7 +155,7 @@ const en: Dictionary = {
         title: "Pin and Codes Store",
         period: "Since Nov 2025",
         tags: ["web", "backend"],
-        image: "/images/store-management-screenshot.webp",
+        image: "/images/pin-codes-store.webp",
         live: true,
         summary: "Live e-commerce platform for exam results checker PINs.",
         description:

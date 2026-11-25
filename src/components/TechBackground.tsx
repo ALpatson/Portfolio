@@ -22,6 +22,16 @@ export default function TechBackground({ mode = "both" }: { mode?: TechMode }) {
     const grid = mode !== "network";
     const network = mode !== "grid";
     let w = 0, h = 0, frame = 0;
+    // Colours come from the palette (CSS variables), re-read now and then so a
+    // palette or light/dark switch is picked up without a reload.
+    const rgb = (name: string, fallback: string) => {
+      const hex = getComputedStyle(document.documentElement).getPropertyValue(name).trim() || fallback;
+      const m = hex.replace("#", "").match(/^([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i);
+      return m ? m.slice(1).map((x) => parseInt(x, 16)).join(",") : "200,200,200";
+    };
+    let accent = rgb("--accent", "#6f78ff");
+    let ink = rgb("--fg", "#f5f5f7");
+    let lastRead = 0;
     const mouse = { x: -9999, y: -9999, active: false };
     const spot = { x: 0, y: 0 };
     let points: { x: number; y: number; vx: number; vy: number }[] = [];
@@ -59,6 +69,11 @@ export default function TechBackground({ mode = "both" }: { mode?: TechMode }) {
     document.addEventListener("pointerleave", onLeave);
 
     const draw = (now: number) => {
+      if (now - lastRead > 1000) {
+        accent = rgb("--accent", "#6f78ff");
+        ink = rgb("--fg", "#f5f5f7");
+        lastRead = now;
+      }
       ctx.clearRect(0, 0, w, h);
 
       // The spotlight eases towards the mouse, or wanders slowly on its own.
@@ -68,8 +83,8 @@ export default function TechBackground({ mode = "both" }: { mode?: TechMode }) {
       spot.y += (ty - spot.y) * 0.12;
 
       const glow = ctx.createRadialGradient(spot.x, spot.y, 0, spot.x, spot.y, SPOT * 1.3);
-      glow.addColorStop(0, "rgba(129,140,248,0.11)");
-      glow.addColorStop(1, "rgba(129,140,248,0)");
+      glow.addColorStop(0, `rgba(${accent},0.12)`);
+      glow.addColorStop(1, `rgba(${accent},0)`);
       ctx.fillStyle = glow;
       ctx.fillRect(0, 0, w, h);
 
@@ -78,7 +93,7 @@ export default function TechBackground({ mode = "both" }: { mode?: TechMode }) {
           for (let x = GAP / 2; x < w; x += GAP) {
             const k = Math.max(0, 1 - Math.hypot(x - spot.x, y - spot.y) / SPOT);
             const size = 1.1 + k * 1.2;
-            ctx.fillStyle = `rgba(${190 + 50 * k},${195 + 45 * k},255,${0.07 + 0.5 * k})`;
+            ctx.fillStyle = `rgba(${k > 0.15 ? accent : ink},${0.07 + 0.5 * k})`;
             ctx.fillRect(x - size / 2, y - size / 2, size, size);
           }
         }
@@ -100,7 +115,7 @@ export default function TechBackground({ mode = "both" }: { mode?: TechMode }) {
             // Links are brighter inside the spotlight.
             const mx = (nodes[i].x + nodes[j].x) / 2, my = (nodes[i].y + nodes[j].y) / 2;
             const lit = Math.max(0, 1 - Math.hypot(mx - spot.x, my - spot.y) / (SPOT * 1.4));
-            ctx.strokeStyle = `rgba(94,234,212,${(0.1 + 0.3 * lit) * (1 - d / LINK)})`;
+            ctx.strokeStyle = `rgba(${accent},${(0.08 + 0.3 * lit) * (1 - d / LINK)})`;
             ctx.beginPath();
             ctx.moveTo(nodes[i].x, nodes[i].y);
             ctx.lineTo(nodes[j].x, nodes[j].y);
@@ -109,7 +124,7 @@ export default function TechBackground({ mode = "both" }: { mode?: TechMode }) {
         }
         for (const p of points) {
           const lit = Math.max(0, 1 - Math.hypot(p.x - spot.x, p.y - spot.y) / SPOT);
-          ctx.fillStyle = `rgba(167,243,208,${0.35 + 0.5 * lit})`;
+          ctx.fillStyle = `rgba(${accent},${0.3 + 0.5 * lit})`;
           ctx.beginPath();
           ctx.arc(p.x, p.y, 1.5, 0, Math.PI * 2);
           ctx.fill();

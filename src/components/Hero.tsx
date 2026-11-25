@@ -3,7 +3,6 @@
 import { motion } from "motion/react";
 import type { Dictionary } from "@/content/types";
 import CodeCard from "./CodeCard";
-import LiveStatusStrip from "./LiveStatusStrip";
 import TypedRoles from "./TypedRoles";
 import { ease } from "./Reveal";
 
@@ -97,12 +96,8 @@ export default function Hero({ t }: { t: Dictionary["hero"] }) {
           </a>
         </motion.div>
 
-        <motion.div {...fade(1.25)} className="flex w-full justify-center">
-          <LiveStatusStrip t={t.live} />
-        </motion.div>
-
         <motion.div
-          className="relative mt-16 flex w-full min-w-0 justify-center text-left"
+          className="relative mt-20 flex w-full min-w-0 justify-center text-left"
           initial={{ opacity: 0, y: 60, scale: 0.96 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 1.2, ease, delay: 0.5 }}

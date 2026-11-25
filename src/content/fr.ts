@@ -21,8 +21,6 @@ const fr: Dictionary = {
     menu: "Ouvrir le menu",
     close: "Fermer le menu",
     switchTo: "View in English",
-    light: "Passer en mode clair",
-    dark: "Passer en mode sombre",
   },
   hero: {
     badge: "Disponible pour un stage de 6 mois dès mars 2027",
@@ -34,7 +32,6 @@ const fr: Dictionary = {
     ctaWork: "Voir mes projets",
     ctaContact: "Me contacter",
     ctaCv: "Télécharger mon CV",
-    live: { title: "En ligne en ce moment", online: "en ligne", offline: "ne répond pas", checking: "vérification…" },
     code: {
       comment: "# l'essentiel, toujours à jour",
       basedIn: "Lille, France",

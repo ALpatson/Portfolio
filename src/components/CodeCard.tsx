@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { useReducedMotion } from "motion/react";
+import { useSettledReducedMotion } from "./useSettledReducedMotion";
 import type { Dictionary } from "@/content/types";
 
 type Token = [text: string, className: string];
@@ -20,7 +20,7 @@ const CHAR_MS = 14;
 
 // A small editor window that types out a "profile" dictionary, as if it were Python.
 export default function CodeCard({ t, role }: { t: Dictionary["hero"]["code"]; role: string }) {
-  const reduced = useReducedMotion();
+  const reduced = useSettledReducedMotion();
 
   const lines: Token[][] = useMemo(() => {
     const str = (v: string): Token => [`"${v}"`, C.str];

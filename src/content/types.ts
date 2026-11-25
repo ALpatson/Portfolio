@@ -39,7 +39,7 @@ export type SkillGroup = {
 
 export type Dictionary = {
   meta: { title: string; description: string };
-  nav: { about: string; journey: string; projects: string; skills: string; resume: string; contact: string; menu: string; close: string; switchTo: string; light: string; dark: string };
+  nav: { about: string; journey: string; projects: string; skills: string; resume: string; contact: string; menu: string; close: string; switchTo: string };
   hero: {
     badge: string;
     kicker: string;
@@ -50,7 +50,6 @@ export type Dictionary = {
     ctaWork: string;
     ctaContact: string;
     ctaCv: string;
-    live: { title: string; online: string; offline: string; checking: string };
     code: { comment: string; basedIn: string; lastStop: string; openTo: string; outro: string };
   };
   about: {
