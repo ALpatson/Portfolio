@@ -42,6 +42,9 @@ export type Dictionary = {
   nav: { about: string; journey: string; projects: string; skills: string; resume: string; contact: string; menu: string; close: string; switchTo: string };
   hero: {
     badge: string;
+    portraitAlt: string;
+    portraitLabel: string;
+    highlight: { title: string; text: string };
     kicker: string;
     roles: string[];
     rolesLabel: string;
@@ -58,7 +61,6 @@ export type Dictionary = {
     text: string;
     stats: { value: string; label: string }[];
     photos: { src: string; alt: string }[];
-    photoHint: string;
   };
   journey: {
     label: string;

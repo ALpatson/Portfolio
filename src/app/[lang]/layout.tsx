@@ -1,11 +1,13 @@
 import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
-import { IBM_Plex_Mono, Inter } from "next/font/google";
+import { Bricolage_Grotesque, IBM_Plex_Mono, Inter } from "next/font/google";
 import { getDictionary, hasLocale, locales } from "@/content";
 import "../globals.css";
 
 // Apple devices use the system font (San Francisco); Inter is the closest match elsewhere.
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
+// Headings: a grotesk with sharp, ink-trap-like details that suits the engraved portrait.
+const bricolage = Bricolage_Grotesque({ variable: "--font-bricolage", subsets: ["latin"] });
 const plexMono = IBM_Plex_Mono({ variable: "--font-plex-mono", subsets: ["latin"], weight: ["400", "500"] });
 
 const siteUrl = "https://alpatsonportfolio.vercel.app";
@@ -37,7 +39,7 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
 }
 
 export const viewport: Viewport = {
-  themeColor: "#f5f6f8",
+  themeColor: "#f6f7f6",
 };
 
 export default async function LangLayout({ children, params }: LayoutProps<"/[lang]">) {
@@ -45,7 +47,7 @@ export default async function LangLayout({ children, params }: LayoutProps<"/[la
   if (!hasLocale(lang)) notFound();
 
   return (
-    <html lang={lang} className={`${inter.variable} ${plexMono.variable}`}>
+    <html lang={lang} className={`${inter.variable} ${bricolage.variable} ${plexMono.variable}`}>
       <body className="min-h-dvh">{children}</body>
     </html>
   );

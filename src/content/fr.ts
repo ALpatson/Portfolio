@@ -24,11 +24,17 @@ const fr: Dictionary = {
   },
   hero: {
     badge: "Disponible pour un stage de 6 mois dès mars 2027",
+    portraitAlt: "Alpatson Cobbina Siaw",
+    portraitLabel: "Ingénieur de recherche IA",
+    highlight: {
+      title: "Stagiaire ingénieur de recherche en IA, ISIA Lab, Belgique",
+      text: "Vision par ordinateur pour les personnes aveugles et malvoyantes : lire les boîtes de médicaments, les menus et les étiquettes de prix, et les aider à se déplacer dehors.",
+    },
     kicker: "Bonjour, je suis",
-    roles: ["Ingénieur logiciel full-stack", "Ingénieur logiciel", "Développeur backend", "Ingénieur IA", "Ingénieur DevOps", "Joueur d'échecs"],
+    roles: ["Ingénieur logiciel full-stack", "Ingénieur logiciel", "Développeur backend", "Ingénieur IA et vision par ordinateur", "Ingénieur DevOps", "Joueur d'échecs"],
     rolesLabel: "Rôles :",
     lead: "Je crée des logiciels que les gens utilisent vraiment, et je mesure avant de faire confiance.",
-    body: "Je gère de bout en bout une plateforme e-commerce en ligne, j'ai créé le site et le système de classement du club d'échecs de la KNUST, et j'ai passé l'été 2026 comme stagiaire ingénieur de recherche en IA à l'ISIA Lab.",
+    body: "Je gère de bout en bout une plateforme e-commerce en ligne et j'ai créé le site et le système de classement du club d'échecs de la KNUST.",
     ctaWork: "Voir mes projets",
     ctaContact: "Me contacter",
     ctaCv: "Télécharger mon CV",
@@ -51,11 +57,10 @@ const fr: Dictionary = {
       { value: "3", label: "pays où j'ai travaillé : Ghana, France, Belgique" },
     ],
     photos: [
-      { src: "/images/profile.webp", alt: "Portrait d'Alpatson Cobbina Siaw" },
       { src: "/images/photo-laptop.webp", alt: "Alpatson travaillant sur un ordinateur portable en salle de classe" },
+      { src: "/images/profile.webp", alt: "Portrait d'Alpatson Cobbina Siaw" },
       { src: "/images/photo-desk.webp", alt: "Alpatson assis sur une table, regardant son téléphone" },
     ],
-    photoHint: "Cliquez ou balayez pour la photo suivante",
   },
   journey: {
     label: "Parcours",
@@ -102,7 +107,7 @@ const fr: Dictionary = {
         period: "Mai – août 2026",
         title: "Stagiaire ingénieur de recherche en IA",
         place: "ISIA Lab, Université de Mons, Belgique",
-        text: "Conception d'un système de routage des demandes à base de règles, comparaison d'outils d'IA à des références simples, et correction d'un plantage récurrent ainsi que de cinq bugs d'architecture.",
+        text: "Conception de pipelines de vision par ordinateur (PaddleOCR et LLM) qui aident les personnes aveugles et malvoyantes à lire les boîtes de médicaments, les menus et les étiquettes de prix, et à se déplacer dehors. Aussi un système de routage des demandes à base de règles, et la correction d'un plantage récurrent et de cinq bugs d'architecture.",
       },
       {
         move: "7. Db3",

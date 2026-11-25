@@ -1,34 +1,36 @@
 @import "tailwindcss";
 
 /*
-  Palette: a gallery wall. Cool white, near-black type and one electric
-  ultramarine accent. Every colour on the site comes from these variables.
+  Palette: clean neutral white, near-black type and Ghana green, which is also
+  the colour of a computer-vision detection box. Every colour on the site
+  comes from these variables.
 */
 :root {
-  --bg: #f5f6f8;
-  --bg-raised: #eceef2;
+  --bg: #f6f7f6;
+  --bg-raised: #eceeec;
   --surface: #ffffff;
-  --line: #e1e4ea;
-  --line-strong: #c9ced8;
-  --fg: #0c0d12;
-  --fg-soft: #2b2e38;
-  --muted: #5d6270;
-  --faint: #8a8f9c;
-  --accent: #2f3cff;
-  --accent-soft: #1f2ce0;
+  --line: #e1e5e2;
+  --line-strong: #c6ccc8;
+  --fg: #0b0d0c;
+  --fg-soft: #2a302c;
+  --muted: #59615c;
+  --faint: #89908c;
+  --accent: #007a47;
+  --accent-soft: #00663b;
   --accent-ink: #ffffff;
-  --ok: #12805c;
+  --detect: #2ee58a;
+  --ok: #00a35f;
   --danger: #d7263d;
-  --square-light: #e7e9f2;
-  --square-dark: #7d86c4;
-  --shadow: 12, 13, 18;
+  --square-light: #e5ece7;
+  --square-dark: #6e9a80;
+  --shadow: 11, 13, 12;
   --icon-filter: none;
   --backdrop: 0.6;
-  --nav-bg: rgba(245, 246, 248, 0.82);
+  --nav-bg: rgba(246, 247, 246, 0.82);
   color-scheme: light;
 }
 :root .bg-surface:not(.force-dark *) {
-  box-shadow: 0 2px 14px rgba(12, 13, 18, 0.07);
+  box-shadow: 0 2px 14px rgba(11, 13, 12, 0.07);
 }
 
 /* The code editor card stays dark on purpose, like a real editor. */
@@ -42,13 +44,13 @@
   --fg-soft: #cfd2dc;
   --muted: #9a9fae;
   --faint: #6a6f7e;
-  --accent: #6f78ff;
-  --accent-soft: #8f96ff;
-  --accent-ink: #ffffff;
+  --accent: #2ee58a;
+  --accent-soft: #6cf0ad;
+  --accent-ink: #04140b;
   --ok: #34d399;
   --danger: #ff5c6c;
-  --square-light: #c9cde0;
-  --square-dark: #5a63a8;
+  --square-light: #c8d6cd;
+  --square-dark: #4f7a62;
   --shadow: 0, 0, 0;
   --icon-filter: invert(1); /* piece icons are drawn black */
   --backdrop: 0.5; /* how strongly the animated background shows */
@@ -73,12 +75,13 @@
   --color-accent: var(--accent);
   --color-accent-soft: var(--accent-soft);
   --color-accent-ink: var(--accent-ink);
+  --color-detect: var(--detect);
   --color-ok: var(--ok);
   --color-danger: var(--danger);
   --color-square-light: var(--square-light);
   --color-square-dark: var(--square-dark);
 
-  --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", var(--font-inter), "Helvetica Neue", Arial, sans-serif;
+  --font-display: var(--font-bricolage), "Helvetica Neue", Arial, sans-serif;
   --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", var(--font-inter), "Helvetica Neue", Arial, sans-serif;
   --font-mono: ui-monospace, "SF Mono", Menlo, var(--font-plex-mono), monospace;
 }

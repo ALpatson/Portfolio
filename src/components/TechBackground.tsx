@@ -29,7 +29,7 @@ export default function TechBackground({ mode = "both" }: { mode?: TechMode }) {
       const m = hex.replace("#", "").match(/^([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i);
       return m ? m.slice(1).map((x) => parseInt(x, 16)).join(",") : "200,200,200";
     };
-    let accent = rgb("--accent", "#6f78ff");
+    let accent = rgb("--accent", "#007a47");
     let ink = rgb("--fg", "#f5f5f7");
     let lastRead = 0;
     const mouse = { x: -9999, y: -9999, active: false };
@@ -70,7 +70,7 @@ export default function TechBackground({ mode = "both" }: { mode?: TechMode }) {
 
     const draw = (now: number) => {
       if (now - lastRead > 1000) {
-        accent = rgb("--accent", "#6f78ff");
+        accent = rgb("--accent", "#007a47");
         ink = rgb("--fg", "#f5f5f7");
         lastRead = now;
       }

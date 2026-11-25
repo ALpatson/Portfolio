@@ -143,7 +143,7 @@ export default function Contact({ t }: { t: Dictionary["contact"] }) {
               <div>
                 <dt className="text-sm text-muted">{t.emailLabel}</dt>
                 <dd className="mt-1">
-                  <a href={`mailto:${EMAIL}`} className="break-all font-display text-xl text-fg underline decoration-accent/50 underline-offset-4 transition hover:text-accent">
+                  <a href={`mailto:${EMAIL}`} className="break-all text-xl text-fg underline decoration-accent/50 underline-offset-4 transition hover:text-accent">
                     {EMAIL}
                   </a>
                 </dd>

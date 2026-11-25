@@ -19,11 +19,17 @@ const en: Dictionary = {
   },
   hero: {
     badge: "Open to a 6-month internship from March 2027",
+    portraitAlt: "Alpatson Cobbina Siaw",
+    portraitLabel: "AI Research Engineer",
+    highlight: {
+      title: "AI Research Engineer intern, ISIA Lab, Belgium",
+      text: "Computer vision for blind and visually impaired people: reading medicine boxes, menus and price labels, and helping them get around outdoors.",
+    },
     kicker: "Hello, I'm",
-    roles: ["Full-Stack Software Engineer", "Software Engineer", "Backend Developer", "AI Engineer", "DevOps Engineer", "Chess Player"],
+    roles: ["Full-Stack Software Engineer", "Software Engineer", "Backend Developer", "AI & Computer Vision Engineer", "DevOps Engineer", "Chess Player"],
     rolesLabel: "Roles:",
     lead: "I build software people actually use, and I measure before I trust.",
-    body: "I run a live e-commerce platform end to end, built the KNUST Chess Club's website and rating system, and spent the summer of 2026 as an AI Research Engineer intern at ISIA Lab.",
+    body: "I run a live e-commerce platform end to end and built the KNUST Chess Club's website and rating system.",
     ctaWork: "See my work",
     ctaContact: "Get in touch",
     ctaCv: "Download CV",
@@ -46,11 +52,10 @@ const en: Dictionary = {
       { value: "3", label: "countries worked in: Ghana, France, Belgium" },
     ],
     photos: [
-      { src: "/images/profile.webp", alt: "Portrait of Alpatson Cobbina Siaw" },
       { src: "/images/photo-laptop.webp", alt: "Alpatson working on a laptop in a classroom" },
+      { src: "/images/profile.webp", alt: "Portrait of Alpatson Cobbina Siaw" },
       { src: "/images/photo-desk.webp", alt: "Alpatson sitting on a desk, looking at his phone" },
     ],
-    photoHint: "Click or swipe for the next photo",
   },
   journey: {
     label: "Journey",
@@ -97,7 +102,7 @@ const en: Dictionary = {
         period: "May – Aug 2026",
         title: "AI Research Engineer Intern",
         place: "ISIA Lab, Université de Mons, Belgium",
-        text: "Built a rule-based request-routing system, benchmarked AI tools against simple baselines, and fixed a recurring crash plus five architectural bugs.",
+        text: "Built computer-vision pipelines (PaddleOCR and LLMs) that help blind and visually impaired people read medicine boxes, menus and price labels and get around outdoors. Also built a rule-based request-routing system and fixed a recurring crash plus five architectural bugs.",
       },
       {
         move: "7. Qb3",

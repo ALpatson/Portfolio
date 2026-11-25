@@ -1,7 +1,7 @@
 "use client";
 
 import type { Dictionary } from "@/content/types";
-import PhotoStack from "./PhotoStack";
+import PhotoMosaic from "./PhotoMosaic";
 import Reveal from "./Reveal";
 import SectionHeader from "./SectionHeader";
 
@@ -20,12 +20,12 @@ export default function About({ t }: { t: Dictionary["about"] }) {
       <SectionHeader index="01" label={t.label} heading={t.heading} />
       <div className="grid gap-12 md:grid-cols-[0.8fr_1.2fr] md:gap-16">
         <Reveal>
-          <PhotoStack photos={t.photos} hint={t.photoHint} />
+          <PhotoMosaic photos={t.photos} />
         </Reveal>
         <div>
           {t.text.split("\n\n").map((para, i) => (
             <Reveal key={i} delay={0.08 * i}>
-              <p className={`font-display leading-relaxed ${i === 0 ? "text-xl text-fg md:text-2xl md:leading-relaxed" : "mt-5 text-lg text-fg-soft"}`}>{para}</p>
+              <p className={`leading-relaxed ${i === 0 ? "text-xl text-fg md:text-2xl md:leading-relaxed" : "mt-5 text-lg text-fg-soft"}`}>{para}</p>
             </Reveal>
           ))}
           <div className="mt-12 grid grid-cols-2 gap-x-8 gap-y-10">
