@@ -250,7 +250,7 @@ export default function ChessBoard({ t }: { t: BoardText }) {
       </div>
 
       <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
-        <p className="min-h-[1.25rem] font-mono text-xs text-muted" aria-live="polite">
+        <p className="min-h-[1.25rem] text-sm text-muted" aria-live="polite">
           {mode === "watch" ? t.caption : status || t.hint}
         </p>
         <div className="flex gap-2">

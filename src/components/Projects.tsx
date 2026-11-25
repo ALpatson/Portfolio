@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion, useMotionValue, useSpring } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import type { Dictionary, Project, ProjectTag } from "@/content/types";
 import SectionHeader from "./SectionHeader";
 import { ease } from "./Reveal";
@@ -13,13 +13,13 @@ function Badges({ p, t }: { p: Project; t: T }) {
   return (
     <div className="flex gap-1.5">
       {p.live && (
-        <span className="inline-flex items-center gap-1.5 rounded-full bg-bg/85 px-2.5 py-1 font-mono text-[10px] uppercase tracking-wider text-fg backdrop-blur">
+        <span className="inline-flex items-center gap-1.5 rounded-full bg-bg/85 px-2.5 py-1 text-xs font-medium text-fg backdrop-blur">
           <span className="h-1.5 w-1.5 rounded-full bg-ok" />
           {t.live}
         </span>
       )}
-      {p.team && <span className="rounded-full bg-bg/85 px-2.5 py-1 font-mono text-[10px] uppercase tracking-wider text-fg-soft backdrop-blur">{t.team}</span>}
-      {p.private && <span className="rounded-full bg-bg/85 px-2.5 py-1 font-mono text-[10px] uppercase tracking-wider text-muted backdrop-blur">{t.private}</span>}
+      {p.team && <span className="rounded-full bg-bg/85 px-2.5 py-1 text-xs font-medium text-fg-soft backdrop-blur">{t.team}</span>}
+      {p.private && <span className="rounded-full bg-bg/85 px-2.5 py-1 text-xs font-medium text-muted backdrop-blur">{t.private}</span>}
     </div>
   );
 }
@@ -40,20 +40,6 @@ function Cover({ p, className }: { p: Project; className?: string }) {
 }
 
 function Card({ p, index, t, onOpen }: { p: Project; index: number; t: T; onOpen: () => void }) {
-  const rx = useSpring(useMotionValue(0), { stiffness: 200, damping: 20 });
-  const ry = useSpring(useMotionValue(0), { stiffness: 200, damping: 20 });
-
-  const onMove = (e: React.PointerEvent<HTMLButtonElement>) => {
-    if (e.pointerType !== "mouse") return;
-    const box = e.currentTarget.getBoundingClientRect();
-    ry.set(((e.clientX - box.left) / box.width - 0.5) * 6);
-    rx.set(-((e.clientY - box.top) / box.height - 0.5) * 6);
-  };
-  const onLeave = () => {
-    rx.set(0);
-    ry.set(0);
-  };
-
   return (
     <motion.li
       layout
@@ -61,35 +47,29 @@ function Card({ p, index, t, onOpen }: { p: Project; index: number; t: T; onOpen
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.96, transition: { duration: 0.2 } }}
       transition={{ duration: 0.5, ease, delay: Math.min(index, 6) * 0.05 }}
-      style={{ perspective: 900 }}
     >
-      <motion.button
+      <button
         type="button"
         onClick={onOpen}
-        onPointerMove={onMove}
-        onPointerLeave={onLeave}
-        style={{ rotateX: rx, rotateY: ry }}
         className="group flex h-full w-full flex-col overflow-hidden rounded-3xl border border-line bg-surface p-1.5 text-left transition-colors hover:border-line-strong"
       >
         <div className="relative aspect-[16/10] overflow-hidden rounded-[1.1rem] border border-line bg-bg">
-          <Cover p={p} className="transition-transform duration-700 ease-out group-hover:scale-[1.04]" />
+          <Cover p={p} />
           <div className="absolute top-3 left-3">
             <Badges p={p} t={t} />
           </div>
-          <span className="absolute top-3 right-3 font-mono text-[11px] text-fg/70">{String(index + 1).padStart(2, "0")}</span>
         </div>
         <div className="flex flex-1 flex-col px-4 pt-4 pb-3.5">
           <h3 className="font-display text-xl font-semibold text-fg">{p.title}</h3>
           <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">{p.summary}</p>
           <div className="mt-4 flex items-center justify-between">
-            <span className="font-mono text-[11px] text-faint">{p.stack.slice(0, 3).join(" · ")}</span>
+            <span className="text-xs text-faint">{p.stack.slice(0, 3).join(", ")}</span>
             <span className="inline-flex items-center gap-1 text-sm font-medium text-accent">
               {t.details}
-              <span className="transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
             </span>
           </div>
         </div>
-      </motion.button>
+      </button>
     </motion.li>
   );
 }
@@ -146,20 +126,20 @@ function Details({ p, t, onClose }: { p: Project; t: T; onClose: () => void }) {
         </button>
 
         <div className="px-4 pt-6 pb-5 sm:px-6 sm:pt-8 sm:pb-6">
-          {p.period && <p className="font-mono text-xs uppercase tracking-wider text-muted">{p.period}</p>}
+          {p.period && <p className="text-sm text-muted">{p.period}</p>}
           <h3 id="project-title" className="mt-1 font-display text-3xl font-semibold text-fg sm:text-4xl">
             {p.title}
           </h3>
           <p className="mt-4 leading-relaxed text-fg-soft">{p.description}</p>
 
           <div className="mt-6 rounded-2xl border border-accent/30 bg-accent/[0.06] px-5 py-4">
-            <p className="font-mono text-[11px] uppercase tracking-wider text-accent">{t.role}</p>
+            <p className="text-sm font-semibold text-accent">{t.role}</p>
             <p className="mt-1 leading-relaxed text-fg">{p.role}</p>
           </div>
 
           {p.highlights.length > 0 && (
             <>
-              <p className="mt-6 font-mono text-[11px] uppercase tracking-wider text-muted">{t.highlights}</p>
+              <p className="mt-6 text-sm text-muted">{t.highlights}</p>
               <ul className="mt-2 space-y-1.5">
                 {p.highlights.map((h) => (
                   <li key={h} className="flex gap-3 text-fg-soft">
@@ -173,7 +153,7 @@ function Details({ p, t, onClose }: { p: Project; t: T; onClose: () => void }) {
 
           {p.stack.length > 0 && (
             <>
-              <p className="mt-6 font-mono text-[11px] uppercase tracking-wider text-muted">{t.stack}</p>
+              <p className="mt-6 text-sm text-muted">{t.stack}</p>
               <ul className="mt-2 flex flex-wrap gap-2">
                 {p.stack.map((s) => (
                   <li key={s} className="rounded-full border border-line-strong px-3 py-1 text-xs text-fg-soft">
@@ -234,7 +214,7 @@ export default function Projects({ t }: { t: T }) {
           >
             {filter === f && <motion.span layoutId="filter-pill" className="absolute inset-0 rounded-full bg-accent" transition={{ type: "spring", stiffness: 380, damping: 32 }} />}
             <span className="relative">
-              {t.filters[f]} <span className="font-mono text-[10px] opacity-70">{count(f)}</span>
+              {t.filters[f]} <span className="text-xs opacity-70 tabular-nums">{count(f)}</span>
             </span>
           </button>
         ))}

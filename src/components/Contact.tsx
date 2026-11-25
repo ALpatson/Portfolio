@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "motion/react";
 import type { Dictionary } from "@/content/types";
-import Reveal, { ease } from "./Reveal";
+import Reveal from "./Reveal";
 
 const EMAIL = "cobbinaalpatson@gmail.com";
 
@@ -57,13 +57,8 @@ export default function Contact({ t }: { t: Dictionary["contact"] }) {
   return (
     <section id="contact" className="relative overflow-hidden border-t border-line bg-bg-raised/60">
       <div className="mx-auto max-w-6xl px-5 py-24 sm:px-8 md:py-32">
-        <p className="mb-3 text-base font-semibold text-accent md:text-lg">{t.label}</p>
         <motion.h2
           className="font-display text-[clamp(3.5rem,11vw,8rem)] leading-[0.95] font-semibold tracking-[-0.045em] text-fg"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.9, ease }}
         >
           {t.heading}
         </motion.h2>
@@ -76,7 +71,7 @@ export default function Contact({ t }: { t: Dictionary["contact"] }) {
             <form onSubmit={onSubmit} noValidate className="space-y-6 rounded-3xl border border-line bg-surface p-6 sm:p-8">
               <div className="grid gap-6 sm:grid-cols-2">
                 <label className="block">
-                  <span className="font-mono text-[11px] uppercase tracking-wider text-muted">{t.name}</span>
+                  <span className="text-sm text-muted">{t.name}</span>
                   <input
                     name="name"
                     required
@@ -88,7 +83,7 @@ export default function Contact({ t }: { t: Dictionary["contact"] }) {
                   />
                 </label>
                 <label className="block">
-                  <span className="font-mono text-[11px] uppercase tracking-wider text-muted">{t.email}</span>
+                  <span className="text-sm text-muted">{t.email}</span>
                   <input
                     type="email"
                     name="email"
@@ -102,7 +97,7 @@ export default function Contact({ t }: { t: Dictionary["contact"] }) {
                 </label>
               </div>
               <label className="block">
-                <span className="font-mono text-[11px] uppercase tracking-wider text-muted">{t.message}</span>
+                <span className="text-sm text-muted">{t.message}</span>
                 <textarea
                   name="message"
                   required
@@ -122,7 +117,6 @@ export default function Contact({ t }: { t: Dictionary["contact"] }) {
                   className="group inline-flex items-center gap-2 rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-accent-ink transition hover:bg-accent-soft disabled:cursor-wait disabled:opacity-60"
                 >
                   {status.kind === "sending" ? t.sending : t.send}
-                  <span className="transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
                 </button>
                 <p role="status" aria-live="polite" className="text-sm">
                   {status.kind === "sent" && <span className="text-ok">{t.sent}</span>}
@@ -144,7 +138,7 @@ export default function Contact({ t }: { t: Dictionary["contact"] }) {
           <Reveal delay={0.1}>
             <dl className="space-y-7 rounded-3xl border border-line p-6 sm:p-8">
               <div>
-                <dt className="font-mono text-[11px] uppercase tracking-wider text-muted">{t.emailLabel}</dt>
+                <dt className="text-sm text-muted">{t.emailLabel}</dt>
                 <dd className="mt-1">
                   <a href={`mailto:${EMAIL}`} className="break-all font-display text-xl text-fg underline decoration-accent/50 underline-offset-4 transition hover:text-accent">
                     {EMAIL}
@@ -152,11 +146,11 @@ export default function Contact({ t }: { t: Dictionary["contact"] }) {
                 </dd>
               </div>
               <div>
-                <dt className="font-mono text-[11px] uppercase tracking-wider text-muted">{t.availabilityLabel}</dt>
+                <dt className="text-sm text-muted">{t.availabilityLabel}</dt>
                 <dd className="mt-1 text-fg">{t.availability}</dd>
               </div>
               <div>
-                <dt className="font-mono text-[11px] uppercase tracking-wider text-muted">{t.locationLabel}</dt>
+                <dt className="text-sm text-muted">{t.locationLabel}</dt>
                 <dd className="mt-1 text-fg">{t.location}</dd>
                 <dd className="text-sm text-muted">
                   {t.languagesLabel}: {t.languages}

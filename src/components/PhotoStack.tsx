@@ -100,7 +100,7 @@ export default function PhotoStack({ photos, hint }: { photos: Photo[]; hint: st
         })}
       </div>
 
-      <div className="mt-8 flex items-center justify-between font-mono text-[11px] text-muted">
+      <div className="mt-8 flex items-center justify-between text-xs text-muted tabular-nums">
         <span aria-hidden="true">
           {String(order[0] + 1).padStart(2, "0")} / {String(photos.length).padStart(2, "0")}
         </span>

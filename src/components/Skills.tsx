@@ -15,7 +15,7 @@ export default function Skills({ t }: { t: Dictionary["skills"] }) {
       <div className="mx-auto max-w-6xl px-5 py-24 sm:px-8 md:py-32">
         <SectionHeader index="04" label={t.label} heading={t.heading} sub={t.sub} />
 
-        <p className="mb-4 flex items-center gap-2 font-mono text-xs text-muted">
+        <p className="mb-4 flex items-center gap-2 text-sm text-muted">
           <span className="relative flex h-2 w-2" aria-hidden="true">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
@@ -48,7 +48,7 @@ export default function Skills({ t }: { t: Dictionary["skills"] }) {
                   whileHover={{ y: -8, rotate: -4 }}
                   transition={{ type: "spring", stiffness: 300, damping: 18 }}
                 />
-                <span className={`relative px-1 text-center font-mono text-[10px] leading-tight uppercase tracking-wider ${light ? "text-[#3a2e1f]" : "text-[#f1e6cf]"}`}>
+                <span className={`relative px-1 text-center text-[11px] font-medium leading-tight ${light ? "text-[#3a2e1f]" : "text-[#f1e6cf]"}`}>
                   {g.name}
                 </span>
               </button>

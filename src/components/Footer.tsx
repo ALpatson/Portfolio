@@ -15,7 +15,7 @@ export default async function Footer({ t }: { t: Dictionary["footer"] }) {
           © {year} Alpatson Cobbina Siaw. {t.rights}
         </p>
         <div className="flex items-center gap-5">
-          <a href="https://lichess.org" target="_blank" rel="noopener noreferrer" className="font-mono text-[11px] text-faint transition hover:text-muted">
+          <a href="https://lichess.org" target="_blank" rel="noopener noreferrer" className="text-xs text-faint transition hover:text-muted">
             {t.credit}
           </a>
           <a href="#top" className="transition hover:text-accent">

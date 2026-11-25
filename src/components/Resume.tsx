@@ -17,15 +17,15 @@ export default function Resume({ t }: { t: Dictionary["resume"] }) {
                 src={f.preview}
                 alt=""
                 loading="lazy"
-                className="w-full origin-top transition-transform duration-700 ease-out group-hover:-translate-y-[6%]"
+                className="w-full origin-top"
               />
               <span className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-surface to-transparent" aria-hidden="true" />
-              <span className="absolute top-3 left-3 rounded-full bg-bg/85 px-3 py-1 font-mono text-xs font-semibold tracking-wider text-fg backdrop-blur">{f.code}</span>
+              <span className="absolute top-3 left-3 rounded-full bg-bg/85 px-3 py-1 text-xs font-semibold text-fg backdrop-blur">{f.code}</span>
             </a>
             <div className="flex flex-wrap items-center justify-between gap-3 px-4 pt-4 pb-3">
               <div>
                 <p className="font-display text-xl font-semibold text-fg">{f.name}</p>
-                <p className="mt-0.5 font-mono text-[11px] text-muted">{t.meta}</p>
+                <p className="mt-0.5 text-sm text-muted">{t.meta}</p>
               </div>
               <div className="flex gap-2">
                 <a href={f.href} target="_blank" rel="noopener" className="rounded-full border border-line-strong px-4 py-2 text-sm text-fg transition hover:border-accent hover:text-accent">
