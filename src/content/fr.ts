@@ -25,11 +25,6 @@ const fr: Dictionary = {
   hero: {
     badge: "Disponible pour un stage de 6 mois dès mars 2027",
     portraitAlt: "Alpatson Cobbina Siaw",
-    portraitLabel: "Ingénieur de recherche IA",
-    highlight: {
-      title: "Stagiaire ingénieur de recherche en IA, ISIA Lab, Belgique",
-      text: "Vision par ordinateur pour les personnes aveugles et malvoyantes : lire les boîtes de médicaments, les menus et les étiquettes de prix, et les aider à se déplacer dehors.",
-    },
     kicker: "Bonjour, je suis",
     roles: ["Ingénieur logiciel full-stack", "Ingénieur logiciel", "Développeur backend", "Ingénieur IA et vision par ordinateur", "Ingénieur DevOps", "Joueur d'échecs"],
     rolesLabel: "Rôles :",

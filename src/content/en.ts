@@ -20,11 +20,6 @@ const en: Dictionary = {
   hero: {
     badge: "Open to a 6-month internship from March 2027",
     portraitAlt: "Alpatson Cobbina Siaw",
-    portraitLabel: "AI Research Engineer",
-    highlight: {
-      title: "AI Research Engineer intern, ISIA Lab, Belgium",
-      text: "Computer vision for blind and visually impaired people: reading medicine boxes, menus and price labels, and helping them get around outdoors.",
-    },
     kicker: "Hello, I'm",
     roles: ["Full-Stack Software Engineer", "Software Engineer", "Backend Developer", "AI & Computer Vision Engineer", "DevOps Engineer", "Chess Player"],
     rolesLabel: "Roles:",

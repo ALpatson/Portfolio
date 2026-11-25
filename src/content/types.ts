@@ -43,8 +43,6 @@ export type Dictionary = {
   hero: {
     badge: string;
     portraitAlt: string;
-    portraitLabel: string;
-    highlight: { title: string; text: string };
     kicker: string;
     roles: string[];
     rolesLabel: string;
